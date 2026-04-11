@@ -2,39 +2,118 @@ import Link from "next/link";
 
 const initiatives = [
   {
-    category: "Open Data Platforms",
+    category: "Open Data Platforms & Principles",
     color: "#7C3AED",
     items: [
-      { name: "ADDI", full: "Alzheimer's Disease Data Initiative", desc: "Global platform for sharing and accessing AD data across institutions. Supports data cataloguing, access, and analysis.", url: "https://www.alzheimersdata.org/" },
-      { name: "GAAIN", full: "Global Alzheimer's Association Interactive Network", desc: "Meta-search engine enabling federated queries across multiple AD datasets without centralising data.", url: "http://www.gaain.org/" },
-      { name: "Synapse", full: "Sage Bionetworks Synapse", desc: "Platform hosting key open AD datasets including ANMerge, AMP-AD, and ROSMAP derived data.", url: "https://www.synapse.org/" },
-      { name: "OpenNeuro", full: "OpenNeuro", desc: "BIDS-compliant open platform for neuroimaging data. Growing number of dementia-related datasets.", url: "https://openneuro.org/" },
+      {
+        name: "FAIR Data Principles",
+        full: "Findable, Accessible, Interoperable, Reusable",
+        desc: "The foundational framework for scientific data stewardship. The FAIR principles specify that research data should be findable via unique persistent identifiers, accessible via standardised open protocols, interoperable using shared vocabularies, and reusable with clear licences and provenance. First formally published by Wilkinson et al. (Scientific Data, 2016; doi:10.1038/sdata.2016.18), they are now a requirement of major funding agencies.",
+        url: "https://www.go-fair.org/fair-principles/",
+        doi: "10.1038/sdata.2016.18",
+      },
+      {
+        name: "ADDI",
+        full: "Alzheimer's Disease Data Initiative",
+        desc: "A global platform coordinating access to and sharing of AD data across institutions. Facilitates data cataloguing, federated queries, and access governance across multiple international cohorts.",
+        url: "https://www.alzheimersdata.org/",
+        doi: "",
+      },
+      {
+        name: "GAAIN",
+        full: "Global Alzheimer's Association Interactive Network",
+        desc: "A meta-search engine enabling federated queries across multiple AD datasets without centralising data — an early implementation of federated analysis for AD.",
+        url: "http://www.gaain.org/",
+        doi: "",
+      },
+      {
+        name: "Synapse (Sage Bionetworks)",
+        full: "Open platform for collaborative biomedical data science",
+        desc: "Hosts key open AD datasets including ANMerge, AMP-AD, ROSMAP derived data, and the BrainLat Latin American neuroimaging dataset. Central repository for the AMP-AD Knowledge Portal.",
+        url: "https://www.synapse.org/",
+        doi: "",
+      },
     ],
   },
   {
-    category: "Large-Scale Genetic Collaborations",
+    category: "Data Governance & Safe Access",
     color: "#BE185D",
     items: [
-      { name: "IGAP", full: "International Genomics of Alzheimer's Project", desc: "Meta-GWAS consortium that identified many AD risk loci. Primarily European-descent populations.", url: "https://www.niagads.org/igap" },
-      { name: "EADB", full: "European Alzheimer DNA Biobank", desc: "European GWAS consortium. Identified novel loci and validated APOE interactions.", url: "https://eadb.eu/" },
-      { name: "ADGC", full: "Alzheimer's Disease Genetics Consortium", desc: "US-based GWAS network coordinating across ADNI, NACC, and multiple ADRCs.", url: "https://www.niagads.org/adgc" },
-      { name: "CHARGE", full: "Cohorts for Heart and Aging Research in Genomic Epidemiology", desc: "Cardiovascular + dementia genetics consortium. Strong focus on gene-environment interactions.", url: "https://www.chargeconsortium.com/" },
+      {
+        name: "Five Safes Framework",
+        full: "Safe People, Safe Projects, Safe Settings, Safe Data, Safe Outputs",
+        desc: "Developed by the UK's Office for National Statistics and adopted by Health Data Research UK, the Five Safes provides a structured governance model for designing safe and efficient data access. Applied in major initiatives such as ICODA (Boylan et al., Lancet Digital Health, 2024; doi:10.1016/S2589-7500(24)00028-1) and the UK Biobank.",
+        url: "https://ukdataservice.ac.uk/help/secure-lab/what-is-the-five-safes-framework/",
+        doi: "10.1016/S2589-7500(24)00028-1",
+      },
+      {
+        name: "GA4GH",
+        full: "Global Alliance for Genomics and Health",
+        desc: "Develops international frameworks and standards for ethical genomic data sharing, including the Data Use Ontology (DUO), machine-readable consent guidance, and Data Access Committee standards. Their work enables automated compliance with diverse national regulations (Bernier et al., Big Data & Society, 2023; doi:10.1177/20539517231163174).",
+        url: "https://www.ga4gh.org/",
+        doi: "10.1177/20539517231163174",
+      },
+      {
+        name: "Trusted Research Environments (TREs)",
+        full: "Secure environments for sensitive data analysis",
+        desc: "TREs provide approved researchers with secure environments for accessing sensitive datasets without data leaving its custodian. Increasingly adopted for cross-national AD collaboration. Federated analysis platforms (e.g., DataSHIELD) extend this model by deploying analytical models across sites while returning only aggregated results.",
+        url: "https://www.hdruk.ac.uk/",
+        doi: "",
+      },
     ],
   },
   {
-    category: "Atlases & Harmonisation",
+    category: "Large-Scale Genetic Consortia",
     color: "#1E3A8A",
     items: [
-      { name: "Shared Atlases", full: "Neuroimaging Atlases", desc: "Content to be provided by author — will cover MNI, AAL, Desikan-Killiany, and disease-specific atlases.", url: "#" },
-      { name: "ComBat / NeuroHarmonize", full: "Harmonisation Pipelines", desc: "Content to be provided by author — will cover ComBat, NeuroHarmonize, RAVEL, and related pipelines for multi-site batch effect correction.", url: "#" },
+      {
+        name: "IGAP",
+        full: "International Genomics of Alzheimer's Project",
+        desc: "Meta-GWAS consortium that identified many foundational AD risk loci. Primarily European-descent populations — its results require replication and calibration in diverse ancestral groups.",
+        url: "https://www.niagads.org/igap",
+        doi: "",
+      },
+      {
+        name: "EADB",
+        full: "European Alzheimer DNA Biobank",
+        desc: "European GWAS consortium identifying novel loci and validating APOE interactions. Coordinating harmonised genotyping and phenotyping across European sites.",
+        url: "https://eadb.eu/",
+        doi: "",
+      },
+      {
+        name: "UK Biobank WGS",
+        full: "UK Biobank Whole-Genome Sequencing Consortium",
+        desc: "Whole-genome sequencing of 490,640 UK Biobank participants (2025), identifying ~1.5 billion variants. An 18.8-fold increase in variant discovery compared to imputed array data. Cross-ancestry meta-analysis identified signals in African and South Asian ancestry groups not detectable in European analyses. Data available via the UKB Research Analysis Platform (UK Biobank WGS Consortium, Nature, 2025; doi:10.1038/s41586-025-09272-9).",
+        url: "https://www.ukbiobank.ac.uk/",
+        doi: "10.1038/s41586-025-09272-9",
+      },
     ],
   },
   {
-    category: "Reproducibility Initiatives",
+    category: "Open Science & Reproducibility",
     color: "#0E7490",
     items: [
-      { name: "AMP-AD", full: "Accelerating Medicines Partnership — Alzheimer's Disease", desc: "NIH-industry consortium. All data and code deposited in Synapse. Strong open-science mandate.", url: "https://adknowledgeportal.synapse.org/" },
-      { name: "AD Knowledge Portal", full: "Sage Bionetworks AD Knowledge Portal", desc: "Central repository for AMP-AD data, tools, and analyses. Reproducibility-first design.", url: "https://adknowledgeportal.synapse.org/" },
+      {
+        name: "AMP-AD",
+        full: "Accelerating Medicines Partnership — Alzheimer's Disease",
+        desc: "NIH-industry consortium with strong open-science mandate. All data and code deposited in Synapse. Enables multi-omics AD research (proteomics, transcriptomics, epigenomics) via the AD Knowledge Portal.",
+        url: "https://adknowledgeportal.synapse.org/",
+        doi: "",
+      },
+      {
+        name: "PPIE in AD Research",
+        full: "Patient and Public Involvement and Engagement",
+        desc: "Evidence consistently shows that involving patients and the public in research design improves quality, relevance, and uptake. PPIE is critical to ensuring diverse communities can participate meaningfully in studies that affect them — particularly for cohorts from underrepresented backgrounds (Blackburn et al., Research Involvement and Engagement, 2018; doi:10.1186/s40900-018-0100-8).",
+        url: "https://www.nihr.ac.uk/documents/public-involvement-in-research/31771",
+        doi: "10.1186/s40900-018-0100-8",
+      },
+      {
+        name: "BrainLat",
+        full: "Latin American Brain Health Institute Dataset",
+        desc: "First open multimodal neuroimaging dataset of neurodegenerative diseases from Latin America: 780 participants (AD, bvFTD, PD, MS, healthy controls) across 5 countries. Organised in BIDS format, following FAIR principles, and hosted on Synapse. Highlights the critical gap in underrepresented-population neuroimaging data (Prado et al., Scientific Data, 2023; doi:10.1038/s41597-023-02806-8).",
+        url: "https://doi.org/10.7303/syn51549340",
+        doi: "10.1038/s41597-023-02806-8",
+      },
     ],
   },
 ];
@@ -48,20 +127,33 @@ export default function OpenSciencePage() {
           Part II — Open Science
         </div>
         <h1 className="text-3xl font-extrabold text-gray-100 mb-3">
-          Open Science, Atlases & Harmonisation
+          Open Science, Governance & Harmonisation
         </h1>
         <p className="text-gray-400 text-sm max-w-2xl leading-relaxed">
-          An overview of initiatives promoting open data, shared atlases, harmonisation pipelines,
-          large-scale genetic collaborations, and reproducible science in the AD field.
+          An evidence-based overview of the frameworks, platforms, and consortia enabling open, diverse, 
+          and reproducible Alzheimer&apos;s disease research — from the FAIR principles to federated analysis,
+          data governance, and patient involvement.
         </p>
         <div className="section-divider mt-6" />
+      </div>
+
+      {/* Framing paragraph */}
+      <div className="glass-card rounded-xl p-6 mb-10 border" style={{ borderColor: "rgba(124,58,237,0.2)" }}>
+        <p className="text-sm text-gray-300 leading-relaxed">
+          Sharing data across studies is essential to ensure that results are comparable and reproducible.
+          Differences in data acquisition, processing pipelines, and cohort composition introduce substantial
+          variability if not addressed through standardised preprocessing, quality control, and statistical
+          harmonisation. The development of common data models, shared ontologies, and open analytical
+          workflows are central to large-scale AD research — as is ensuring that the communities most affected
+          by dementia are partners, not merely subjects, in the research enterprise.
+        </p>
       </div>
 
       {/* Initiatives */}
       <div className="space-y-10">
         {initiatives.map((cat) => (
           <section key={cat.category}>
-            <div className="flex items-center gap-3 mb-4">
+            <div className="flex items-center gap-3 mb-5">
               <div className="h-0.5 w-6 rounded" style={{ background: cat.color }} />
               <h2 className="text-lg font-bold text-gray-200">{cat.category}</h2>
             </div>
@@ -74,12 +166,13 @@ export default function OpenSciencePage() {
                       <span className="font-bold text-sm" style={{ color: cat.color }}>{item.name}</span>
                       <div className="text-xs text-gray-500 mt-0.5">{item.full}</div>
                     </div>
-                    {item.url !== "#" && (
-                      <a href={item.url} target="_blank" rel="noopener noreferrer"
-                        className="text-xs text-gray-600 hover:text-violet-400 shrink-0 ml-2">↗</a>
-                    )}
+                    <a href={item.url} target="_blank" rel="noopener noreferrer"
+                      className="text-xs text-gray-600 hover:text-violet-400 shrink-0 ml-2">↗</a>
                   </div>
                   <p className="text-xs text-gray-400 leading-relaxed">{item.desc}</p>
+                  {item.doi && (
+                    <p className="text-xs text-gray-600 mt-2 font-mono">doi:{item.doi}</p>
+                  )}
                 </div>
               ))}
             </div>
@@ -97,11 +190,11 @@ export default function OpenSciencePage() {
         <div className="glass-card rounded-xl p-6 border" style={{ borderColor: "rgba(14,116,144,0.3)" }}>
           <p className="text-sm text-gray-400 leading-relaxed mb-4">
             As part of the original research component of this project, we conducted a reproducibility audit
-            of papers published in{" "}
-            <em className="text-gray-300">Alzheimer&apos;s & Dementia</em> (Wiley), following the methodology
+            of papers published in <em>Alzheimer&apos;s & Dementia</em> (Wiley), adapting the methodology
             established by Boudreau et al. for <em>Magnetic Resonance in Medicine</em>. The pipeline detects
-            code/data sharing, geographic origin of first authors, and — uniquely for this study — performs
-            sex-specific keyword analysis.
+            code and data sharing, geographic origin of first authors, and — uniquely for this study — 
+            performs sex-specific keyword analysis to quantify the proportion of papers performing 
+            sex-stratified analyses.
           </p>
           <Link href="/original-research" className="btn-glow text-sm inline-block">
             View Original Research →

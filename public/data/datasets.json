@@ -4,11 +4,21 @@
     "name": "ADNI",
     "full_name": "Alzheimer's Disease Neuroimaging Initiative",
     "year": 2004,
-    "data_types": ["MRI", "PET", "CSF", "Blood", "Genetics", "Cognitive", "Clinical"],
+    "data_types": [
+      "MRI",
+      "PET",
+      "CSF",
+      "Blood",
+      "Genetics",
+      "Cognitive",
+      "Clinical"
+    ],
     "access": "partial",
     "n_subjects": 2000,
     "n_note": "~2,000+ (multiple phases)",
-    "origin": ["USA"],
+    "origin": [
+      "USA"
+    ],
     "doi": "10.1016/j.jalz.2010.05.007",
     "url": "https://adni.loni.usc.edu/",
     "notes": "Gold-standard AD neuroimaging cohort. Multiple phases (ADNI-1, GO, 2, 3, 4). Predominantly white/European-American."
@@ -16,27 +26,41 @@
   {
     "id": "oasis1",
     "name": "OASIS-1",
-    "full_name": "Open Access Series of Imaging Studies — Cross-sectional",
+    "full_name": "Open Access Series of Imaging Studies \u2014 Cross-sectional",
     "year": 2007,
-    "data_types": ["MRI", "Clinical"],
+    "data_types": [
+      "MRI",
+      "Clinical"
+    ],
     "access": "open",
     "n_subjects": 416,
     "n_note": "416",
-    "origin": ["USA"],
+    "origin": [
+      "USA"
+    ],
     "doi": "10.1162/jocn.2007.19.9.1498",
     "url": "https://www.oasis-brains.org/",
-    "notes": "Fully open access. Cross-sectional. Age range 18–96."
+    "notes": "Fully open access. Cross-sectional. Age range 18\u201396."
   },
   {
     "id": "oasis3",
     "name": "OASIS-3",
-    "full_name": "Open Access Series of Imaging Studies — Longitudinal",
+    "full_name": "Open Access Series of Imaging Studies \u2014 Longitudinal",
     "year": 2019,
-    "data_types": ["MRI", "PET", "CSF", "Blood", "Clinical", "Cognitive"],
+    "data_types": [
+      "MRI",
+      "PET",
+      "CSF",
+      "Blood",
+      "Clinical",
+      "Cognitive"
+    ],
     "access": "open",
     "n_subjects": 1378,
     "n_note": "1,378",
-    "origin": ["USA"],
+    "origin": [
+      "USA"
+    ],
     "doi": "10.1101/2019.12.13.19014902",
     "url": "https://www.oasis-brains.org/",
     "notes": "Longitudinal. Open access. Includes amyloid/tau PET."
@@ -46,11 +70,21 @@
     "name": "AIBL",
     "full_name": "Australian Imaging, Biomarker & Lifestyle Flagship Study",
     "year": 2006,
-    "data_types": ["MRI", "PET", "Blood", "CSF", "Genetics", "Cognitive", "Lifestyle"],
+    "data_types": [
+      "MRI",
+      "PET",
+      "Blood",
+      "CSF",
+      "Genetics",
+      "Cognitive",
+      "Lifestyle"
+    ],
     "access": "partial",
     "n_subjects": 1112,
     "n_note": "~1,112",
-    "origin": ["Australia"],
+    "origin": [
+      "Australia"
+    ],
     "doi": "10.1017/S1041610210000001",
     "url": "https://aibl.csiro.au/",
     "notes": "Major Australian cohort. Strong amyloid PET and lifestyle data."
@@ -60,11 +94,22 @@
     "name": "UK Biobank",
     "full_name": "UK Biobank",
     "year": 2006,
-    "data_types": ["MRI", "Genetics", "Proteomics", "Metabolomics", "Exposomics", "Blood", "Cognitive", "Lifestyle"],
+    "data_types": [
+      "MRI",
+      "Genetics",
+      "Proteomics",
+      "Metabolomics",
+      "Exposomics",
+      "Blood",
+      "Cognitive",
+      "Lifestyle"
+    ],
     "access": "restricted",
     "n_subjects": 500000,
     "n_note": "500,000+ (imaging ~40,000)",
-    "origin": ["UK"],
+    "origin": [
+      "UK"
+    ],
     "doi": "10.1371/journal.pmed.1001779",
     "url": "https://www.ukbiobank.ac.uk/",
     "notes": "Population-level biobank. Application-based access. Largest MRI+genetics cohort."
@@ -74,11 +119,25 @@
     "name": "AddNeuroMed",
     "full_name": "AddNeuroMed",
     "year": 2005,
-    "data_types": ["MRI", "Blood", "CSF", "Genetics", "Cognitive", "Clinical"],
+    "data_types": [
+      "MRI",
+      "Blood",
+      "CSF",
+      "Genetics",
+      "Cognitive",
+      "Clinical"
+    ],
     "access": "partial",
     "n_subjects": 698,
     "n_note": "~698",
-    "origin": ["UK", "Finland", "France", "Greece", "Italy", "Poland"],
+    "origin": [
+      "UK",
+      "Finland",
+      "France",
+      "Greece",
+      "Italy",
+      "Poland"
+    ],
     "doi": "10.1016/j.jalz.2008.07.004",
     "url": "https://www.europeanmarinescience.eu/",
     "notes": "Pan-European multi-site study. Good geographic diversity within Europe."
@@ -88,11 +147,26 @@
     "name": "EPAD",
     "full_name": "European Prevention of Alzheimer's Dementia",
     "year": 2015,
-    "data_types": ["MRI", "PET", "CSF", "EEG", "Blood", "Genetics", "Cognitive"],
+    "data_types": [
+      "MRI",
+      "PET",
+      "CSF",
+      "EEG",
+      "Blood",
+      "Genetics",
+      "Cognitive"
+    ],
     "access": "partial",
     "n_subjects": 2096,
     "n_note": "~2,096",
-    "origin": ["UK", "France", "Spain", "Germany", "Netherlands", "Sweden"],
+    "origin": [
+      "UK",
+      "France",
+      "Spain",
+      "Germany",
+      "Netherlands",
+      "Sweden"
+    ],
     "doi": "10.1016/j.jalz.2015.10.004",
     "url": "https://ep-ad.org/",
     "notes": "Prevention-focused. Longitudinal. Multi-modal imaging. European-only."
@@ -102,11 +176,20 @@
     "name": "PREVENT-AD",
     "full_name": "Pre-symptomatic Evaluation of Experimental or Novel Treatments for Alzheimer Disease",
     "year": 2011,
-    "data_types": ["MRI", "PET", "CSF", "Blood", "Genetics", "Cognitive"],
+    "data_types": [
+      "MRI",
+      "PET",
+      "CSF",
+      "Blood",
+      "Genetics",
+      "Cognitive"
+    ],
     "access": "restricted",
     "n_subjects": 400,
     "n_note": "~400",
-    "origin": ["Canada"],
+    "origin": [
+      "Canada"
+    ],
     "doi": "10.1186/s13195-016-0173-2",
     "url": "https://prevent-alzheimer.net/",
     "notes": "Focus on individuals at familial risk for AD. Canadian French cohort."
@@ -116,11 +199,22 @@
     "name": "A4 Study",
     "full_name": "Anti-Amyloid Treatment in Asymptomatic Alzheimer's",
     "year": 2014,
-    "data_types": ["MRI", "PET", "Blood", "Cognitive", "Clinical"],
+    "data_types": [
+      "MRI",
+      "PET",
+      "Blood",
+      "Cognitive",
+      "Clinical"
+    ],
     "access": "restricted",
     "n_subjects": 4486,
     "n_note": "4,486",
-    "origin": ["USA", "Canada", "Australia", "Japan"],
+    "origin": [
+      "USA",
+      "Canada",
+      "Australia",
+      "Japan"
+    ],
     "doi": "10.1001/jamaneurol.2020.0587",
     "url": "https://a4study.org/",
     "notes": "Prevention trial enriched for amyloid positivity. Diverse international sites."
@@ -130,11 +224,19 @@
     "name": "NACC",
     "full_name": "National Alzheimer's Coordinating Center",
     "year": 1999,
-    "data_types": ["Clinical", "Neuropathology", "MRI", "Genetics", "Cognitive"],
+    "data_types": [
+      "Clinical",
+      "Neuropathology",
+      "MRI",
+      "Genetics",
+      "Cognitive"
+    ],
     "access": "restricted",
     "n_subjects": 50000,
     "n_note": "50,000+",
-    "origin": ["USA"],
+    "origin": [
+      "USA"
+    ],
     "doi": "10.1097/WAD.0b013e318214bb18",
     "url": "https://naccdata.org/",
     "notes": "Harmonised data across 34 US Alzheimer's Disease Research Centers. Includes post-mortem neuropathology."
@@ -144,11 +246,21 @@
     "name": "ROSMAP",
     "full_name": "Religious Orders Study and Memory and Aging Project",
     "year": 1994,
-    "data_types": ["MRI", "Genetics", "Proteomics", "Epigenomics", "Transcriptomics", "Neuropathology", "Cognitive"],
+    "data_types": [
+      "MRI",
+      "Genetics",
+      "Proteomics",
+      "Epigenomics",
+      "Transcriptomics",
+      "Neuropathology",
+      "Cognitive"
+    ],
     "access": "restricted",
     "n_subjects": 3000,
     "n_note": "~3,000",
-    "origin": ["USA"],
+    "origin": [
+      "USA"
+    ],
     "doi": "10.1001/archgenpsychiatry.2012.1461",
     "url": "https://www.radc.rush.edu/",
     "notes": "Rich post-mortem multi-omics. Unique longitudinal clinical-to-neuropath design."
@@ -158,11 +270,20 @@
     "name": "WRAP",
     "full_name": "Wisconsin Registry for Alzheimer's Prevention",
     "year": 2001,
-    "data_types": ["MRI", "PET", "Blood", "Genetics", "Cognitive", "Lifestyle"],
+    "data_types": [
+      "MRI",
+      "PET",
+      "Blood",
+      "Genetics",
+      "Cognitive",
+      "Lifestyle"
+    ],
     "access": "restricted",
     "n_subjects": 1500,
     "n_note": "~1,500",
-    "origin": ["USA"],
+    "origin": [
+      "USA"
+    ],
     "doi": "10.1016/j.jalz.2010.03.013",
     "url": "https://wrap.wisc.edu/",
     "notes": "Prevention-focused registry. Parental history of AD enrichment. Longitudinal."
@@ -172,11 +293,24 @@
     "name": "ANMerge",
     "full_name": "AddNeuroMed Merged Dataset",
     "year": 2021,
-    "data_types": ["MRI", "Blood", "Genetics", "Cognitive", "Clinical"],
+    "data_types": [
+      "MRI",
+      "Blood",
+      "Genetics",
+      "Cognitive",
+      "Clinical"
+    ],
     "access": "open",
     "n_subjects": 700,
     "n_note": "~700",
-    "origin": ["UK", "Finland", "France", "Greece", "Italy", "Poland"],
+    "origin": [
+      "UK",
+      "Finland",
+      "France",
+      "Greece",
+      "Italy",
+      "Poland"
+    ],
     "doi": "10.3233/JAD-200928",
     "url": "https://www.synapse.org/",
     "notes": "Fully open harmonised version of AddNeuroMed. Available via Synapse."
@@ -186,11 +320,26 @@
     "name": "EMIF-AD",
     "full_name": "European Medical Information Framework for Alzheimer's Disease",
     "year": 2016,
-    "data_types": ["MRI", "PET", "CSF", "Blood", "Genetics", "Proteomics", "Cognitive"],
+    "data_types": [
+      "MRI",
+      "PET",
+      "CSF",
+      "Blood",
+      "Genetics",
+      "Proteomics",
+      "Cognitive"
+    ],
     "access": "restricted",
     "n_subjects": 1221,
     "n_note": "~1,221",
-    "origin": ["Netherlands", "Belgium", "Sweden", "Germany", "Spain", "UK"],
+    "origin": [
+      "Netherlands",
+      "Belgium",
+      "Sweden",
+      "Germany",
+      "Spain",
+      "UK"
+    ],
     "doi": "10.1002/alz.12054",
     "url": "https://emif-catalogue.eu/",
     "notes": "Multi-modal harmonised European dataset. Strong proteomics."
@@ -200,11 +349,20 @@
     "name": "DELCODE",
     "full_name": "DZNE-Longitudinal Cognitive Impairment and Dementia Study",
     "year": 2015,
-    "data_types": ["MRI", "CSF", "Blood", "Genetics", "Cognitive", "EEG"],
+    "data_types": [
+      "MRI",
+      "CSF",
+      "Blood",
+      "Genetics",
+      "Cognitive",
+      "EEG"
+    ],
     "access": "restricted",
     "n_subjects": 1000,
     "n_note": "~1,000",
-    "origin": ["Germany"],
+    "origin": [
+      "Germany"
+    ],
     "doi": "10.1186/s13195-018-0354-9",
     "url": "https://www.dzne.de/",
     "notes": "German prevention study. Subjective cognitive decline enriched. 10 DZNE sites."
@@ -212,13 +370,20 @@
   {
     "id": "whicap",
     "name": "WHICAP",
-    "full_name": "Washington Heights–Inwood Columbia Aging Project",
+    "full_name": "Washington Heights\u2013Inwood Columbia Aging Project",
     "year": 1992,
-    "data_types": ["Clinical", "Cognitive", "Blood", "Genetics"],
+    "data_types": [
+      "Clinical",
+      "Cognitive",
+      "Blood",
+      "Genetics"
+    ],
     "access": "restricted",
     "n_subjects": 5000,
     "n_note": "~5,000",
-    "origin": ["USA"],
+    "origin": [
+      "USA"
+    ],
     "doi": "10.1001/archneur.64.8.1119",
     "url": "https://www.mailmanschool.org/",
     "notes": "Notably diverse cohort: Caribbean Hispanic and African American populations. NYC-based."
@@ -228,11 +393,22 @@
     "name": "Knight ADRC",
     "full_name": "Knight Alzheimer Disease Research Center at WUSTL",
     "year": 1979,
-    "data_types": ["MRI", "PET", "CSF", "Blood", "Genetics", "Proteomics", "Cognitive", "Neuropathology"],
+    "data_types": [
+      "MRI",
+      "PET",
+      "CSF",
+      "Blood",
+      "Genetics",
+      "Proteomics",
+      "Cognitive",
+      "Neuropathology"
+    ],
     "access": "restricted",
     "n_subjects": 3000,
     "n_note": "~3,000+",
-    "origin": ["USA"],
+    "origin": [
+      "USA"
+    ],
     "doi": "10.1016/j.jalz.2022.01.001",
     "url": "https://knightadrc.wustl.edu/",
     "notes": "Deep phenotyping. Rich proteomics (CSF + plasma). Well-curated post-mortem."
@@ -242,11 +418,20 @@
     "name": "BLSA",
     "full_name": "Baltimore Longitudinal Study of Aging",
     "year": 1958,
-    "data_types": ["MRI", "PET", "Blood", "Cognitive", "Clinical", "Lifestyle"],
+    "data_types": [
+      "MRI",
+      "PET",
+      "Blood",
+      "Cognitive",
+      "Clinical",
+      "Lifestyle"
+    ],
     "access": "restricted",
     "n_subjects": 3000,
     "n_note": "~3,000+",
-    "origin": ["USA"],
+    "origin": [
+      "USA"
+    ],
     "doi": "10.1093/geronb/gbs055",
     "url": "https://www.blsa.nih.gov/",
     "notes": "Oldest US longitudinal aging study. NIA-funded. Includes amyloid PET."
@@ -254,13 +439,20 @@
   {
     "id": "lasi-dad",
     "name": "LASI-DAD",
-    "full_name": "Longitudinal Aging Study in India — Diagnostic Assessment of Dementia",
+    "full_name": "Longitudinal Aging Study in India \u2014 Diagnostic Assessment of Dementia",
     "year": 2017,
-    "data_types": ["Clinical", "Cognitive", "Blood", "Genetics"],
+    "data_types": [
+      "Clinical",
+      "Cognitive",
+      "Blood",
+      "Genetics"
+    ],
     "access": "restricted",
     "n_subjects": 4096,
     "n_note": "4,096",
-    "origin": ["India"],
+    "origin": [
+      "India"
+    ],
     "doi": "10.1186/s13195-020-00673-w",
     "url": "https://lasi-dad.com/",
     "notes": "Largest population-based dementia study in India. Critical for LMIC representation."
@@ -270,13 +462,50 @@
     "name": "ReDLat",
     "full_name": "Red Latina de Demencias Tempranas (Latin American Network for Early-Onset Dementia)",
     "year": 2019,
-    "data_types": ["MRI", "Blood", "Genetics", "Cognitive", "Clinical"],
+    "data_types": [
+      "MRI",
+      "Blood",
+      "Genetics",
+      "Cognitive",
+      "Clinical"
+    ],
     "access": "restricted",
     "n_subjects": 1200,
     "n_note": "~1,200",
-    "origin": ["Argentina", "Brazil", "Chile", "Colombia", "Mexico"],
+    "origin": [
+      "Argentina",
+      "Brazil",
+      "Chile",
+      "Colombia",
+      "Mexico"
+    ],
     "doi": "10.3389/fnagi.2021.631461",
     "url": "https://redlat.net/",
     "notes": "Crucial for Latin American diversity. Includes Indigenous-descent and mestizo populations."
+  },
+  {
+    "id": "brainlat",
+    "name": "BrainLat",
+    "full_name": "Latin American Brain Health Institute Neuroimaging Dataset",
+    "year": 2023,
+    "data_types": [
+      "MRI",
+      "EEG",
+      "Cognitive",
+      "Clinical"
+    ],
+    "access": "open",
+    "n_subjects": 780,
+    "n_note": "780",
+    "origin": [
+      "Argentina",
+      "Chile",
+      "Colombia",
+      "Mexico",
+      "Peru"
+    ],
+    "doi": "10.1038/s41597-023-02806-8",
+    "url": "https://doi.org/10.7303/syn51549340",
+    "notes": "First open multimodal neuroimaging dataset of neurodegeneration from Latin America. Includes AD, bvFTD, PD, MS and healthy controls. MRI (anatomical, functional, diffusion) + high-density EEG. BIDS format. Hosted on Synapse. Critical resource for underrepresented population neuroscience."
   }
 ]

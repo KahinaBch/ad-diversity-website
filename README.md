@@ -57,4 +57,3 @@ MIT — open source for academic use and community extension.
 If you use this platform or its data, please cite:
 
 > KahinaBch (2025). *Diversity in Alzheimer's Disease Research*. GBM6330E Final Project. GitHub. https://github.com/KahinaBch/ad-diversity-website
-
