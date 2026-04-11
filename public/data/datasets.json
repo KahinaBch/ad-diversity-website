@@ -65,7 +65,7 @@
       "USA"
     ],
     "doi": "10.1001/archneur.64.8.1119",
-    "url": "https://www.mailmanschool.org/",
+    "url": "https://www.maelstrom-research.org/study/whicap",
     "notes": "Notably diverse cohort: Caribbean Hispanic and African American populations. NYC-based."
   },
   {
@@ -89,7 +89,7 @@
       "USA"
     ],
     "doi": "10.1001/archgenpsychiatry.2012.1461",
-    "url": "https://www.radc.rush.edu/",
+    "url": "https://dss.niagads.org/cohorts/religious-orders-study-memory-and-aging-project-rosmap/",
     "notes": "Rich post-mortem multi-omics. Unique longitudinal clinical-to-neuropath design."
   },
   {
@@ -207,8 +207,8 @@
       "Italy",
       "Poland"
     ],
-    "doi": "10.1016/j.jalz.2008.07.004",
-    "url": "https://www.europeanmarinescience.eu/",
+    "doi": "10.1111/j.1749-6632.2009.05064.x",
+    "url": "https://www.innomed-addneuromed.com/en",
     "notes": "Pan-European multi-site study. Good geographic diversity within Europe."
   },
   {
@@ -226,8 +226,8 @@
       "Lifestyle"
     ],
     "access": "partial",
-    "n_subjects": 1112,
-    "n_note": "~1,112",
+    "n_subjects": 3000,
+    "n_note": "3,000+",
     "origin": [
       "Australia"
     ],
@@ -299,7 +299,7 @@
       "Japan"
     ],
     "doi": "10.1016/j.jalz.2015.10.012",
-    "url": "https://www.j-adni.org/",
+    "url": "https://www.gaaindata.org/partner/J-ADNI",
     "notes": "Japanese harmonised replication of the ADNI protocol. Enables direct comparison of biomarker profiles between Japanese and North American populations."
   },
   {
@@ -321,7 +321,7 @@
       "France"
     ],
     "doi": "10.1016/j.jalz.2013.07.001",
-    "url": "https://mapt.inserm.fr/",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4652787/",
     "notes": "French multi-domain lifestyle intervention trial in elderly at-risk individuals. Strong data on omega-3 supplementation and cognitive training. 13 sites across France."
   },
   {
@@ -340,8 +340,8 @@
     "origin": [
       "USA"
     ],
-    "doi": "10.1016/j.jalz.2011.12.012",
-    "url": "https://www.sagesstudygroup.org/",
+    "doi": "10.1111/jgs.13793",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/26662213/",
     "notes": "Longitudinal study examining perioperative cognitive decline. Includes diverse urban Boston population. Notably higher minority representation than most AD cohorts."
   },
   {
@@ -363,9 +363,29 @@
     "origin": [
       "Canada"
     ],
-    "doi": "10.1186/s13195-016-0173-2",
-    "url": "https://prevent-alzheimer.net/",
+    "doi": "",
+    "url": "https://openpreventad.loris.ca",
     "notes": "Focus on individuals at familial risk for AD. Canadian French cohort."
+  },
+  {
+    "id": "adsp",
+    "name": "ADSP",
+    "full_name": "Alzheimer's Disease Sequencing Project",
+    "year": 2012,
+    "data_types": [
+      "Genetics",
+      "Clinical",
+      "Cognitive"
+    ],
+    "access": "restricted",
+    "n_subjects": 100000,
+    "n_note": "100,000+ (whole-genome & whole-exome)",
+    "origin": [
+      "USA"
+    ],
+    "doi": "10.1016/j.jalz.2022.09.009",
+    "url": "https://adsp.niagads.org/",
+    "notes": "NIH initiative sequencing whole genomes and exomes of AD cases and controls to identify disease-causing and protective variants. Prioritises diverse populations including African American, Hispanic/Latino, and Asian individuals. Data via NIAGADS."
   },
   {
     "id": "alfa",
@@ -387,8 +407,8 @@
     "origin": [
       "Spain"
     ],
-    "doi": "10.1016/j.jalz.2016.01.010",
-    "url": "https://www.barcelonabeta.org/en/research/alfa-study",
+    "doi": "10.1016/j.trci.2016.02.003",
+    "url": "https://www.barcelonabeta.org/en/alfa-study/about-the-alfa-study",
     "notes": "Catalan cohort of cognitively unimpaired adults, mostly offspring of AD patients. Led by the Barcelona Beta Brain Research Center (BBRC). Strong amyloid/tau PET and CSF biomarker data. ALFA+ sub-study with richer biomarker profiling."
   },
   {
@@ -412,7 +432,7 @@
       "Australia",
       "Japan"
     ],
-    "doi": "10.1001/jamaneurol.2020.0587",
+    "doi": "10.1126/scitranslmed.3007941",
     "url": "https://a4study.org/",
     "notes": "Prevention trial enriched for amyloid positivity. Diverse international sites."
   },
@@ -464,7 +484,7 @@
       "Netherlands",
       "Sweden"
     ],
-    "doi": "10.1016/j.jalz.2015.10.004",
+    "doi": "10.1016/S2215-0366(15)00454-X",
     "url": "https://ep-ad.org/",
     "notes": "Prevention-focused. Longitudinal. Multi-modal imaging. European-only."
   },
@@ -487,38 +507,52 @@
     "origin": [
       "Germany"
     ],
-    "doi": "10.1186/s13195-018-0354-9",
+    "doi": "10.1186/s13195-017-0314-2",
     "url": "https://www.dzne.de/",
     "notes": "German prevention study. Subjective cognitive decline enriched. 10 DZNE sites."
   },
   {
-    "id": "emif-ad",
-    "name": "EMIF-AD",
-    "full_name": "European Medical Information Framework for Alzheimer's Disease",
+    "id": "mayo-rna",
+    "name": "Mayo Clinic AD Study",
+    "full_name": "Mayo Clinic Alzheimer's Disease Genetics Study (AMP-AD)",
     "year": 2016,
     "data_types": [
-      "MRI",
-      "PET",
-      "CSF",
-      "Blood",
+      "Transcriptomics",
       "Genetics",
-      "Proteomics",
-      "Cognitive"
+      "Neuropathology",
+      "Clinical"
     ],
     "access": "restricted",
-    "n_subjects": 1221,
-    "n_note": "~1,221",
+    "n_subjects": 2000,
+    "n_note": "~2,000",
     "origin": [
-      "Netherlands",
-      "Belgium",
-      "Sweden",
-      "Germany",
-      "Spain",
-      "UK"
+      "USA"
     ],
-    "doi": "10.1002/alz.12054",
-    "url": "https://emif-catalogue.eu/",
-    "notes": "Multi-modal harmonised European dataset. Strong proteomics."
+    "doi": "10.1038/nn.4165",
+    "url": "https://adknowledgeportal.synapse.org/",
+    "notes": "Part of the AMP-AD consortium. RNA-seq from temporal cortex and cerebellum across AD and control brains. Deposited in Synapse. Complementary to ROSMAP for cross-cohort transcriptomic replication."
+  },
+  {
+    "id": "msbb",
+    "name": "MSBB",
+    "full_name": "Mount Sinai Brain Bank (AMP-AD)",
+    "year": 2016,
+    "data_types": [
+      "Transcriptomics",
+      "Proteomics",
+      "Neuropathology",
+      "Genetics",
+      "Clinical"
+    ],
+    "access": "restricted",
+    "n_subjects": 300,
+    "n_note": "~300 donors",
+    "origin": [
+      "USA"
+    ],
+    "doi": "10.1038/sdata.2018.185",
+    "url": "https://adknowledgeportal.synapse.org/",
+    "notes": "Multi-region RNA-seq and proteomics from Mount Sinai Brain Bank AD cases and controls. Part of AMP-AD. Includes 4 brain regions per donor, enabling network-based analyses. Available via Synapse."
   },
   {
     "id": "lasi-dad",
@@ -537,8 +571,8 @@
     "origin": [
       "India"
     ],
-    "doi": "10.1186/s13195-020-00673-w",
-    "url": "https://lasi-dad.com/",
+    "doi": "10.1136/bmjopen-2019-030300",
+    "url": "https://lasi-dad.org",
     "notes": "Largest population-based dementia study in India. Critical for LMIC representation."
   },
   {
@@ -561,38 +595,14 @@
       "Uganda",
       "Tanzania"
     ],
-    "doi": "10.1016/j.jalz.2021.09.007",
+    "doi": "10.1093/hmg/ddaf113",
     "url": "https://h3africa.org/",
     "notes": "Critical resource for African-descent populations. Addresses the severe gap in sub-Saharan African representation in dementia genetics. Includes genetic data from populations not represented in IGAP or EADB."
   },
   {
-    "id": "alfa-plus",
-    "name": "ALFA+",
-    "full_name": "Alzheimer and Families Plus (ALFA+) Study",
-    "year": 2018,
-    "data_types": [
-      "MRI",
-      "PET",
-      "CSF",
-      "Blood",
-      "EEG",
-      "Genetics",
-      "Cognitive"
-    ],
-    "access": "partial",
-    "n_subjects": 450,
-    "n_note": "~450",
-    "origin": [
-      "Spain"
-    ],
-    "doi": "10.3389/fnins.2018.00770",
-    "url": "https://www.barcelonabeta.org/en/research/alfa-study",
-    "notes": "Enriched sub-cohort of ALFA focusing on pre-clinical AD biomarkers. Includes CSF A\u03b242/40, p-tau, amyloid PET, functional MRI, EEG. One of Europe's most comprehensively phenotyped pre-clinical cohorts."
-  },
-  {
     "id": "oasis3",
     "name": "OASIS-3",
-    "full_name": "Open Access Series of Imaging Studies \u2014 Longitudinal",
+    "full_name": "Open Access Series of Imaging Studies \u2014 Longitudinal Neuroimaging, Clinical, and Cognitive Dataset for Normal Aging and Alzheimer Disease",
     "year": 2019,
     "data_types": [
       "MRI",
@@ -634,8 +644,8 @@
       "Colombia",
       "Mexico"
     ],
-    "doi": "10.3389/fnagi.2021.631461",
-    "url": "https://redlat.net/",
+    "doi": "10.1002/alz70860_104080",
+    "url": "https://red-lat.com",
     "notes": "Crucial for Latin American diversity. Includes Indigenous-descent and mestizo populations."
   },
   {
@@ -661,9 +671,29 @@
       "Italy",
       "Poland"
     ],
-    "doi": "10.3233/JAD-200928",
+    "doi": "10.3233/JAD-200948",
     "url": "https://www.synapse.org/",
     "notes": "Fully open harmonised version of AddNeuroMed. Available via Synapse."
+  },
+  {
+    "id": "sea-ad",
+    "name": "SEA-AD",
+    "full_name": "Seattle Alzheimer's Disease Brain Cell Atlas",
+    "year": 2022,
+    "data_types": [
+      "Transcriptomics",
+      "Epigenomics",
+      "Neuropathology"
+    ],
+    "access": "open",
+    "n_subjects": 84,
+    "n_note": "84 donors",
+    "origin": [
+      "USA"
+    ],
+    "doi": "10.1038/s41593-024-01611-5",
+    "url": "https://portal.brain-map.org/explore/seattle-alzheimers-disease",
+    "notes": "Single-cell and single-nucleus RNA-seq + ATAC-seq from 84 human brain donors spanning the full AD neuropathological spectrum. Produced by the Allen Institute for Brain Science. Fully open via the Allen Brain Map portal and Synapse."
   },
   {
     "id": "brainlat",
@@ -687,7 +717,7 @@
       "Peru"
     ],
     "doi": "10.1038/s41597-023-02806-8",
-    "url": "https://doi.org/10.7303/syn51549340",
+    "url": "https://doi.org/10.1038/s41597-023-02806-8",
     "notes": "First open multimodal neuroimaging dataset of neurodegeneration from Latin America. Includes AD, bvFTD, PD, MS and healthy controls. MRI (anatomical, functional, diffusion) + high-density EEG. BIDS format. Hosted on Synapse. Critical resource for underrepresented population neuroscience."
   }
 ]

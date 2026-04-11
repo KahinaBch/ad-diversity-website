@@ -3,53 +3,138 @@
     {
       "id": "north-america",
       "name": "North America",
-      "count": 22,
-      "centroid": [-95, 48],
-      "datasets": ["ADNI", "NACC", "ROSMAP", "WRAP", "A4 Study", "PREVENT-AD", "Knight ADRC", "BLSA", "Harvard Aging Brain Study", "HABS", "ROS", "MAP", "BIOCARD", "WHICAP", "ADGC", "Mayo Clinic Study", "ADNI-3", "A4 (multi-site)", "SAGES", "MESA (cognitive)", "MAAS", "GEMS"],
+      "count": 26,
+      "centroid": [
+        -95,
+        48
+      ],
+      "datasets": [
+        "ADNI",
+        "NACC",
+        "ROSMAP",
+        "WRAP",
+        "A4 Study",
+        "PREVENT-AD",
+        "Knight ADRC",
+        "BLSA",
+        "Harvard Aging Brain Study",
+        "HABS",
+        "ROS",
+        "MAP",
+        "BIOCARD",
+        "WHICAP",
+        "ADGC",
+        "Mayo Clinic Study",
+        "ADNI-3",
+        "A4 (multi-site)",
+        "SAGES",
+        "MESA (cognitive)",
+        "MAAS",
+        "GEMS",
+        "ADSP",
+        "SEA-AD",
+        "Mayo Clinic AD (AMP-AD)",
+        "MSBB (Mount Sinai Brain Bank)"
+      ],
       "color": "#7C3AED"
     },
     {
       "id": "europe",
       "name": "Europe",
-      "count": 16,
-      "centroid": [10, 52],
-      "datasets": ["UK Biobank", "EPAD", "AddNeuroMed", "EMIF-AD", "ANMerge", "DELCODE", "Vallecas Project", "ADNI-Europe", "NeuroMET", "PharmaCog", "DESCRIPA", "MAPT", "ALFA", "ALFA+", "3C Study", "LIFE-Adult"],
+      "count": 17,
+      "centroid": [
+        10,
+        52
+      ],
+      "datasets": [
+        "UK Biobank",
+        "EPAD",
+        "AddNeuroMed",
+        "EMIF-AD",
+        "ANMerge",
+        "DELCODE",
+        "Vallecas Project",
+        "ADNI-Europe",
+        "NeuroMET",
+        "PharmaCog",
+        "DESCRIPA",
+        "MAPT",
+        "ALFA",
+        "ALFA+",
+        "3C Study",
+        "LIFE-Adult",
+        "MAPT (France)"
+      ],
       "color": "#BE185D"
     },
     {
       "id": "asia-pacific",
       "name": "Asia-Pacific",
-      "count": 9,
-      "centroid": [130, 25],
-      "datasets": ["AIBL (Australia)", "ANZBD", "Korean Brain Aging Study", "FINGER-China", "Shanghai Aging Study", "Taiwan Biobank AD", "Singapore EDIS", "JMEM", "J-ADNI"],
+      "count": 10,
+      "centroid": [
+        130,
+        25
+      ],
+      "datasets": [
+        "AIBL (Australia)",
+        "ANZBD",
+        "Korean Brain Aging Study",
+        "FINGER-China",
+        "Shanghai Aging Study",
+        "Taiwan Biobank AD",
+        "Singapore EDIS",
+        "JMEM",
+        "J-ADNI",
+        "KBASE (Korean Brain Aging Study)"
+      ],
       "color": "#1E3A8A"
     },
     {
       "id": "latin-america",
       "name": "Latin America",
       "count": 4,
-      "centroid": [-65, -15],
-      "datasets": ["ReDLat Consortium", "BrainLat", "Medellín cohort (GRUPO DE NEUROCIENCIAS)", "LASI-DAD (Latin America sites)"],
+      "centroid": [
+        -65,
+        -15
+      ],
+      "datasets": [
+        "ReDLat Consortium",
+        "BrainLat",
+        "Medell\u00edn cohort (GRUPO DE NEUROCIENCIAS)",
+        "LASI-DAD (Latin America sites)"
+      ],
       "color": "#0E7490"
     },
     {
       "id": "africa",
       "name": "Africa",
       "count": 2,
-      "centroid": [20, 5],
-      "datasets": ["SAGES-Africa (Ghana)", "H3Africa Brain Health Study"],
+      "centroid": [
+        20,
+        5
+      ],
+      "datasets": [
+        "SAGES-Africa (Ghana)",
+        "H3Africa Brain Health Study"
+      ],
       "color": "#065F46"
     },
     {
       "id": "middle-east-south-asia",
       "name": "Middle East & South Asia",
       "count": 2,
-      "centroid": [68, 22],
-      "datasets": ["LASI-DAD (India)", "SHARE-Israel"],
+      "centroid": [
+        68,
+        22
+      ],
+      "datasets": [
+        "LASI-DAD (India)",
+        "SHARE-Israel"
+      ],
       "color": "#92400E"
     }
   ],
-  "total": 55,
+  "total": 61,
   "last_updated": "2025-04-11",
   "note": "Dataset counts reflect distinct cohorts with documented AD-relevant data. Contributions welcome via Pull Request to the dataset catalogue."
 }

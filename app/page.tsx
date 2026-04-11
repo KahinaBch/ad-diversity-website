@@ -31,7 +31,7 @@ const sections = [
 ];
 
 const stats = [
-  { value: "47+", label: "Documented datasets", color: "#7C3AED" },
+  { value: "31+", label: "Documented datasets", color: "#7C3AED" },
   { value: "6", label: "World regions covered", color: "#BE185D" },
   { value: "20+", label: "Countries represented", color: "#1E3A8A" },
   { value: "3", label: "Open sub-repositories", color: "#0E7490" },
