@@ -13,8 +13,22 @@ export default function Footer() {
               </div>
               <span className="font-semibold text-violet-200 text-sm">GBM6330E Final Project</span>
             </div>
-            <p className="text-xs text-gray-400 leading-relaxed">
+            <p className="text-xs text-gray-400 leading-relaxed mb-2">
               Inclusion of diversity in the prevention and diagnosis of neurodegenerative diseases — the example of Alzheimer&apos;s disease.
+            </p>
+            <p className="text-xs text-gray-500 leading-relaxed">
+              Built by{" "}
+              <span className="text-violet-400 font-medium">Kahina Baouche</span>{" "}
+              in the context of{" "}
+              <a
+                href="https://gbm6330.edublogs.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-violet-400 underline hover:text-violet-300"
+              >
+                GBM6330E: Emerging Biomedical Technologies
+              </a>
+              {" "}of Dr. Nikola Stikov at Polytechnique Montréal.
             </p>
           </div>
 

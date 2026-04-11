@@ -159,7 +159,6 @@ export default function DatasetTable() {
                 </button>
               </th>
               <th>Origin</th>
-              <th>DOI</th>
             </tr>
           </thead>
           <tbody>
@@ -208,17 +207,6 @@ export default function DatasetTable() {
                       ))}
                     </div>
                   </td>
-                  <td>
-                    <a
-                      href={`https://doi.org/${d.doi}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      className="text-xs text-violet-400 hover:text-violet-300 underline"
-                    >
-                      DOI ↗
-                    </a>
-                  </td>
                 </tr>
                 {expanded === d.id && (
                   <tr key={`${d.id}-expanded`}>
@@ -237,6 +225,9 @@ export default function DatasetTable() {
                       >
                         Official site ↗
                       </a>
+                      {d.doi && (
+                        <span className="ml-2 text-gray-600 font-mono text-xs">doi:{d.doi}</span>
+                      )}
                     </td>
                   </tr>
                 )}

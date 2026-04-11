@@ -60,12 +60,11 @@ export default function Part1() {
         {/* Mechanism cards */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-6">
           {[
-            { icon: "🧠", label: "Amyloid cascade", desc: "Aβ42 oligomers trigger downstream neurodegeneration — the central therapeutic target" },
-            { icon: "🔗", label: "Tau pathology", desc: "Hyperphosphorylated tau forms neurofibrillary tangles; propagation follows Braak staging" },
-            { icon: "🔥", label: "Neuroinflammation", desc: "Chronic microglial activation drives synaptic loss independently of amyloid burden" },
+            { label: "Amyloid cascade", desc: "Aβ42 oligomers trigger downstream neurodegeneration — the central therapeutic target" },
+            { label: "Tau pathology", desc: "Hyperphosphorylated tau forms neurofibrillary tangles; propagation follows Braak staging" },
+            { label: "Neuroinflammation", desc: "Chronic microglial activation drives synaptic loss independently of amyloid burden" },
           ].map((c) => (
             <div key={c.label} className="glass-card rounded-lg p-4 border" style={{ borderColor: "rgba(167,139,250,0.12)" }}>
-              <div className="text-2xl mb-2">{c.icon}</div>
               <div className="text-xs font-semibold text-violet-300 mb-1">{c.label}</div>
               <div className="text-xs text-gray-500 leading-relaxed">{c.desc}</div>
             </div>
@@ -139,7 +138,27 @@ export default function Part1() {
           </div>
         </div>
 
-        <div className="glass-card rounded-xl p-5 border" style={{ borderColor: "rgba(190,24,93,0.2)" }}>
+        {/* Lancet 2024 figure */}
+        <div className="mt-6 glass-card rounded-xl p-5 border" style={{ borderColor: "rgba(190,24,93,0.2)" }}>
+          <div className="text-xs font-semibold text-pink-400 uppercase tracking-wider mb-3">
+            Figure — Lancet Commission 2024: 14 Modifiable Risk Factors Across the Life Course
+          </div>
+          <div className="flex justify-center">
+            <img
+              src="/ad-diversity-website/images/lancet2024_risk_factors.png"
+              alt="Lancet 2024 Commission: 14 modifiable risk factors for dementia across the life course, totalling 45% potentially modifiable cases"
+              className="rounded-lg max-w-sm w-full"
+              style={{ maxHeight: "520px", objectFit: "contain" }}
+            />
+          </div>
+          <p className="text-xs text-gray-500 text-center mt-3 italic">
+            Adapted from: Livingston et al. (2024). Dementia prevention, intervention, and care: 2024 report of the Lancet standing Commission.{" "}
+            <em>The Lancet</em>, 404(10452), 572–628. doi:10.1016/S0140-6736(24)01296-0.
+            Bubble size represents percentage reduction in dementia cases if that risk factor is eliminated.
+          </p>
+        </div>
+
+        <div className="glass-card rounded-xl p-5 border mt-4" style={{ borderColor: "rgba(190,24,93,0.2)" }}>
           <div className="text-xs font-semibold text-pink-400 mb-2">New in 2024 — Two additional risk factors identified:</div>
           <div className="flex gap-4">
             <div className="flex items-center gap-2 text-sm text-gray-300">

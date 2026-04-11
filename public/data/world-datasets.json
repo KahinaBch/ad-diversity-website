@@ -3,33 +3,33 @@
     {
       "id": "north-america",
       "name": "North America",
-      "count": 18,
+      "count": 22,
       "centroid": [-95, 48],
-      "datasets": ["ADNI", "NACC", "ROSMAP", "WRAP", "A4 Study", "PREVENT-AD", "Knight ADRC", "BLSA", "Mayo Clinic Study", "Harvard Aging Brain Study", "ADRC (multi-site)", "HABS", "ROS", "MAP", "BIOCARD", "SCIENCe", "ADGC", "WHICAP"],
+      "datasets": ["ADNI", "NACC", "ROSMAP", "WRAP", "A4 Study", "PREVENT-AD", "Knight ADRC", "BLSA", "Harvard Aging Brain Study", "HABS", "ROS", "MAP", "BIOCARD", "WHICAP", "ADGC", "Mayo Clinic Study", "ADNI-3", "A4 (multi-site)", "SAGES", "MESA (cognitive)", "MAAS", "GEMS"],
       "color": "#7C3AED"
     },
     {
       "id": "europe",
       "name": "Europe",
-      "count": 14,
+      "count": 16,
       "centroid": [10, 52],
-      "datasets": ["UK Biobank", "EPAD", "AddNeuroMed", "EMIF-AD", "ANMerge", "DZNE DELCODE", "Vallecas Project", "AIBL (EU cohort)", "ADNI-Europe", "AIBL", "NeuroMET", "PharmaCog", "DESCRIPA", "MAPT"],
+      "datasets": ["UK Biobank", "EPAD", "AddNeuroMed", "EMIF-AD", "ANMerge", "DELCODE", "Vallecas Project", "ADNI-Europe", "NeuroMET", "PharmaCog", "DESCRIPA", "MAPT", "ALFA", "ALFA+", "3C Study", "LIFE-Adult"],
       "color": "#BE185D"
     },
     {
       "id": "asia-pacific",
       "name": "Asia-Pacific",
-      "count": 8,
-      "centroid": [130, 30],
-      "datasets": ["AIBL (Australia)", "ANZBD", "JADER", "Korean Brain Aging Study", "FINGER-China", "Shanghai Aging Study", "Taiwan Biobank AD", "Singapore EDIS"],
+      "count": 9,
+      "centroid": [130, 25],
+      "datasets": ["AIBL (Australia)", "ANZBD", "Korean Brain Aging Study", "FINGER-China", "Shanghai Aging Study", "Taiwan Biobank AD", "Singapore EDIS", "JMEM", "J-ADNI"],
       "color": "#1E3A8A"
     },
     {
       "id": "latin-america",
       "name": "Latin America",
-      "count": 3,
+      "count": 4,
       "centroid": [-65, -15],
-      "datasets": ["ReDLat Consortium", "LASI-DAD (partial)", "Medellín cohort"],
+      "datasets": ["ReDLat Consortium", "BrainLat", "Medellín cohort (GRUPO DE NEUROCIENCIAS)", "LASI-DAD (Latin America sites)"],
       "color": "#0E7490"
     },
     {
@@ -41,15 +41,15 @@
       "color": "#065F46"
     },
     {
-      "id": "middle-east",
+      "id": "middle-east-south-asia",
       "name": "Middle East & South Asia",
       "count": 2,
-      "centroid": [55, 25],
+      "centroid": [68, 22],
       "datasets": ["LASI-DAD (India)", "SHARE-Israel"],
       "color": "#92400E"
     }
   ],
-  "total": 47,
+  "total": 55,
   "last_updated": "2025-04-11",
-  "note": "Dataset counts are approximate and include major publicly documented cohorts. Contributions welcome via Pull Request."
+  "note": "Dataset counts reflect distinct cohorts with documented AD-relevant data. Contributions welcome via Pull Request to the dataset catalogue."
 }
