@@ -223,6 +223,75 @@ export default function OriginalResearch() {
         <div className="section-divider mt-6" />
       </div>
 
+      {/* ── 2025 headline results ─────────────────────────────────────── */}
+      <section className="mb-14">
+        <h2 className="text-xl font-bold text-gray-200 mb-1">2025 Pipeline Run — Headline Results</h2>
+        <p className="text-sm text-gray-500 mb-6">
+          <em>Alzheimer&apos;s & Dementia</em> (Wiley, ISSN: 1552-5260) · 913 papers manually downloaded and screened
+        </p>
+
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+          {[
+            { label: "PDFs analysed", value: "913", sub: "manually downloaded", color: "#7C3AED" },
+            { label: "Code sharing", value: "88.6%", sub: "keyword match", color: "#BE185D", note: "but only 9.4% with a real repo link" },
+            { label: "Data sharing", value: "3.0%", sub: "27 / 913 papers", color: "#BE185D" },
+            { label: "Sex-specific keywords", value: "25.5%", sub: "233 papers", color: "#0E7490" },
+            { label: "Sex-aware main focus", value: "4.1%", sub: "37 papers (keyword in title)", color: "#0E7490" },
+            { label: "Dataset mentions", value: "52.8%", sub: "482 papers cite ≥1 dataset", color: "#1E3A8A" },
+            { label: "Repo links extracted", value: "9.4%", sub: "86 papers (80 GitHub)", color: "#7C3AED" },
+            { label: "Country extracted", value: "99.1%", sub: "905 / 913 papers", color: "#1E3A8A" },
+          ].map((s) => (
+            <div key={s.label} className="glass-card rounded-xl p-4 border text-center" style={{ borderColor: s.color + "25" }}>
+              <div className="text-2xl font-extrabold mb-0.5" style={{ color: s.color }}>{s.value}</div>
+              <div className="text-xs text-gray-400 font-medium">{s.label}</div>
+              <div className="text-xs text-gray-600 mt-0.5">{s.sub}</div>
+              {s.note && <div className="text-xs mt-1 italic" style={{ color: s.color + "cc" }}>{s.note}</div>}
+            </div>
+          ))}
+        </div>
+
+        {/* Platform breakdown */}
+        <div className="glass-card rounded-xl p-5 border mb-4" style={{ borderColor: "rgba(124,58,237,0.2)" }}>
+          <p className="text-xs font-semibold text-violet-300 mb-3">Repository hosting platforms (from extracted links)</p>
+          <div className="flex gap-6">
+            {[{ name: "GitHub", n: 80 }, { name: "OSF", n: 4 }, { name: "Zenodo", n: 2 }].map((p) => (
+              <div key={p.name} className="flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full" style={{ background: "#7C3AED" }} />
+                <span className="text-sm font-bold text-violet-200">{p.name}</span>
+                <span className="text-xs text-gray-400">{p.n} papers</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Top datasets */}
+        <div className="glass-card rounded-xl p-5 border" style={{ borderColor: "rgba(30,58,138,0.2)" }}>
+          <p className="text-xs font-semibold text-blue-300 mb-3">Most frequently cited datasets</p>
+          <div className="space-y-2">
+            {[
+              { name: "ADNI", n: 175 },
+              { name: "NACC", n: 136 },
+              { name: "UK Biobank", n: 92 },
+              { name: "MAPT", n: 72 },
+              { name: "A4 Study", n: 41 },
+            ].map((d, i) => (
+              <div key={d.name} className="flex items-center gap-3">
+                <div className="text-xs text-gray-600 w-4 text-right">{i + 1}.</div>
+                <div className="text-xs font-semibold text-gray-300 w-24">{d.name}</div>
+                <div className="flex-1 bg-gray-900 rounded-full h-1.5">
+                  <div className="h-1.5 rounded-full" style={{ width: `${(d.n / 175) * 100}%`, background: "#1E3A8A" }} />
+                </div>
+                <div className="text-xs text-gray-400 w-28 text-right">
+                  {d.n} papers ({((d.n / 913) * 100).toFixed(1)}%)
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <div className="section-divider mb-10" />
+
       {/* ── Three sub-repos ──────────────────────────────────────────────── */}
       <section className="mb-14">
         <h2 className="text-lg font-bold text-gray-200 mb-4">Three Sub-Repositories</h2>
