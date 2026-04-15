@@ -25,23 +25,23 @@
   {
     "id": "swedish-twin-registry",
     "name": "Swedish Twin Registry",
-    "acronym": "STR",
+    "full_name": "Swedish Twin Registry",
     "year": 1961,
+    "data_types": [
+      "Clinical",
+      "Genetics",
+      "Cognitive",
+      "Lifestyle"
+    ],
+    "access": "restricted",
+    "n_subjects": 194000,
+    "n_note": "~194,000 twins registered",
     "origin": [
       "Sweden"
     ],
-    "type": [
-      "Genetics",
-      "Epidemiology",
-      "Longitudinal"
-    ],
-    "access": "Controlled",
-    "participants": 194000,
-    "url": "https://ki.se/en/research/research-infrastructure-and-environments/core-facilities-for-research/the-swedish-twin-registry",
     "doi": "10.1375/twin.5.5.427",
-    "description": "World's largest twin registry, hosted at Karolinska Institutet. Not primarily designed for AD research but widely used for disentangling genetic and environmental contributions to dementia through classical twin design.",
-    "primary_aim_ad": false,
-    "note": "Primary aim was not AD \u2014 used to study genetic vs environmental contributions to dementia"
+    "url": "https://ki.se/en/research/research-infrastructure-and-environments/core-facilities-for-research/the-swedish-twin-registry",
+    "notes": "World's largest twin registry, hosted at Karolinska Institutet. Not primarily designed for AD research \u2014 used to disentangle genetic and environmental contributions to dementia through classical twin design."
   },
   {
     "id": "knight-adrc",
@@ -137,23 +137,24 @@
   },
   {
     "id": "rush-map",
-    "name": "Rush Memory and Aging Project",
-    "acronym": "Rush MAP",
+    "name": "Rush MAP",
+    "full_name": "Rush Memory and Aging Project",
     "year": 1997,
+    "data_types": [
+      "Clinical",
+      "Cognitive",
+      "Neuropathology",
+      "MRI"
+    ],
+    "access": "restricted",
+    "n_subjects": 2000,
+    "n_note": "~2,000 participants with brain donation",
     "origin": [
       "USA"
     ],
-    "type": [
-      "Clinical",
-      "Neuroimaging",
-      "Neuropathology"
-    ],
-    "access": "Controlled",
-    "participants": 2000,
-    "url": "https://www.rushu.rush.edu/research-rush-university/departmental-research/rush-alzheimers-disease-center/rush-alzheimers-disease-center-research/epidemiologic-research/memory-aging-project",
     "doi": "10.2174/156720512801322663",
-    "description": "Longitudinal clinical-pathologic cohort of older adults from retirement communities in Chicago, with brain donation at death. Foundational for linking ante-mortem clinical data to post-mortem neuropathology.",
-    "primary_aim_ad": true
+    "url": "https://www.rushu.rush.edu/research-rush-university/departmental-research/rush-alzheimers-disease-center/rush-alzheimers-disease-center-research/epidemiologic-research/memory-aging-project",
+    "notes": "Longitudinal clinical-pathologic cohort from retirement communities in Chicago with brain donation at death. Foundational for linking ante-mortem clinical data to post-mortem neuropathology."
   },
   {
     "id": "nacc",
@@ -254,23 +255,25 @@
   },
   {
     "id": "sydney-mas",
-    "name": "Sydney Memory and Ageing Study",
-    "acronym": "Sydney MAS",
+    "name": "Sydney MAS",
+    "full_name": "Sydney Memory and Ageing Study",
     "year": 2005,
+    "data_types": [
+      "MRI",
+      "Cognitive",
+      "Genetics",
+      "Clinical",
+      "Lifestyle"
+    ],
+    "access": "restricted",
+    "n_subjects": 1037,
+    "n_note": "1,037 participants aged 70\u201390",
     "origin": [
       "Australia"
     ],
-    "type": [
-      "Neuroimaging",
-      "Neuropsychology",
-      "Biomarkers"
-    ],
-    "access": "Controlled",
-    "participants": 1037,
-    "url": "https://doi.org/10.1017/S1041610210001067",
     "doi": "10.1017/S1041610210001067",
-    "description": "Longitudinal study of community-dwelling older Australians aged 70-90, investigating risk factors for mild cognitive impairment and dementia. Includes neuropsychological testing, neuroimaging, genetics, and lifestyle factors.",
-    "primary_aim_ad": true
+    "url": "https://doi.org/10.1017/S1041610210001067",
+    "notes": "Longitudinal study of community-dwelling older Australians investigating risk factors for MCI and dementia. Includes neuropsychological testing, neuroimaging, genetics, and lifestyle factors."
   },
   {
     "id": "aibl",
@@ -407,24 +410,25 @@
   },
   {
     "id": "habs-ad",
-    "name": "Harvard Aging Brain Study",
-    "acronym": "HABS-AD",
+    "name": "HABS-AD",
+    "full_name": "Harvard Aging Brain Study",
     "year": 2010,
+    "data_types": [
+      "MRI",
+      "PET",
+      "Cognitive",
+      "Blood",
+      "Clinical"
+    ],
+    "access": "restricted",
+    "n_subjects": 600,
+    "n_note": "~600 cognitively normal older adults",
     "origin": [
       "USA"
     ],
-    "type": [
-      "Neuroimaging",
-      "PET",
-      "Biomarkers",
-      "Longitudinal"
-    ],
-    "access": "Controlled",
-    "participants": 600,
-    "url": "https://habs.mgh.harvard.edu",
     "doi": "10.1002/trc2.70140",
-    "description": "Longitudinal study at Massachusetts General Hospital investigating the earliest stages of AD in cognitively normal older adults. Emphasises amyloid and tau PET imaging and MRI to track preclinical AD trajectories.",
-    "primary_aim_ad": true
+    "url": "https://habs.mgh.harvard.edu",
+    "notes": "Longitudinal study at Massachusetts General Hospital investigating the earliest stages of AD in cognitively normal older adults. Emphasises amyloid and tau PET imaging to track preclinical AD trajectories."
   },
   {
     "id": "prevent-ad",
@@ -684,22 +688,21 @@
   {
     "id": "care-registry",
     "name": "CARE Registry",
-    "acronym": "CARE",
+    "full_name": "CARE Registry (Sweden)",
     "year": 2018,
+    "data_types": [
+      "Clinical",
+      "Cognitive"
+    ],
+    "access": "restricted",
+    "n_subjects": 0,
+    "n_note": "Register-based; national linkage",
     "origin": [
       "Sweden"
     ],
-    "type": [
-      "Registry",
-      "Clinical",
-      "Epidemiology"
-    ],
-    "access": "Controlled",
-    "participants": null,
-    "url": "https://doi.org/10.1177/1403494819859737",
     "doi": "10.1177/1403494819859737",
-    "description": "Swedish register-based cohort linking national health registers (patient register, cause of death, prescriptions) for large-scale epidemiological research on risk factors, treatment, and outcomes in dementia.",
-    "primary_aim_ad": true
+    "url": "https://doi.org/10.1177/1403494819859737",
+    "notes": "Swedish register-based cohort linking national health registers for large-scale epidemiological research on risk factors, treatment, and outcomes in dementia."
   },
   {
     "id": "oasis3",
@@ -752,25 +755,24 @@
   },
   {
     "id": "vip-vietnamese",
-    "name": "Cognitive Aging Program \u2014 Vietnamese American Immigrants",
-    "acronym": "VIP",
+    "name": "VIP",
+    "full_name": "Cognitive Aging Program \u2014 Vietnamese American Immigrants",
     "year": 2020,
+    "data_types": [
+      "Cognitive",
+      "Clinical",
+      "Lifestyle"
+    ],
+    "access": "restricted",
+    "n_subjects": 450,
+    "n_note": "~450 Vietnamese American immigrants",
     "origin": [
       "USA",
       "Vietnam"
     ],
-    "type": [
-      "Epidemiology",
-      "Neuropsychology",
-      "Longitudinal"
-    ],
-    "access": "Controlled",
-    "participants": 450,
-    "url": "https://doi.org/10.1002/alz.70097",
     "doi": "10.1002/alz.70097",
-    "description": "Longitudinal study of cognitive aging in Vietnamese American immigrants, addressing a critically underrepresented population in US dementia research. Uses culturally adapted cognitive assessments.",
-    "primary_aim_ad": false,
-    "note": "Primary aim is cognitive aging in an underrepresented immigrant population \u2014 not exclusively AD"
+    "url": "https://doi.org/10.1002/alz.70097",
+    "notes": "Longitudinal study of cognitive aging in Vietnamese American immigrants, addressing a critically underrepresented population. Not exclusively AD \u2014 focuses on cognitive aging with culturally adapted assessments."
   },
   {
     "id": "anmerge",
@@ -801,23 +803,22 @@
   },
   {
     "id": "readd-adsp",
-    "name": "READD-ADSP \u2014 Recruitment and Retention for Alzheimer's Disease Diversity",
-    "acronym": "READD-ADSP",
+    "name": "READD-ADSP",
+    "full_name": "Recruitment and Retention for Alzheimer's Disease Diversity Genetic Cohorts in the ADSP",
     "year": 2021,
+    "data_types": [
+      "Genetics",
+      "Clinical"
+    ],
+    "access": "restricted",
+    "n_subjects": 0,
+    "n_note": "Ongoing recruitment initiative",
     "origin": [
       "USA"
     ],
-    "type": [
-      "Genetics",
-      "Epidemiology",
-      "Clinical"
-    ],
-    "access": "Controlled",
-    "participants": null,
-    "url": "https://doi.org/10.1002/alz.074860",
     "doi": "10.1002/alz.074860",
-    "description": "Initiative within the Alzheimer's Disease Sequencing Project (ADSP) specifically improving recruitment of underrepresented racial and ethnic groups in AD genetic studies. Addresses the gap between intent to diversify and actual cohort composition.",
-    "primary_aim_ad": true
+    "url": "https://doi.org/10.1002/alz.074860",
+    "notes": "Initiative within the Alzheimer's Disease Sequencing Project (ADSP) focused specifically on improving recruitment of underrepresented racial and ethnic groups in AD genetic studies."
   },
   {
     "id": "sea-ad",
@@ -841,9 +842,20 @@
   },
   {
     "id": "acad",
-    "name": "Asian Cohort for Alzheimer's Disease",
-    "acronym": "ACAD",
+    "name": "ACAD",
+    "full_name": "Asian Cohort for Alzheimer's Disease",
     "year": 2022,
+    "data_types": [
+      "Genetics",
+      "MRI",
+      "Blood",
+      "CSF",
+      "Clinical",
+      "Cognitive"
+    ],
+    "access": "restricted",
+    "n_subjects": 5000,
+    "n_note": "~5,000 across multiple sites",
     "origin": [
       "USA",
       "China",
@@ -851,18 +863,9 @@
       "South Korea",
       "Japan"
     ],
-    "type": [
-      "Genetics",
-      "Neuroimaging",
-      "Biomarkers",
-      "Epidemiology"
-    ],
-    "access": "Controlled",
-    "participants": 5000,
-    "url": "https://doi.org/10.1002/alz.13611",
     "doi": "10.1002/alz.13611",
-    "description": "Multi-site consortium recruiting individuals of Asian ancestry across North America and Asia to study AD genetics, biomarkers, and risk factors in populations historically excluded from large-scale AD genomics. Directly addresses the European-ancestry bias in AD GWAS.",
-    "primary_aim_ad": true
+    "url": "https://doi.org/10.1002/alz.13611",
+    "notes": "Multi-site consortium recruiting individuals of Asian ancestry across North America and Asia. Directly addresses the European-ancestry bias in AD GWAS by studying populations historically excluded from large-scale genomics."
   },
   {
     "id": "brainlat",
@@ -891,23 +894,21 @@
   },
   {
     "id": "valiant",
-    "name": "VALIANT Study",
-    "acronym": "VALIANT",
+    "name": "VALIANT",
+    "full_name": "VALIANT Study",
     "year": 2024,
+    "data_types": [
+      "Blood",
+      "Clinical"
+    ],
+    "access": "restricted",
+    "n_subjects": 0,
+    "n_note": "Not reported",
     "origin": [
       "Multiple"
     ],
-    "type": [
-      "Immunology",
-      "Biomarkers",
-      "Clinical"
-    ],
-    "access": "Controlled",
-    "participants": null,
-    "url": "https://doi.org/10.1016/j.imbio.2025.153039",
     "doi": "10.1016/j.imbio.2025.153039",
-    "description": "Study investigating immune and inflammatory biomarkers in Alzheimer's disease. Contributes to understanding neuroinflammatory mechanisms rather than serving as a general AD epidemiological cohort.",
-    "primary_aim_ad": false,
-    "note": "Primary aim was immunological characterisation \u2014 not a general AD cohort"
+    "url": "https://doi.org/10.1016/j.imbio.2025.153039",
+    "notes": "Study investigating immune and inflammatory biomarkers in Alzheimer's disease. Primary aim was immunological characterisation \u2014 not a general AD epidemiological cohort."
   }
 ]

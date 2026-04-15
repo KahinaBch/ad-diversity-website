@@ -44,17 +44,17 @@ const pipelineSteps = [
     step: "3", color: "#BE185D",
     title: "Open-science keyword scan",
     desc: "Each PDF is scanned for platform names (github, osf, zenodo, dryad, figshare), sharing statements (code available, data available, openly available), and tool indicators (jupyter, notebook, open source). Repository links are extracted where present.",
-    note: "Hypothesis — Pillar 3: if sharing practices are improving, rates should increase over time. 2025: 88.7% keyword match — but only 9.4% contain an actual repository link.",  },
+    note: "Hypothesis (Pillar 3): if sharing practices are improving, rates should increase over time. 2025: 88.7% keyword match, but only 9.4% contain an actual repository link.",  },
   {
     step: "4", color: "#0E7490",
     title: "Sex-specific keyword scan (NOVEL)",
     desc: "Full text is scanned for: sex-stratified, sex differences, gender-specific, sex-disaggregated, sex-based analysis, female-specific, APOE sex interaction, menopause, hormonal influence, stratified by sex. Papers classified as 'sex-aware main focus' (keyword in title) or 'sex-aware consideration' (keyword in body only).",
-    note: "Hypothesis — Pillar 2: the proportion of AD papers explicitly treating sex as a biological variable is low, in tension with the ~65% female disease burden and the NIH mandate. ",  },
+    note: "Hypothesis (Pillar 2): the proportion of AD papers explicitly treating sex as a biological variable is low, in tension with the ~65% female disease burden and the NIH mandate. ",  },
   {
     step: "4b", color: "#0E7490",
     title: "Dataset mention scan",
-    desc: "PDF text is scanned for names from the AD Dataset Catalogue, identifying which datasets — and therefore which populations — are most cited in published AD research.",
-    note: "Hypothesis — Pillar 1: a small number of North American/European cohorts (ADNI, NACC, UK Biobank) will dominate dataset citations, reflecting the geographic concentration of AD research.",
+    desc: "PDF text is scanned for names from the AD Dataset Catalogue, identifying which datasets, and therefore which populations, are most cited in published AD research.",
+    note: "Hypothesis (Pillar 1): a small number of North American/European cohorts (ADNI, NACC, UK Biobank) will dominate dataset citations, reflecting the geographic concentration of AD research.",
   },
   {
     step: "5", color: "#BE185D",
@@ -65,12 +65,12 @@ const pipelineSteps = [
   {
     step: "5b", color: "#7C3AED",
     title: "Author metadata + gender inference",
-    desc: "First/last author names are retrieved via DOI and gender is inferred from names using the gender-guesser Python package (heuristic, name-based). Enables analysis of gender representation in AD research leadership — a structural dimension of Pillar 3 (researcher diversity as part of the open-science infrastructure question).",
+    desc: "First/last author names are retrieved via DOI and gender is inferred from names using the gender-guesser Python package (heuristic, name-based). Enables analysis of gender representation in AD research leadership, a structural dimension of Pillar 3 (researcher diversity as part of the open-science infrastructure question).",
   },
   {
     step: "6", color: "#1E3A8A",
     title: "Country extraction",
-    desc: "First-author affiliation country is extracted from PDF text (pdfminer + pycountry). Maps the geographic origin of the research teams producing published AD science — a structural dimension of Pillar 3. 2025: 99.1% of papers successfully attributed.",
+    desc: "First-author affiliation country is extracted from PDF text (pdfminer + pycountry). Maps the geographic origin of the research teams producing published AD science, a structural dimension of Pillar 3. 2025: 99.1% of papers successfully attributed.",
   },
   {
     step: "7", color: "#1E3A8A",
@@ -92,13 +92,13 @@ const pillars = [
     accent: "#93C5FD",
     title: "Who is studied?",
     subtitle: "Geographic & Ethnic Diversity",
-    framing: "The first dimension asks a deceptively simple question: which populations does published AD research actually examine? If the field reflected the global distribution of the dementia burden, dataset citations would show a broad spread across world regions. Instead, we expect — and find — that a small number of well-funded North American and European cohorts dominate the citation record, while regions facing the fastest-growing burden remain marginal.",
+    framing: "The first dimension asks a deceptively simple question: which populations does published AD research actually examine? If the field reflected the global distribution of the dementia burden, dataset citations would show a broad spread across world regions. Instead, we find that a small number of well-funded North American and European cohorts dominate the citation record, while regions facing the fastest-growing burden remain marginal.",
     figures: [
       {
         file: "fig12_dataset_proportions_all_papers.png",
-        title: "Dataset Citations — Which Populations Are Actually Studied?",
+        title: "Dataset Citations: Which Populations Are Actually Studied?",
         finding: `${results2025.datasetMentions.n} of 913 papers (${results2025.datasetMentions.pct}%) cited at least one known dataset. The most frequently cited: ADNI (${results2025.topDatasets[0].n} papers, ${((results2025.topDatasets[0].n/results2025.pdfs)*100).toFixed(1)}%); NACC (${results2025.topDatasets[1].n}, ${((results2025.topDatasets[1].n/results2025.pdfs)*100).toFixed(1)}%); UK Biobank (${results2025.topDatasets[2].n}, ${((results2025.topDatasets[2].n/results2025.pdfs)*100).toFixed(1)}%). Bars are colour-coded by dataset geographic origin.`,
-        relevance: "Dataset citations are a direct proxy for which populations are studied. A concentration in a handful of North American/European cohorts means that the findings published in the field's flagship journal overwhelmingly reflect a narrow slice of the world's at-risk population — limiting both scientific generalisability and equity in how results are applied globally.",
+        relevance: "Dataset citations are a direct proxy for which populations are studied. A concentration in a handful of North American/European cohorts means that the findings published in the field's flagship journal overwhelmingly reflect a narrow slice of the world's at-risk population, limiting both scientific generalisability and equity in how results are applied globally.",
       },
     ],
   },
@@ -108,13 +108,13 @@ const pillars = [
     accent: "#F9A8D4",
     title: "Does the literature treat sex as a biological variable?",
     subtitle: "Sex & Gender Diversity in Research",
-    framing: "Women comprise ~65% of people living with Alzheimer's disease, and sex shapes AD risk, hormonal biology, APOE4 interactions, tau propagation, and treatment response. The NIH has mandated 'sex as a biological variable' since 2016. Does the flagship AD journal show evidence of this shift — or does sex remain a covariate to adjust for rather than a research question in its own right?",
+    framing: "Women comprise ~65% of people living with Alzheimer's disease, and sex shapes AD risk, hormonal biology, APOE4 interactions, tau propagation, and treatment response. The NIH has mandated 'sex as a biological variable' since 2016. Does the flagship AD journal show evidence of this shift, or does sex remain a covariate to adjust for rather than a research question in its own right?",
     figures: [
       {
         file: "fig6_sex_aware_level_distribution.png",
         title: "Sex-Aware Level Distribution",
         finding: `Out of 913 papers: ${results2025.sexKeywords.mainFocus} (${((results2025.sexKeywords.mainFocus/results2025.pdfs)*100).toFixed(1)}%) classified as 'sex-aware main focus' (keyword in title); ${results2025.sexKeywords.consideration} (${((results2025.sexKeywords.consideration/results2025.pdfs)*100).toFixed(1)}%) as 'sex-aware consideration' (keyword in body only); the remainder had no sex-specific keywords detected.`,
-        relevance: "Only 4.1% of papers make sex a primary research focus — despite women accounting for two-thirds of the disease burden. This quantifies, for the first time in a systematic and reproducible way, the gap between the biological importance of sex in AD and its treatment in the published literature.",
+        relevance: "Only 4.1% of papers make sex a primary research focus, despite women accounting for two-thirds of the disease burden. This quantifies, for the first time in a systematic and reproducible way, the gap between the biological importance of sex in AD and its treatment in the published literature.",
       },
     ],
   },
@@ -122,28 +122,28 @@ const pillars = [
     number: "III",
     color: "#7C3AED",
     accent: "#c4b5fd",
-    title: "Is the infrastructure open — and the research team diverse?",
+    title: "Is the infrastructure open, and the research team diverse?",
     subtitle: "Data Infrastructure, Reproducibility & Researcher Diversity",
-    framing: "The third dimension is the broadest. It asks whether the scientific infrastructure is open enough for findings to be verified, built upon, and adapted to new populations — and whether the research teams producing those findings reflect the communities most affected. We measure two things: (1) the actual state of code and data sharing in the flagship AD journal; (2) the geographic origin and gender composition of authorship as structural indicators of who is shaping the research agenda.",
+    framing: "The third dimension is the broadest. It asks whether the scientific infrastructure is open enough for findings to be verified, built upon, and adapted to new populations, and whether the research teams producing those findings reflect the communities most affected. We measure two things: (1) the actual state of code and data sharing in the flagship AD journal; (2) the geographic origin and gender composition of authorship as structural indicators of who is shaping the research agenda.",
     keyStats: true,
     figures: [
       {
         file: "fig3_country_distribution.png",
         title: "Where Does Published AD Research Come From?",
-        finding: "905 of 913 papers (99.1%) were successfully attributed to a first-author country. The distribution reveals strong concentration in North America and Europe, with minimal representation from Latin America, Africa, and South/Southeast Asia — the regions facing the fastest-growing dementia burden.",
+        finding: "905 of 913 papers (99.1%) were successfully attributed to a first-author country. The distribution reveals strong concentration in North America and Europe, with minimal representation from Latin America, Africa, and South/Southeast Asia, the regions facing the fastest-growing dementia burden.",
         relevance: "The geographic origin of research teams shapes which questions are asked, which populations are recruited, and what counts as a priority. Researchers embedded in affected regions bring community trust and context-specific expertise that external teams cannot replicate. This figure maps the current baseline of geographic equity in AD research leadership.",
       },
       {
         file: "fig10_first_author_gender_distribution.png",
         title: "First-Author Gender Distribution",
         finding: "Distribution of inferred first-author gender across 913 papers (2025), derived from name-based inference. Reflects who is entering and publishing in the AD research pipeline.",
-        relevance: "Women researchers are more likely to include sex-stratified analyses and to prioritise diversity-focused questions. First-author gender tracks whether the research pipeline is broadening — and whether gender diversity in the workforce translates into methodological diversity in the literature.",
+        relevance: "Women researchers are more likely to include sex-stratified analyses and to prioritise diversity-focused questions. First-author gender tracks whether the research pipeline is broadening, and whether gender diversity in the workforce translates into methodological diversity in the literature.",
       },
       {
         file: "fig11_last_author_gender_distribution.png",
         title: "Last-Author (Senior) Gender Distribution",
         finding: "Distribution of inferred last-author gender, reflecting research leadership (principal investigator positions). Comparing first- vs. last-author distributions reveals whether gender imbalances are concentrated at the senior level.",
-        relevance: "Senior researchers set agendas, secure funding, and decide what populations to study. Gender diversity at this level is a structural predictor of whether sex-disaggregated and diversity-oriented research will be systematically prioritised — the leadership complement to the biological gap quantified in Pillar II.",
+        relevance: "Senior researchers set agendas, secure funding, and decide what populations to study. Gender diversity at this level is a structural predictor of whether sex-disaggregated and diversity-oriented research will be systematically prioritised, the leadership complement to the biological gap quantified in Pillar II.",
       },
     ],
   },
@@ -151,12 +151,12 @@ const pillars = [
 
 const limitations = [
   { title: "Single journal", desc: "Results describe Alzheimer's & Dementia only and cannot be generalised to the broader AD literature, other dementia journals, or preprints." },
-  { title: "Keyword sensitivity", desc: "Papers sharing code without expected terminology will be missed (false negatives). Papers mentioning sharing without doing it will be flagged (false positives) — addressed by manual curation." },
+  { title: "Keyword sensitivity", desc: "Papers sharing code without expected terminology will be missed (false negatives). Papers mentioning sharing without doing it will be flagged (false positives), addressed by manual curation." },
   { title: "Sex keywords are proxies", desc: "Detecting 'sex differences' flags intent, not quality. A paper may mention sex as a demographic variable without stratifying results." },
   { title: "PDF access", desc: "PDFs must be downloaded manually due to copyright. This limits automation for researchers without institutional access." },
-  { title: "Country attribution", desc: "Country is assigned to the first author's affiliation. A US-based researcher studying an African cohort is attributed to the USA — not the population studied." },
-  { title: "Gender inference", desc: "First/last author gender is inferred from names — an imperfect proxy that treats gender as binary and may fail for gender-neutral or culturally unfamiliar names." },
-  { title: "Ethnic diversity within countries is invisible", desc: "The pipeline measures geographic diversity at the country level. Studies that investigate ethnic or racial diversity within a single country — for example, comparing African American and White American participants in a US cohort — are not captured. Intra-country ethnic diversity analyses are an important and currently unmeasured dimension that future iterations of this audit should address." },
+  { title: "Country attribution", desc: "Country is assigned to the first author's affiliation. A US-based researcher studying an African cohort is attributed to the USA, not to the population studied." },
+  { title: "Gender inference", desc: "First/last author gender is inferred from names, an imperfect proxy that treats gender as binary and may fail for gender-neutral or culturally unfamiliar names." },
+  { title: "Ethnic diversity within countries is invisible", desc: "The pipeline measures geographic diversity at the country level. Studies that investigate ethnic or racial diversity within a single country, for example comparing African American and White American participants in a US cohort, are not captured. Intra-country ethnic diversity analyses are an important and currently unmeasured dimension that future iterations of this audit should address." },
 ];
 
 function FigureBlock({ fig, color }: { fig: (typeof pillars[0]["figures"])[0]; color: string }) {
@@ -212,7 +212,7 @@ export default function OriginalResearch() {
           Measuring Diversity in AD Research
         </h1>
         <p className="text-gray-400 text-sm max-w-2xl leading-relaxed">
-          An empirical investigation structured around the three dimensions of diversity identified in Part I — applied to <em>Alzheimer&apos;s & Dementia</em> (2025), the field&apos;s flagship journal.
+          An empirical investigation structured around the three dimensions of diversity identified in Part I, applied to <em>Alzheimer&apos;s & Dementia</em> (2025), the field&apos;s flagship journal.
         </p>
 
         <div className="mt-5 rounded-xl p-5 border" style={{ borderColor: "rgba(14,116,144,0.3)", background: "rgba(14,116,144,0.06)" }}>
@@ -258,7 +258,7 @@ export default function OriginalResearch() {
 
       {/* ── 2025 headline results ─────────────────────────────────────── */}
       <section className="mb-14">
-        <h2 className="text-xl font-bold text-gray-200 mb-1">2025 Pipeline Run — Headline Results</h2>
+        <h2 className="text-xl font-bold text-gray-200 mb-1">2025 Pipeline Run: Headline Results</h2>
         <p className="text-sm text-gray-500 mb-6">
           <em>Alzheimer&apos;s & Dementia</em> (Wiley, ISSN: 1552-5260) · 913 papers manually downloaded and screened
         </p>
@@ -360,7 +360,7 @@ export default function OriginalResearch() {
         <div className="glass-card rounded-xl p-5 border mb-5 mt-4" style={{ borderColor: "rgba(30,58,138,0.3)" }}>
           <p className="text-xs font-semibold text-blue-300 uppercase tracking-wider mb-2">Reproducibility defined</p>
           <p className="text-sm text-gray-300 leading-relaxed">
-            <strong className="text-gray-100">Computational reproducibility</strong>: the ability of an independent researcher to re-run the analyses underlying a published paper and obtain the same results — requiring shared code, shared data, and documentation. We use the presence of open-science indicators in published papers (GitHub links, data availability statements, OSF/Zenodo deposits) as a proxy measure. Each pipeline step is labelled with the pillar it addresses.
+            <strong className="text-gray-100">Computational reproducibility</strong>: the ability of an independent researcher to re-run the analyses underlying a published paper and obtain the same results, requiring shared code, shared data, and documentation. We use the presence of open-science indicators in published papers (GitHub links, data availability statements, OSF/Zenodo deposits) as a proxy measure. Each pipeline step is labelled with the pillar it addresses.
           </p>
         </div>
 
@@ -416,7 +416,7 @@ export default function OriginalResearch() {
                 {pillar.framing}
               </div>
 
-              {/* Pillar III — key stats (no external figures) */}
+              {/* Pillar III key stats (no external figures) */}
               {pillar.keyStats && (
                 <div>
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-5">
@@ -438,7 +438,7 @@ export default function OriginalResearch() {
                   </div>
                   <div className="glass-card rounded-xl p-5 border" style={{ borderColor: "rgba(124,58,237,0.2)" }}>
                     <p className="text-xs text-gray-400 leading-relaxed">
-                      <strong className="text-gray-200">Key finding:</strong> The gap between 88.7% keyword match and 9.4% genuine repository links is the core result of Pillar III. It reveals that the majority of open-science language in the AD literature is not backed by accessible repositories — distinguishing between the rhetoric of open science and its practice. 
+                      <strong className="text-gray-200">Key finding:</strong> The gap between 88.7% keyword match and 9.4% genuine repository links is the core result of Pillar III. It reveals that the majority of open-science language in the AD literature is not backed by accessible repositories, distinguishing between the rhetoric of open science and its practice. 
                     </p>
                   </div>
                 </div>
@@ -462,10 +462,10 @@ export default function OriginalResearch() {
         <div className="glass-card rounded-xl p-6 border" style={{ borderColor: "rgba(239,68,68,0.2)" }}>
           <div className="flex items-center gap-2 mb-4">
             <span className="text-yellow-400">⚠</span>
-            <h3 className="text-base font-bold text-gray-200">DISCLAIMER — Scope and limitations</h3>
+            <h3 className="text-base font-bold text-gray-200">DISCLAIMER: Scope and limitations</h3>
           </div>
           <p className="text-sm text-gray-400 leading-relaxed mb-4">
-            This analysis is intentionally narrow but <strong className="text-gray-200">reproducible, transparent, and extendable</strong> — the pipeline can be applied to any journal, any year, and any keyword set.
+            This analysis is intentionally narrow but <strong className="text-gray-200">reproducible, transparent, and extendable</strong>: the pipeline can be applied to any journal, any year, and any keyword set.
           </p>
           <div className="space-y-3">
             {limitations.map((l) => (
@@ -492,7 +492,7 @@ export default function OriginalResearch() {
             </div>
           </div>
           <p className="text-sm text-gray-300 leading-relaxed mb-3">
-            This is a first investigation, designed to be deepened, extended, and continued over time — tracking how open-science practices and researcher diversity in AD research evolve year by year. It is also meant to be participative. If something seems incorrect, could be improved, or if you have data, datasets, or perspectives to contribute, your input is welcome.
+            This is a first investigation, designed to be deepened, extended, and continued over time, tracking how open-science practices and researcher diversity in AD research evolve year by year. It is also meant to be participative. If something seems incorrect, could be improved, or if you have data, datasets, or perspectives to contribute, your input is welcome.
           </p>
           <p className="text-sm text-gray-400 leading-relaxed mb-4">
             Future directions include extending the audit to other years and journals, adding intra-country ethnic diversity detection, incorporating citation network analysis, and expanding the dataset catalogue with community contributions.
