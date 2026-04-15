@@ -23,6 +23,27 @@
     "notes": "Oldest US longitudinal aging study. NIA-funded. Includes amyloid PET."
   },
   {
+    "id": "swedish-twin-registry",
+    "name": "Swedish Twin Registry",
+    "acronym": "STR",
+    "year": 1961,
+    "origin": [
+      "Sweden"
+    ],
+    "type": [
+      "Genetics",
+      "Epidemiology",
+      "Longitudinal"
+    ],
+    "access": "Controlled",
+    "participants": 194000,
+    "url": "https://ki.se/en/research/research-infrastructure-and-environments/core-facilities-for-research/the-swedish-twin-registry",
+    "doi": "10.1375/twin.5.5.427",
+    "description": "World's largest twin registry, hosted at Karolinska Institutet. Not primarily designed for AD research but widely used for disentangling genetic and environmental contributions to dementia through classical twin design.",
+    "primary_aim_ad": false,
+    "note": "Primary aim was not AD \u2014 used to study genetic vs environmental contributions to dementia"
+  },
+  {
     "id": "knight-adrc",
     "name": "Knight ADRC",
     "full_name": "Knight Alzheimer Disease Research Center at WUSTL",
@@ -113,6 +134,26 @@
     "doi": "10.1016/j.jalz.2014.04.010",
     "url": "https://www.biocard-se.org/",
     "notes": "Longitudinal study of cognitively normal volunteers at NIH. Rich longitudinal CSF biomarker data spanning 25+ years. Unique long-term follow-up."
+  },
+  {
+    "id": "rush-map",
+    "name": "Rush Memory and Aging Project",
+    "acronym": "Rush MAP",
+    "year": 1997,
+    "origin": [
+      "USA"
+    ],
+    "type": [
+      "Clinical",
+      "Neuroimaging",
+      "Neuropathology"
+    ],
+    "access": "Controlled",
+    "participants": 2000,
+    "url": "https://www.rushu.rush.edu/research-rush-university/departmental-research/rush-alzheimers-disease-center/rush-alzheimers-disease-center-research/epidemiologic-research/memory-aging-project",
+    "doi": "10.2174/156720512801322663",
+    "description": "Longitudinal clinical-pathologic cohort of older adults from retirement communities in Chicago, with brain donation at death. Foundational for linking ante-mortem clinical data to post-mortem neuropathology.",
+    "primary_aim_ad": true
   },
   {
     "id": "nacc",
@@ -210,6 +251,26 @@
     "doi": "10.1111/j.1749-6632.2009.05064.x",
     "url": "https://www.innomed-addneuromed.com/en",
     "notes": "Pan-European multi-site study. Good geographic diversity within Europe."
+  },
+  {
+    "id": "sydney-mas",
+    "name": "Sydney Memory and Ageing Study",
+    "acronym": "Sydney MAS",
+    "year": 2005,
+    "origin": [
+      "Australia"
+    ],
+    "type": [
+      "Neuroimaging",
+      "Neuropsychology",
+      "Biomarkers"
+    ],
+    "access": "Controlled",
+    "participants": 1037,
+    "url": "https://doi.org/10.1017/S1041610210001067",
+    "doi": "10.1017/S1041610210001067",
+    "description": "Longitudinal study of community-dwelling older Australians aged 70-90, investigating risk factors for mild cognitive impairment and dementia. Includes neuropsychological testing, neuroimaging, genetics, and lifestyle factors.",
+    "primary_aim_ad": true
   },
   {
     "id": "aibl",
@@ -343,6 +404,27 @@
     "doi": "10.1111/jgs.13793",
     "url": "https://pubmed.ncbi.nlm.nih.gov/26662213/",
     "notes": "Longitudinal study examining perioperative cognitive decline. Includes diverse urban Boston population. Notably higher minority representation than most AD cohorts."
+  },
+  {
+    "id": "habs-ad",
+    "name": "Harvard Aging Brain Study",
+    "acronym": "HABS-AD",
+    "year": 2010,
+    "origin": [
+      "USA"
+    ],
+    "type": [
+      "Neuroimaging",
+      "PET",
+      "Biomarkers",
+      "Longitudinal"
+    ],
+    "access": "Controlled",
+    "participants": 600,
+    "url": "https://habs.mgh.harvard.edu",
+    "doi": "10.1002/trc2.70140",
+    "description": "Longitudinal study at Massachusetts General Hospital investigating the earliest stages of AD in cognitively normal older adults. Emphasises amyloid and tau PET imaging and MRI to track preclinical AD trajectories.",
+    "primary_aim_ad": true
   },
   {
     "id": "prevent-ad",
@@ -600,6 +682,26 @@
     "notes": "Critical resource for African-descent populations. Addresses the severe gap in sub-Saharan African representation in dementia genetics. Includes genetic data from populations not represented in IGAP or EADB."
   },
   {
+    "id": "care-registry",
+    "name": "CARE Registry",
+    "acronym": "CARE",
+    "year": 2018,
+    "origin": [
+      "Sweden"
+    ],
+    "type": [
+      "Registry",
+      "Clinical",
+      "Epidemiology"
+    ],
+    "access": "Controlled",
+    "participants": null,
+    "url": "https://doi.org/10.1177/1403494819859737",
+    "doi": "10.1177/1403494819859737",
+    "description": "Swedish register-based cohort linking national health registers (patient register, cause of death, prescriptions) for large-scale epidemiological research on risk factors, treatment, and outcomes in dementia.",
+    "primary_aim_ad": true
+  },
+  {
     "id": "oasis3",
     "name": "OASIS-3",
     "full_name": "Open Access Series of Imaging Studies \u2014 Longitudinal Neuroimaging, Clinical, and Cognitive Dataset for Normal Aging and Alzheimer Disease",
@@ -649,6 +751,28 @@
     "notes": "Crucial for Latin American diversity. Includes Indigenous-descent and mestizo populations."
   },
   {
+    "id": "vip-vietnamese",
+    "name": "Cognitive Aging Program \u2014 Vietnamese American Immigrants",
+    "acronym": "VIP",
+    "year": 2020,
+    "origin": [
+      "USA",
+      "Vietnam"
+    ],
+    "type": [
+      "Epidemiology",
+      "Neuropsychology",
+      "Longitudinal"
+    ],
+    "access": "Controlled",
+    "participants": 450,
+    "url": "https://doi.org/10.1002/alz.70097",
+    "doi": "10.1002/alz.70097",
+    "description": "Longitudinal study of cognitive aging in Vietnamese American immigrants, addressing a critically underrepresented population in US dementia research. Uses culturally adapted cognitive assessments.",
+    "primary_aim_ad": false,
+    "note": "Primary aim is cognitive aging in an underrepresented immigrant population \u2014 not exclusively AD"
+  },
+  {
     "id": "anmerge",
     "name": "ANMerge",
     "full_name": "AddNeuroMed Merged Dataset",
@@ -676,6 +800,26 @@
     "notes": "Fully open harmonised version of AddNeuroMed. Available via Synapse."
   },
   {
+    "id": "readd-adsp",
+    "name": "READD-ADSP \u2014 Recruitment and Retention for Alzheimer's Disease Diversity",
+    "acronym": "READD-ADSP",
+    "year": 2021,
+    "origin": [
+      "USA"
+    ],
+    "type": [
+      "Genetics",
+      "Epidemiology",
+      "Clinical"
+    ],
+    "access": "Controlled",
+    "participants": null,
+    "url": "https://doi.org/10.1002/alz.074860",
+    "doi": "10.1002/alz.074860",
+    "description": "Initiative within the Alzheimer's Disease Sequencing Project (ADSP) specifically improving recruitment of underrepresented racial and ethnic groups in AD genetic studies. Addresses the gap between intent to diversify and actual cohort composition.",
+    "primary_aim_ad": true
+  },
+  {
     "id": "sea-ad",
     "name": "SEA-AD",
     "full_name": "Seattle Alzheimer's Disease Brain Cell Atlas",
@@ -694,6 +838,31 @@
     "doi": "10.1038/s41593-024-01611-5",
     "url": "https://portal.brain-map.org/explore/seattle-alzheimers-disease",
     "notes": "Single-cell and single-nucleus RNA-seq + ATAC-seq from 84 human brain donors spanning the full AD neuropathological spectrum. Produced by the Allen Institute for Brain Science. Fully open via the Allen Brain Map portal and Synapse."
+  },
+  {
+    "id": "acad",
+    "name": "Asian Cohort for Alzheimer's Disease",
+    "acronym": "ACAD",
+    "year": 2022,
+    "origin": [
+      "USA",
+      "China",
+      "Singapore",
+      "South Korea",
+      "Japan"
+    ],
+    "type": [
+      "Genetics",
+      "Neuroimaging",
+      "Biomarkers",
+      "Epidemiology"
+    ],
+    "access": "Controlled",
+    "participants": 5000,
+    "url": "https://doi.org/10.1002/alz.13611",
+    "doi": "10.1002/alz.13611",
+    "description": "Multi-site consortium recruiting individuals of Asian ancestry across North America and Asia to study AD genetics, biomarkers, and risk factors in populations historically excluded from large-scale AD genomics. Directly addresses the European-ancestry bias in AD GWAS.",
+    "primary_aim_ad": true
   },
   {
     "id": "brainlat",
@@ -719,5 +888,26 @@
     "doi": "10.1038/s41597-023-02806-8",
     "url": "https://doi.org/10.1038/s41597-023-02806-8",
     "notes": "First open multimodal neuroimaging dataset of neurodegeneration from Latin America. Includes AD, bvFTD, PD, MS and healthy controls. MRI (anatomical, functional, diffusion) + high-density EEG. BIDS format. Hosted on Synapse. Critical resource for underrepresented population neuroscience."
+  },
+  {
+    "id": "valiant",
+    "name": "VALIANT Study",
+    "acronym": "VALIANT",
+    "year": 2024,
+    "origin": [
+      "Multiple"
+    ],
+    "type": [
+      "Immunology",
+      "Biomarkers",
+      "Clinical"
+    ],
+    "access": "Controlled",
+    "participants": null,
+    "url": "https://doi.org/10.1016/j.imbio.2025.153039",
+    "doi": "10.1016/j.imbio.2025.153039",
+    "description": "Study investigating immune and inflammatory biomarkers in Alzheimer's disease. Contributes to understanding neuroinflammatory mechanisms rather than serving as a general AD epidemiological cohort.",
+    "primary_aim_ad": false,
+    "note": "Primary aim was immunological characterisation \u2014 not a general AD cohort"
   }
 ]

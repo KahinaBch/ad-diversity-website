@@ -18,7 +18,8 @@ export default function Footer() {
             </p>
             <p className="text-xs text-gray-500 leading-relaxed">
               Built by{" "}
-              <span className="text-violet-400 font-medium">Kahina Baouche</span>{" "}
+              <a href="https://www.linkedin.com/in/kahina-baouche" target="_blank" rel="noopener noreferrer"
+                className="text-violet-400 font-medium hover:text-violet-300 transition-colors">Kahina Baouche</a>{" "}
               in the context of{" "}
               <a
                 href="https://gbm6330.edublogs.org"

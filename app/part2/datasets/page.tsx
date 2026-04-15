@@ -82,11 +82,7 @@ export default function DatasetsPage() {
 
         <div className="glass-card rounded-xl p-6 border" style={{ borderColor: "rgba(30,58,138,0.3)" }}>
           <p className="text-sm text-gray-400 leading-relaxed mb-4">
-            <span className="font-semibold text-gray-200">Content to be populated.</span>{" "}
-            This section will discuss the rise of datasets incorporating proteomics (CSF and plasma, e.g. ROSMAP,
-            Knight ADRC, EMIF-AD), transcriptomics (brain tissue RNA-seq), epigenomics (DNA methylation), and
-            exposomics (environmental exposure indices, notably UK Biobank). It will argue for the necessity of
-            multi-modal integration and describe the analytical questions that emerge.
+            Beyond neuroimaging and genetics, a new wave of datasets now incorporates proteomics (CSF and plasma, e.g. ROSMAP, Knight ADRC), transcriptomics (brain tissue RNA-seq via AMP-AD), epigenomics (DNA methylation), and exposomics (environmental exposure indices, notably UK Biobank). The integration of these modalities into a single analytical framework is increasingly necessary to capture the full biological complexity of AD and to identify population-specific mechanisms that single-modality studies miss.
           </p>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">

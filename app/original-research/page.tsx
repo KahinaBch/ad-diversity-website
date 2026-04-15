@@ -33,7 +33,7 @@ const pipelineSteps = [
     step: "1", color: "#7C3AED",
     title: "PDF collection (manual)",
     desc: "Full-text PDFs of Alzheimer's & Dementia articles were manually downloaded for 2025. Automated bulk download is not possible due to copyright restrictions. 913 PDFs were collected and organised into month folders by acceptance date.",
-    note: "Manual download is required for copyright compliance — the only legally sound approach when working with a paywalled journal.",
+    note: "Manual download is required for copyright compliance .",
   },
   {
     step: "2", color: "#7C3AED",
@@ -44,12 +44,12 @@ const pipelineSteps = [
     step: "3", color: "#BE185D",
     title: "Open-science keyword scan",
     desc: "Each PDF is scanned for platform names (github, osf, zenodo, dryad, figshare), sharing statements (code available, data available, openly available), and tool indicators (jupyter, notebook, open source). Repository links are extracted where present.",
-    note: "Hypothesis — Pillar 3: if sharing practices are improving, rates should increase over time and GitHub should dominate. 2025: 88.7% keyword match — but only 9.4% contain an actual repository link.",  },
+    note: "Hypothesis — Pillar 3: if sharing practices are improving, rates should increase over time. 2025: 88.7% keyword match — but only 9.4% contain an actual repository link.",  },
   {
     step: "4", color: "#0E7490",
     title: "Sex-specific keyword scan (NOVEL)",
     desc: "Full text is scanned for: sex-stratified, sex differences, gender-specific, sex-disaggregated, sex-based analysis, female-specific, APOE sex interaction, menopause, hormonal influence, stratified by sex. Papers classified as 'sex-aware main focus' (keyword in title) or 'sex-aware consideration' (keyword in body only).",
-    note: "Hypothesis — Pillar 2: the proportion of AD papers explicitly treating sex as a biological variable is low, in tension with the ~65% female disease burden and the NIH mandate. This step quantifies that gap systematically for the first time.",  },
+    note: "Hypothesis — Pillar 2: the proportion of AD papers explicitly treating sex as a biological variable is low, in tension with the ~65% female disease burden and the NIH mandate. ",  },
   {
     step: "4b", color: "#0E7490",
     title: "Dataset mention scan",
@@ -65,7 +65,7 @@ const pipelineSteps = [
   {
     step: "5b", color: "#7C3AED",
     title: "Author metadata + gender inference",
-    desc: "First/last author names are retrieved via DOI and gender is inferred from names. Enables analysis of gender representation in AD research leadership — a structural dimension of Pillar 3 (researcher diversity as part of the open-science infrastructure question).",
+    desc: "First/last author names are retrieved via DOI and gender is inferred from names using the gender-guesser Python package (heuristic, name-based). Enables analysis of gender representation in AD research leadership — a structural dimension of Pillar 3 (researcher diversity as part of the open-science infrastructure question).",
   },
   {
     step: "6", color: "#1E3A8A",
@@ -75,7 +75,7 @@ const pipelineSteps = [
   {
     step: "7", color: "#1E3A8A",
     title: "Statistical analysis",
-    desc: "Sharing rates, platform breakdown, sex-keyword prevalence, country distributions, and dataset citation frequencies are computed. Scan logs augment workbook data to prevent undercounting from blank fields.",
+    desc: "Sharing rates, platform breakdown, sex-keyword prevalence, country distributions, and dataset citation frequencies are computed. ",
   },
   {
     step: "8", color: "#1E3A8A",
@@ -156,6 +156,7 @@ const limitations = [
   { title: "PDF access", desc: "PDFs must be downloaded manually due to copyright. This limits automation for researchers without institutional access." },
   { title: "Country attribution", desc: "Country is assigned to the first author's affiliation. A US-based researcher studying an African cohort is attributed to the USA — not the population studied." },
   { title: "Gender inference", desc: "First/last author gender is inferred from names — an imperfect proxy that treats gender as binary and may fail for gender-neutral or culturally unfamiliar names." },
+  { title: "Ethnic diversity within countries is invisible", desc: "The pipeline measures geographic diversity at the country level. Studies that investigate ethnic or racial diversity within a single country — for example, comparing African American and White American participants in a US cohort — are not captured. Intra-country ethnic diversity analyses are an important and currently unmeasured dimension that future iterations of this audit should address." },
 ];
 
 function FigureBlock({ fig, color }: { fig: (typeof pillars[0]["figures"])[0]; color: string }) {
@@ -215,10 +216,42 @@ export default function OriginalResearch() {
         </p>
 
         <div className="mt-5 rounded-xl p-5 border" style={{ borderColor: "rgba(14,116,144,0.3)", background: "rgba(14,116,144,0.06)" }}>
-          <p className="text-xs font-semibold text-teal-300 uppercase tracking-wider mb-2">Organising principle</p>
-          <p className="text-sm text-gray-300 leading-relaxed">
-            The same framework that defines the problem in Part I — three interconnected dimensions of diversity — organises this investigation. <strong className="text-gray-100">Pillar I</strong> (geographic and ethnic diversity) asks: which populations does published AD research actually examine — measured through dataset citations as a direct proxy for the populations studied. <strong className="text-gray-100">Pillar II</strong> (sex and gender) asks: does the literature treat sex as a biological variable, measured by how many papers perform sex-aware analyses rather than treating sex as a covariate. <strong className="text-gray-100">Pillar III</strong> (data infrastructure and researcher diversity) asks: is the infrastructure open enough to verify and build on findings — and do the research teams themselves reflect the diversity of the communities most affected, measured through sharing rates, the geographic origin of labs, and the gender composition of authorship.
+          <p className="text-xs font-semibold text-teal-300 uppercase tracking-wider mb-4">Organising principle</p>
+          <p className="text-sm text-gray-400 leading-relaxed mb-4">
+            The same framework that defines the problem in Part I organises this investigation. Each pillar addresses a distinct question, measured through a specific lens.
           </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            {[
+              {
+                n: "I", color: "#1E3A8A", accent: "#93C5FD",
+                label: "Geographic & Ethnic Diversity",
+                question: "Who is studied?",
+                measure: "Dataset citations as a direct proxy for which populations are examined in published AD research.",
+              },
+              {
+                n: "II", color: "#BE185D", accent: "#F9A8D4",
+                label: "Sex & Gender Diversity",
+                question: "Does the literature treat sex as a biological variable?",
+                measure: "Proportion of papers performing sex-aware analyses rather than treating sex as a covariate.",
+              },
+              {
+                n: "III", color: "#7C3AED", accent: "#c4b5fd",
+                label: "Data Infrastructure & Researcher Diversity",
+                question: "Is the infrastructure open, and the research team diverse?",
+                measure: "Code/data sharing rates, geographic origin of labs, and gender composition of authorship.",
+              },
+            ].map((p) => (
+              <div key={p.n} className="rounded-xl p-4 border" style={{ borderColor: p.color + "30", background: p.color + "08" }}>
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="w-6 h-6 rounded-md flex items-center justify-center text-xs font-extrabold text-white shrink-0"
+                    style={{ background: p.color }}>{p.n}</div>
+                  <span className="text-xs font-semibold" style={{ color: p.accent }}>{p.label}</span>
+                </div>
+                <p className="text-xs font-semibold text-gray-200 mb-1">{p.question}</p>
+                <p className="text-xs text-gray-500 leading-relaxed">{p.measure}</p>
+              </div>
+            ))}
+          </div>
         </div>
         <div className="section-divider mt-6" />
       </div>
@@ -234,10 +267,10 @@ export default function OriginalResearch() {
           {[
             { label: "PDFs analysed", value: "913", sub: "manually downloaded", color: "#7C3AED" },
             { label: "Code sharing", value: "88.6%", sub: "keyword match", color: "#BE185D", note: "but only 9.4% with a real repo link" },
-            { label: "Data sharing", value: "3.0%", sub: "27 / 913 papers", color: "#BE185D" },
+            { label: "Data sharing", value: "3.0%", sub: "27 / 913 papers", detail: "(openly accessible datasets)", color: "#BE185D" },
             { label: "Sex-specific keywords", value: "25.5%", sub: "233 papers", color: "#0E7490" },
             { label: "Sex-aware main focus", value: "4.1%", sub: "37 papers (keyword in title)", color: "#0E7490" },
-            { label: "Dataset mentions", value: "52.8%", sub: "482 papers cite ≥1 dataset", color: "#1E3A8A" },
+            { label: "Dataset mentions", value: "52.8%", sub: "482 papers cite ≥1 dataset", detail: "(datasets defined in Part II catalogue)", color: "#1E3A8A" },
             { label: "Repo links extracted", value: "9.4%", sub: "86 papers (80 GitHub)", color: "#7C3AED" },
             { label: "Country extracted", value: "99.1%", sub: "905 / 913 papers", color: "#1E3A8A" },
           ].map((s) => (
@@ -245,7 +278,8 @@ export default function OriginalResearch() {
               <div className="text-2xl font-extrabold mb-0.5" style={{ color: s.color }}>{s.value}</div>
               <div className="text-xs text-gray-400 font-medium">{s.label}</div>
               <div className="text-xs text-gray-600 mt-0.5">{s.sub}</div>
-              {s.note && <div className="text-xs mt-1 italic" style={{ color: s.color + "cc" }}>{s.note}</div>}
+              {(s as any).detail && <div className="text-xs mt-0.5 text-gray-700 italic">{(s as any).detail}</div>}
+              {(s as any).note && <div className="text-xs mt-1 italic" style={{ color: s.color + "cc" }}>{(s as any).note}</div>}
             </div>
           ))}
         </div>
@@ -356,7 +390,7 @@ export default function OriginalResearch() {
           Figures served from{" "}
           <a href="https://github.com/KahinaBch/ad-reproducibility-audit" target="_blank" rel="noopener noreferrer"
             className="text-violet-400 underline">ad-reproducibility-audit/plots/2025/</a>.
-          If a figure does not appear, push the PNG to that repository.
+          
         </p>
 
         <div className="space-y-14">
@@ -404,7 +438,7 @@ export default function OriginalResearch() {
                   </div>
                   <div className="glass-card rounded-xl p-5 border" style={{ borderColor: "rgba(124,58,237,0.2)" }}>
                     <p className="text-xs text-gray-400 leading-relaxed">
-                      <strong className="text-gray-200">Key finding:</strong> The gap between 88.7% keyword match and 9.4% genuine repository links is the core result of Pillar III. It reveals that the majority of open-science language in the AD literature is not backed by accessible repositories — distinguishing between the rhetoric of open science and its practice. The 3.0% data sharing rate further underscores that even where code is shared, data sharing remains the exception rather than the rule.
+                      <strong className="text-gray-200">Key finding:</strong> The gap between 88.7% keyword match and 9.4% genuine repository links is the core result of Pillar III. It reveals that the majority of open-science language in the AD literature is not backed by accessible repositories — distinguishing between the rhetoric of open science and its practice. 
                     </p>
                   </div>
                 </div>
@@ -441,6 +475,40 @@ export default function OriginalResearch() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── Participative block ──────────────────────────────────────────── */}
+      <section className="mb-12">
+        <div className="rounded-2xl p-6 border" style={{ borderColor: "rgba(124,58,237,0.25)", background: "linear-gradient(135deg, rgba(124,58,237,0.06), rgba(190,24,93,0.04))" }}>
+          <div className="flex items-start gap-3 mb-3">
+            <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 text-base"
+              style={{ background: "rgba(124,58,237,0.15)", border: "1px solid rgba(124,58,237,0.3)" }}>
+              🌱
+            </div>
+            <div>
+              <h3 className="text-base font-bold text-gray-100 mb-0.5">A living investigation</h3>
+              <p className="text-xs text-gray-500">Version 1.0 · 2025 · Open to contribution</p>
+            </div>
+          </div>
+          <p className="text-sm text-gray-300 leading-relaxed mb-3">
+            This is a first investigation, designed to be deepened, extended, and continued over time — tracking how open-science practices and researcher diversity in AD research evolve year by year. It is also meant to be participative. If something seems incorrect, could be improved, or if you have data, datasets, or perspectives to contribute, your input is welcome.
+          </p>
+          <p className="text-sm text-gray-400 leading-relaxed mb-4">
+            Future directions include extending the audit to other years and journals, adding intra-country ethnic diversity detection, incorporating citation network analysis, and expanding the dataset catalogue with community contributions.
+          </p>
+          <a
+            href="https://github.com/KahinaBch/ad-diversity-website/issues/new"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold transition-all hover:opacity-80"
+            style={{ background: "rgba(124,58,237,0.2)", border: "1px solid rgba(124,58,237,0.4)", color: "#c4b5fd" }}
+          >
+            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+            </svg>
+            Give feedback
+          </a>
         </div>
       </section>
 

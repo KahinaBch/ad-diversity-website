@@ -38,16 +38,16 @@ export default function Part1() {
             Alzheimer&apos;s disease (AD) is the most common cause of dementia, accounting for 60–70% of cases worldwide. It is a progressive neurodegenerative disorder defined by two core hallmarks visible post-mortem and, increasingly, in vivo: extracellular deposits of amyloid-β (Aβ) protein forming plaques, and intracellular tangles of hyperphosphorylated tau protein. These drive widespread synaptic loss, neuroinflammation, and cortical atrophy, producing the gradual, irreversible decline in memory, language, and reasoning that defines the clinical syndrome.
           </p>
           <p>
-            The dominant theoretical framework — the amyloid cascade hypothesis — holds that Aβ42 oligomers are the initiating event, triggering downstream tau pathology and neurodegeneration. Yet this model is incomplete: neuroinflammation, vascular damage, metabolic dysfunction, and genetic risk all act independently and in concert. This is not merely an academic point. It explains why the first approved anti-amyloid therapies (lecanemab, donanemab) show only modest clinical benefit: they reduce amyloid but cannot reverse the neurodegeneration that has already accumulated, often years before symptoms appear.
+            The dominant theoretical framework, the amyloid cascade hypothesis, holds that Aβ42 oligomers are the initiating event, triggering downstream tau pathology and neurodegeneration. Yet this model is incomplete: neuroinflammation, vascular damage, metabolic dysfunction, and genetic risk all act independently and in concert. This is not merely an academic point. It explains why the first approved anti-amyloid therapies (lecanemab, donanemab) show only modest clinical benefit: they reduce amyloid but cannot reverse the neurodegeneration that has already accumulated, often years before symptoms appear.
           </p>
           <p>
-            At the population level, an estimated 55 million people worldwide live with dementia, a figure projected to exceed 150 million by 2050. More than 95% of cases are sporadic late-onset disease, where age is the primary risk factor. The strongest common genetic risk factor is the <em>APOE</em> ε4 allele, which increases AD risk 3-fold in heterozygous and 8–12-fold in homozygous carriers — but crucially, its effect size varies substantially across ancestral populations, a finding that already signals the importance of diversity in genetic research.
+            At the population level, an estimated 55 million people worldwide live with dementia, a figure projected to exceed 150 million by 2050. More than 95% of cases are sporadic late-onset disease, where age is the primary risk factor. The strongest common genetic risk factor is the <em>APOE</em> ε4 allele, which increases AD risk 3-fold in heterozygous and 8–12-fold in homozygous carriers, but crucially, its effect size varies substantially across ancestral populations, a finding that already signals the importance of diversity in genetic research.
           </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-6">
           {[
-            { label: "Amyloid cascade", desc: "Aβ42 oligomers trigger downstream neurodegeneration — the central, though insufficient, therapeutic target." },
+            { label: "Amyloid cascade", desc: "Aβ42 oligomers trigger downstream neurodegeneration, the central, though insufficient therapeutic target." },
             { label: "Tau pathology", desc: "Hyperphosphorylated tau forms neurofibrillary tangles; propagation follows Braak staging and correlates with cognitive decline." },
             { label: "Neuroinflammation", desc: "Chronic microglial activation drives synaptic loss independently of amyloid burden and varies across genetic backgrounds." },
           ].map((c) => (
@@ -69,7 +69,7 @@ export default function Part1() {
 
         <div className="rounded-xl p-4 mb-6 border-l-4" style={{ borderLeftColor: "#BE185D", background: "rgba(190,24,93,0.08)" }}>
           <p className="text-sm font-semibold text-pink-200">
-            Key message: Nearly half of all dementia cases worldwide could be prevented — but only if we study the right risk factors in the right populations. Current evidence is systematically biased toward high-income, European-descent groups, leaving most of the world&apos;s at-risk population poorly understood.
+            Key message: Nearly half of all dementia cases worldwide could be prevented, but only if we study the right risk factors in the right populations. Current evidence is systematically biased toward high-income, European-descent groups, leaving most of the world&apos;s at-risk population poorly understood.
           </p>
         </div>
 
@@ -81,7 +81,7 @@ export default function Part1() {
             The Lancet Commissions on Dementia Prevention, Intervention and Care have provided the most rigorous estimates of this preventable burden. The 2020 report identified 12 modifiable risk factors, cumulatively accounting for approximately 40% of global dementia cases (Livingston et al., <em>The Lancet</em>, 2020; doi:10.1016/S0140-6736(20)30367-6). The 2024 update added untreated vision loss and elevated LDL cholesterol, revising the preventable fraction upward to approximately 45% (Livingston et al., <em>The Lancet</em>, 2024; doi:10.1016/S0140-6736(24)01296-0).
           </p>
           <p>
-            These figures are both encouraging and sobering. The evidence base for these estimates derives predominantly from high-income, European-descent populations. A broader analysis — incorporating risk factors more prevalent in low- and middle-income countries, and accounting for sex-related disparities — could push the preventable fraction to approximately 65%. It also reveals a striking asymmetry: despite dementia disproportionately affecting women, 57% of the 14 identified risk factors from the 2024 Commission are more prevalent in men.
+            These figures are both encouraging and sobering. The evidence base for these estimates derives predominantly from high-income, European-descent populations. A broader analysis incorporating risk factors more prevalent in low- and middle-income countries, and accounting for sex-related disparities, could push the preventable fraction to approximately 65%. It also reveals a striking asymmetry: despite dementia disproportionately affecting women, 57% of the 14 identified risk factors from the 2024 Commission are more prevalent in men.
           </p>
         </div>
 
@@ -141,7 +141,7 @@ export default function Part1() {
 
         <div className="rounded-xl p-4 mb-6 border-l-4" style={{ borderLeftColor: "#1E3A8A", background: "rgba(30,58,138,0.1)" }}>
           <p className="text-sm font-semibold text-blue-200">
-            Key message: &quot;Diversity&quot; in AD research means three interconnected things — who is studied (ethnic and geographic diversity), how biology differs by sex, and whether the research infrastructure enables the global collaboration needed to study these differences at scale. All three are currently insufficient. The issue is not that prior research is wrong — it is that findings from homogeneous cohorts have restricted applicability to most of the world.
+            Key message: &quot;Diversity&quot; in AD research is defined here as three interconnected things — who is studied (ethnic and geographic diversity), how biology differs by sex, and whether the research infrastructure enables the global collaboration needed to study these differences at scale. All three are currently insufficient. The issue is not that prior research is wrong — it is that findings from homogeneous cohorts have restricted applicability to most of the world.
           </p>
         </div>
 
@@ -149,7 +149,7 @@ export default function Part1() {
         <div className="glass-card rounded-xl p-5 border mb-6" style={{ borderColor: "rgba(167,139,250,0.25)" }}>
           <p className="text-xs font-semibold text-violet-300 uppercase tracking-wider mb-2">What do we mean by &quot;diversity&quot;?</p>
           <p className="text-sm text-gray-300 leading-relaxed">
-            In this context, diversity encompasses three distinct but interrelated dimensions: <strong className="text-violet-200">ethnic and geographic diversity</strong> — studying people from different ancestral backgrounds and world regions, where genetic risk variants, environmental exposures, and healthcare access differ substantially; <strong className="text-violet-200">sex and gender</strong> — treating biological sex as a primary variable shaping AD risk and progression, not a demographic covariate to adjust away; and <strong className="text-violet-200">data and methodological diversity</strong> — ensuring that research infrastructure, data standards, and open-science practices enable equitable global collaboration. Diversity should be valued as a driver of discovery, not as a confounder to control for.
+            In this context, diversity encompasses three distinct but interrelated dimensions: <strong className="text-violet-200">ethnic and geographic diversity</strong>: studying people from different ancestral backgrounds and world regions, where genetic risk variants, environmental exposures, and healthcare access differ substantially; <strong className="text-violet-200">sex and gender</strong>: treating biological sex as a primary variable shaping AD risk and progression, not a demographic covariate to adjust away; and <strong className="text-violet-200">data and methodological diversity</strong>: ensuring that research infrastructure, data standards, and open-science practices enable equitable global collaboration. Diversity should be valued as a driver of discovery, not as a confounder to control for.
           </p>
         </div>
 
@@ -190,13 +190,13 @@ export default function Part1() {
             </p>
             <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
               <p>
-                Despite dementia&apos;s growing global burden — 57 million cases in 2021, with more than 60% in low- and middle-income countries (LMICs), and projections reaching 139–153 million by 2050 — research has historically focused on Western, educated, industrialized, rich, and democratic (WEIRD) cohorts. The scientific cost of this homogeneity is concrete: a 2024 meta-analysis found that most dementia studies do not even report participants&apos; ethnicity or race.
+                Despite dementia&apos;s growing global burden (57 million cases in 2021, more than 60% in low- and middle-income countries, with projections reaching 139–153 million by 2050), research has historically focused on Western, educated, industrialized, rich, and democratic (WEIRD) cohorts. The scientific cost of this homogeneity is concrete: a 2024 meta-analysis found that most dementia studies do not even report participants&apos; ethnicity or race.
               </p>
               <p>
-                The major genome-wide association studies (GWAS) identifying key AD risk loci — in genes such as <em>BIN1</em>, <em>CLU</em>, <em>CR1</em>, and <em>PICALM</em> — were performed almost exclusively through European consortia (IGAP, EADB, ADGC). Allele frequencies, linkage disequilibrium patterns, and gene-environment interactions differ substantially across ancestral groups: risk variants discovered in European populations may not exist at meaningful frequency in African, Asian, or Latin American populations — and vice versa. Work on the local ancestry of the <em>APOE</em> locus reveals ancestry-specific nuances in ε4 risk that are entirely missed in homogeneous datasets.
+                The major genome-wide association studies (GWAS) identifying key AD risk loci in genes such as <em>BIN1</em>, <em>CLU</em>, <em>CR1</em>, and <em>PICALM</em> were performed almost exclusively through European consortia (IGAP, EADB, ADGC). Allele frequencies, linkage disequilibrium patterns, and gene-environment interactions differ substantially across ancestral groups: risk variants discovered in European populations may not exist at meaningful frequency in African, Asian, or Latin American populations, and vice versa. Work on the local ancestry of the <em>APOE</em> locus reveals ancestry-specific nuances in ε4 risk that are entirely missed in homogeneous datasets.
               </p>
               <p>
-                Broadening scope unlocks new science. Work led by the Latin America and the Caribbean Consortium on Dementia (ReDLat) identified unique variants associated with AD and frontotemporal dementia in admixed Latin American populations — findings simply undetectable in European cohorts. The first open multimodal neuroimaging dataset of neurodegeneration from Latin America (BrainLat: 780 participants, 5 countries) underscores how thin the evidence base remains for these populations (Prado et al., <em>Scientific Data</em>, 2023; doi:10.1038/s41597-023-02806-8).
+                Broadening scope unlocks new science. Work led by the Latin America and the Caribbean Consortium on Dementia (ReDLat) identified unique variants associated with AD and frontotemporal dementia in admixed Latin American populations, findings that would be undetectable in European cohorts. The first open multimodal neuroimaging dataset of neurodegeneration from Latin America (BrainLat: 780 participants, 5 countries) underscores how thin the evidence base remains for these populations (Prado et al., <em>Scientific Data</em>, 2023; doi:10.1038/s41597-023-02806-8).
               </p>
             </div>
           </div>
@@ -207,14 +207,14 @@ export default function Part1() {
               Sex &amp; Gender — Why it matters
             </h3>
             <p className="text-xs text-gray-500 mb-3 italic">
-              Two-thirds of people with AD are women — yet sex-stratified analyses remain the exception, not the norm.
+              Two-thirds of people with AD are women, yet sex-stratified analyses remain the exception, not the norm.
             </p>
             <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
               <p>
-                Women bear a disproportionate burden of Alzheimer&apos;s disease — approximately two-thirds of all people living with AD worldwide. Longevity alone does not explain this. There is mounting evidence for sex-specific biological mechanisms: oestrogen withdrawal at menopause appears to accelerate amyloid accumulation; women carrying one <em>APOE4</em> allele face greater AD risk than men with the same genotype; immune responses to neuroinflammation differ between sexes; and tau propagation shows sex-specific patterns.
+                Women bear a disproportionate burden of Alzheimer&apos;s disease: approximately two-thirds of all people living with AD worldwide. Longevity alone does not explain this. There is mounting evidence for sex-specific biological mechanisms: oestrogen withdrawal at menopause appears to accelerate amyloid accumulation; women carrying one <em>APOE4</em> allele face greater AD risk than men with the same genotype; immune responses to neuroinflammation differ between sexes; and tau propagation shows sex-specific patterns.
               </p>
               <p>
-                Despite this, most AD studies treat sex as a demographic covariate to adjust away, not a biological variable to study. The UK Biobank Whole-Genome Sequencing study — sequencing 490,640 participants — explicitly noted that no sex-stratified analyses were performed (UK Biobank WGS Consortium, <em>Nature</em>, 2025; doi:10.1038/s41586-025-09272-9). This is symptomatic of a field-wide gap. The result: sex-specific mechanisms remain poorly characterised, sex-tailored treatments do not exist, and prevention strategies are not optimised for the majority of those most at risk.
+                Despite this, most AD studies treat sex as a demographic covariate to adjust away, not a biological variable to study. The UK Biobank Whole-Genome Sequencing study (490,640 participants) explicitly noted that no sex-stratified analyses were performed (UK Biobank WGS Consortium, <em>Nature</em>, 2025; doi:10.1038/s41586-025-09272-9). This is symptomatic of a field-wide gap. As a result, sex-specific mechanisms remain poorly characterised, sex-tailored treatments do not exist, and prevention strategies are not optimised for the majority of those most at risk.
               </p>
             </div>
             <div className="mt-4 p-3 rounded-lg flex items-center gap-4" style={{ background: "rgba(190,24,93,0.1)" }}>
@@ -223,7 +223,7 @@ export default function Part1() {
                 <div className="text-xs text-gray-400">Female-to-male AD ratio</div>
               </div>
               <div className="text-xs text-gray-400 leading-relaxed">
-                Despite women comprising ~65% of AD patients, 57% of the 2024 Lancet Commission&apos;s modifiable risk factors are more prevalent in men — revealing how incomplete current evidence-based prevention models are for women.
+                Despite women comprising ~65% of AD patients, 57% of the 2024 Lancet Commission&apos;s modifiable risk factors are more prevalent in men, revealing how incomplete current evidence-based prevention models are for women.
               </div>
             </div>
           </div>
@@ -257,17 +257,17 @@ export default function Part1() {
               Data Infrastructure, Open Science &amp; Researcher Diversity — Why it matters
             </h3>
             <p className="text-xs text-gray-500 mb-3 italic">
-              Even when diverse data exist, they are often impossible to combine — and the researchers who could interpret them most meaningfully are often excluded from the system.
+              Even when diverse data exist, they are often impossible to combine, and the researchers who could interpret them most meaningfully are often excluded from the system.
             </p>
             <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
               <p>
-                Studying diverse populations at the scale required demands large, harmonised, multi-site datasets built on open-science infrastructure. The FAIR principles — Findable, Accessible, Interoperable, Reusable (Wilkinson et al., <em>Scientific Data</em>, 2016; doi:10.1038/sdata.2016.18) — provide the conceptual foundation. Governance frameworks like the Five Safes (Boylan et al., <em>Lancet Digital Health</em>, 2024; doi:10.1016/S2589-7500(24)00028-1) and trusted research environments enable cross-national collaboration without compromising participant privacy. Open platforms such as ADDI&apos;s ADWorkbench provide free computational infrastructure to researchers in LMICs who would otherwise be structurally excluded from global science.
+                Studying diverse populations at the scale required demands large, harmonised, multi-site datasets built on open-science infrastructure. The FAIR principles (Findable, Accessible, Interoperable, Reusable (Wilkinson et al., <em>Scientific Data</em>, 2016; doi:10.1038/sdata.2016.18) provide the conceptual foundation. Governance frameworks like the Five Safes (Boylan et al., <em>Lancet Digital Health</em>, 2024; doi:10.1016/S2589-7500(24)00028-1) and trusted research environments enable cross-national collaboration without compromising participant privacy. Open platforms such as ADDI&apos;s ADWorkbench provide free computational infrastructure to researchers in LMICs who would otherwise be structurally excluded from global science.
               </p>
               <p>
-                Crucially, the diversity argument extends beyond study participants to the researchers themselves. Scientists from underrepresented communities are better positioned to build trust with local populations, design culturally relevant studies, and identify research questions that external teams simply do not ask. Without intentional investment in researcher diversity — through fellowships, mentorship, and equitable authorship — the cycle of underrepresentation in both leadership and scientific output will continue. Patient and Public Involvement and Engagement (PPIE) provides an additional mechanism for ensuring research priorities reflect the communities most affected (Blackburn et al., <em>Research Involvement and Engagement</em>, 2018; doi:10.1186/s40900-018-0100-8).
+                Crucially, the diversity argument extends beyond study participants to the researchers themselves. Scientists from underrepresented communities are better positioned to build trust with local populations, design culturally relevant studies, and identify research questions that external teams simply do not ask. Without intentional investment in researcher diversity, through fellowships, mentorship, and equitable authorship, the cycle of underrepresentation in both leadership and scientific output will continue. Patient and Public Involvement and Engagement (PPIE) provides an additional mechanism for ensuring research priorities reflect the communities most affected (Blackburn et al., <em>Research Involvement and Engagement</em>, 2018; doi:10.1186/s40900-018-0100-8).
               </p>
               <p>
-                Reproducibility is the third pillar. A finding is only as useful as its ability to be verified and built upon. Yet the proportion of papers in the AD literature that share code or data remains low — and, until now, unmeasured in a systematic way. If methods are not transparent, the field cannot efficiently build on them, particularly for underrepresented populations where data are already scarce.
+                Reproducibility is the third pillar. A finding is only as useful as its ability to be verified and built upon. Yet the proportion of papers in the AD literature that share code or data remains low and, until now, unmeasured in a systematic way. If methods are not transparent, the field cannot efficiently build on them, particularly for underrepresented populations where data are already scarce.
               </p>
             </div>
 
