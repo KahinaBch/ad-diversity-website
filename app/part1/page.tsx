@@ -150,7 +150,7 @@ export default function Part1() {
         {/* KEY TAKEAWAY */}
         <div className="rounded-xl p-4 mb-6 border-l-4" style={{ borderLeftColor: "#1E3A8A", background: "rgba(30,58,138,0.1)" }}>
           <p className="text-sm font-semibold text-blue-200">
-            Key message: &quot;Diversity&quot; in AD research means three interconnected things — who is studied (ethnic and geographic diversity), how biology differs by sex, and whether the research infrastructure enables the global collaboration needed to study these differences at scale. All three are currently insufficient.
+            Key message: &quot;Diversity&quot; in AD research means three interconnected things — who is studied (ethnic and geographic diversity), how biology differs by sex, and whether the research infrastructure enables the global collaboration needed to study these differences at scale. All three are currently insufficient. And critically: <em>the issue is not that prior research is wrong — it is that findings from homogeneous cohorts have restricted applicability to most of the world.</em>
           </p>
         </div>
 
@@ -158,8 +158,24 @@ export default function Part1() {
         <div className="glass-card rounded-xl p-5 border mb-6" style={{ borderColor: "rgba(167,139,250,0.25)" }}>
           <p className="text-xs font-semibold text-violet-300 uppercase tracking-wider mb-2">What do we mean by &quot;diversity&quot;?</p>
           <p className="text-sm text-gray-300 leading-relaxed">
-            In this context, diversity encompasses three distinct but interrelated dimensions: <strong className="text-violet-200">ethnic and geographic diversity</strong> (studying people from different ancestral backgrounds and world regions, where genetic risk variants, environmental exposures, and healthcare access differ); <strong className="text-violet-200">sex and gender</strong> (acknowledging that biological sex shapes AD risk, biology, and progression, and must be treated as a primary variable rather than a statistical covariate); and <strong className="text-violet-200">data and methodological diversity</strong> (ensuring that research infrastructure, data standards, and open-science practices enable equitable global collaboration).
+            In this context, diversity encompasses three distinct but interrelated dimensions: <strong className="text-violet-200">ethnic and geographic diversity</strong> (studying people from different ancestral backgrounds and world regions, where genetic risk variants, environmental exposures, and healthcare access differ substantially); <strong className="text-violet-200">sex and gender</strong> (treating biological sex as a primary variable shaping AD risk and progression, not a demographic covariate to adjust away); and <strong className="text-violet-200">data and methodological diversity</strong> (ensuring that research infrastructure, data standards, and open-science practices enable equitable global collaboration). As Vilor-Tejedor et al. argue, diversity should be valued as a driver of discovery, not as a confounder to control for (<em>Alzheimer&apos;s & Dementia</em>, 2026; doi:10.1002/alz.71069).
           </p>
+        </div>
+
+        {/* Vilor-Tejedor Figure 1 placeholder */}
+        <div className="glass-card rounded-xl p-5 border mb-6" style={{ borderColor: "rgba(124,58,237,0.25)" }}>
+          <div className="text-xs font-semibold text-violet-400 uppercase tracking-wider mb-2">
+            Figure — Global Mismatch Between Disease Burden and Research Representation
+          </div>
+          <div className="rounded-lg p-8 flex flex-col items-center justify-center text-center"
+            style={{ background: "rgba(30,10,60,0.6)", border: "1px dashed rgba(167,139,250,0.2)", minHeight: "180px" }}>
+            <div className="text-violet-500 text-3xl mb-3">📊</div>
+            <p className="text-sm text-gray-400 mb-1">Figure 1 from Vilor-Tejedor et al. (2026)</p>
+            <p className="text-xs text-gray-600 max-w-md leading-relaxed">
+              (A) Projected regional contributions to global dementia burden by 2050 vs. current research representation — showing how Sub-Saharan Africa and South Asia face the sharpest increases yet remain critically underrepresented. (B) Country-level representation scores across major AD cohorts (ADNI, UK Biobank, EPAD, ReDLat, AIBL, J-ADNI, LASI-DAD).
+            </p>
+            <p className="text-xs text-gray-700 mt-2 italic">Adapted from: Vilor-Tejedor et al. (2026). Alzheimer&apos;s & Dementia, 22(1), e71069. doi:10.1002/alz.71069</p>
+          </div>
         </div>
 
         <div className="space-y-6">
@@ -174,10 +190,13 @@ export default function Part1() {
             </p>
             <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
               <p>
-                The vast majority of AD genetics research has been conducted in populations of European descent. The major genome-wide association studies (GWAS) that identified key risk loci — in genes such as <em>BIN1</em>, <em>CLU</em>, <em>CR1</em>, and <em>PICALM</em> — were performed almost exclusively through European consortia (IGAP, EADB, ADGC). The consequence is concrete: allele frequencies, linkage disequilibrium patterns, and gene-environment interactions differ substantially across ancestral groups. Risk variants discovered in European populations may simply not exist at meaningful frequency in African, Asian, or Latin American populations — and vice versa. We may be missing the most important genetic drivers of AD in the majority of the world&apos;s population.
+                Despite dementia&apos;s wide-reaching global impact, research has historically focused on Western, educated, industrialized, rich, and democratic (WEIRD) cohorts. The consequences are concrete: in 2021, 57 million people worldwide lived with dementia, with more than 60% of cases in low- and middle-income countries (LMICs) — yet the scientific evidence base overwhelmingly derives from high-income, European-descent populations. By 2050, the number of cases is expected to reach 139–153 million, with the burden growing fastest in LMICs (Vilor-Tejedor et al., 2026; doi:10.1002/alz.71069).
               </p>
               <p>
-                The stakes could not be higher. Latin America alone is projected to experience a 220% increase in dementia prevalence by 2050 — far exceeding projections for Europe (7.7%) or North America (12.1%). Yet initiatives like BrainLat, the first open multimodal neuroimaging dataset of neurodegeneration from Latin America (780 participants across 5 countries), highlight just how thin the evidence base remains for these populations (Prado et al., <em>Scientific Data</em>, 2023; doi:10.1038/s41597-023-02806-8). Diverse cohorts require a global data infrastructure built on shared standards — the FAIR principles (Findable, Accessible, Interoperable, Reusable) provide the foundation (Wilkinson et al., <em>Scientific Data</em>, 2016; doi:10.1038/sdata.2016.18).
+                The scientific cost of this homogeneity is concrete. Work on the local ancestry of the <em>APOE</em> locus reveals ancestry-specific nuances in the effect of <em>APOE</em> ε4 that are entirely overlooked in predominantly European datasets. A 2024 meta-analysis underscored that a majority of dementia research studies do not even report participants&apos; ethnicity or race. Among those that do, inclusion of racial and ethnic minorities remained limited. Available data indicated a higher incidence of dementia among Hispanic and African American populations in the United States, and among African Caribbean populations in the United Kingdom — but small sample sizes constrained robust analysis.
+              </p>
+              <p>
+                Broadening scope also unlocks entirely new science. Work led by the Latin America and the Caribbean Consortium on Dementia (ReDLat) identified unique variants associated with AD and frontotemporal dementia in admixed Latin American populations — findings that would simply not have been detectable in European cohorts. The first open multimodal neuroimaging dataset of neurodegenerative diseases from Latin America (BrainLat: 780 participants, 5 countries) highlights how under-resourced this research landscape remains (Prado et al., <em>Scientific Data</em>, 2023; doi:10.1038/s41597-023-02806-8).
               </p>
             </div>
           </div>
@@ -192,10 +211,13 @@ export default function Part1() {
             </p>
             <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
               <p>
-                Women bear a disproportionate burden of Alzheimer&apos;s disease — approximately two-thirds of all people living with AD worldwide. Longevity alone does not explain this gap. There is mounting evidence for sex-specific biological mechanisms: oestrogen withdrawal at menopause appears to accelerate amyloid accumulation; women carrying one <em>APOE4</em> allele face greater AD risk than men with the same genotype; immune responses to neuroinflammation differ between sexes; and the trajectory of tau propagation shows sex-specific patterns. These are not minor variations — they suggest that the disease itself proceeds differently in women.
+                Women bear a disproportionate burden of Alzheimer&apos;s disease — approximately two-thirds of all people living with AD worldwide. Longevity alone does not explain this gap. There is mounting evidence for sex-specific biological mechanisms: oestrogen withdrawal at menopause appears to accelerate amyloid accumulation; women carrying one <em>APOE4</em> allele face greater AD risk than men with the same genotype; immune responses to neuroinflammation differ between sexes; and the trajectory of tau propagation shows sex-specific patterns.
               </p>
               <p>
-                Despite this, most AD studies treat sex as a demographic covariate to adjust away rather than as a biological variable to study. The result is that sex-specific mechanisms remain poorly characterised, sex-tailored treatments do not exist, and prevention strategies are not optimised for the majority of those most at risk. The UK Biobank Whole-Genome Sequencing study — sequencing 490,640 participants — explicitly noted that biological sex was included as a covariate but that no sex-stratified analyses were performed (UK Biobank WGS Consortium, <em>Nature</em>, 2025; doi:10.1038/s41586-025-09272-9). This is symptomatic of a field-wide gap that this project&apos;s reproducibility audit (Sub-repo 3) quantifies directly.
+                Despite this, most AD studies treat sex as a demographic covariate to adjust away rather than as a biological variable to study. The UK Biobank Whole-Genome Sequencing study — sequencing 490,640 participants — explicitly noted that no sex-stratified analyses were performed (UK Biobank WGS Consortium, <em>Nature</em>, 2025; doi:10.1038/s41586-025-09272-9). Vilor-Tejedor et al. (2026) include sex and gender diversity as one of the core dimensions that must be prioritised in datasets, alongside ethnicity, geography, and socioeconomic status.
+              </p>
+              <p>
+                The reproducibility audit conducted in Sub-repo 3 quantifies the proportion of papers in <em>Alzheimer&apos;s & Dementia</em> that explicitly perform sex-stratified analyses — providing the first systematic baseline for this critical methodological transition.
               </p>
             </div>
             <div className="mt-4 p-3 rounded-lg flex items-center gap-4" style={{ background: "rgba(190,24,93,0.1)" }}>
@@ -209,34 +231,86 @@ export default function Part1() {
             </div>
           </div>
 
+          {/* Vilor-Tejedor Figure 2 placeholder */}
+          <div className="glass-card rounded-xl p-5 border" style={{ borderColor: "rgba(14,116,144,0.25)" }}>
+            <div className="text-xs font-semibold text-teal-400 uppercase tracking-wider mb-2">
+              Figure — Dimensions of Diversity in Global Dementia Research
+            </div>
+            <div className="rounded-lg p-8 flex flex-col items-center justify-center text-center"
+              style={{ background: "rgba(10,30,40,0.6)", border: "1px dashed rgba(14,116,144,0.2)", minHeight: "160px" }}>
+              <div className="text-teal-500 text-3xl mb-3">🔬</div>
+              <p className="text-sm text-gray-400 mb-1">Figure 2 from Vilor-Tejedor et al. (2026)</p>
+              <p className="text-xs text-gray-600 max-w-md leading-relaxed">
+                Venn diagram showing how diversity across participants (ethnic/racial diversity, sex/gender, socioeconomic status), researchers (institutional and career diversity, geographic inclusion), and methods (context-aware tools, AI/ML interpretability, multimodal integration, standardised datasets, open science) converge to enable better science. Bottom map: global distribution of William H. Gates Sr. Fellowship cohort.
+              </p>
+              <p className="text-xs text-gray-700 mt-2 italic">Adapted from: Vilor-Tejedor et al. (2026). Alzheimer&apos;s & Dementia, 22(1), e71069. doi:10.1002/alz.71069</p>
+            </div>
+          </div>
+
           {/* Data infrastructure */}
           <div className="glass-card rounded-xl p-6 border" style={{ borderColor: "rgba(107,33,168,0.3)" }}>
             <h3 className="text-sm font-bold mb-1" style={{ color: "#c4b5fd" }}>
-              Data Infrastructure &amp; Reproducibility — Why it matters
+              Data Infrastructure, Open Science &amp; Researcher Diversity — Why it matters
             </h3>
             <p className="text-xs text-gray-500 mb-3 italic">
-              Even when diverse data exist, they are often impossible to combine — because they were not built to talk to each other.
+              Even when diverse data exist, they are often impossible to combine — and the researchers who could interpret them most meaningfully are often shut out of the system.
             </p>
             <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
               <p>
-                Studying diverse populations at the scale required to identify rare genetic variants or small effect sizes demands large, harmonised, multi-site datasets. This is an infrastructure problem as much as a scientific one. Data that are siloed — collected under incompatible protocols, stored in formats that cannot be compared, or locked behind inaccessible governance frameworks — cannot power the analyses the field needs. The FAIR principles (Wilkinson et al., 2016) and governance frameworks like the Five Safes (Boylan et al., <em>Lancet Digital Health</em>, 2024; doi:10.1016/S2589-7500(24)00028-1) provide the conceptual tools. Trusted Research Environments and federated analysis platforms (e.g., DataSHIELD) provide the technical mechanisms to pool data across jurisdictions without compromising participant privacy.
+                Studying diverse populations at the scale required demands large, harmonised, multi-site datasets built on open-science infrastructure. Open-access data platforms — Dementias Platform UK (DPUK, 2014), the Global Alzheimer&apos;s Association Interactive Network (GAAIN, 2012), and the Alzheimer&apos;s Disease Data Initiative (ADDI, 2020) — are reshaping how global dementia research is conducted. ADDI&apos;s ADWorkbench provides secure, cloud-based computational resources to researchers worldwide, particularly in LMICs, at no cost — directly addressing the infrastructure gap that prevents researchers in low-resource settings from participating in global science (Vilor-Tejedor et al., 2026; doi:10.1002/alz.71069).
               </p>
               <p>
-                Reproducibility is the third pillar of this infrastructure. A finding published in AD research is only as useful as its ability to be verified, replicated, and built upon. Yet the proportion of papers in the AD literature that share code or data remains low and unmeasured. This is a critical gap: if the methods underlying published findings are not transparent and reproducible, the field cannot efficiently build on them — particularly for underrepresented populations where data are already scarce. Patient and Public Involvement and Engagement (PPIE) ensures that these infrastructure decisions reflect the priorities of affected communities (Blackburn et al., <em>Research Involvement and Engagement</em>, 2018; doi:10.1186/s40900-018-0100-8).
+                The FAIR principles (Wilkinson et al., 2016) and governance frameworks like the Five Safes (Boylan et al., 2024) provide the conceptual tools. Trusted Research Environments and federated analysis platforms (e.g., DataSHIELD) provide the technical mechanisms to pool data across jurisdictions without compromising participant privacy.
               </p>
+              <p>
+                Crucially, Vilor-Tejedor et al. extend the diversity argument beyond study participants to the researchers themselves. Researchers from historically underrepresented communities are better positioned to build trust with local populations, design culturally relevant studies, and advocate for neglected research priorities. The William H. Gates Sr. Fellowship (ADDI, 2023) exemplifies this by supporting early-career researchers from underrepresented regions through financial support, mentorship, and infrastructure access. Without intentional investment in researcher diversity, the cycle of underrepresentation in both leadership and scientific output will continue.
+              </p>
+            </div>
+
+            {/* Key highlights from Vilor-Tejedor */}
+            <div className="mt-4 p-4 rounded-lg" style={{ background: "rgba(107,33,168,0.1)", border: "1px solid rgba(107,33,168,0.2)" }}>
+              <p className="text-xs font-semibold text-violet-300 mb-2">Five priorities from Vilor-Tejedor et al. (2026)</p>
+              <div className="space-y-1">
+                {[
+                  "Prioritize representation in datasets across ethnicity, geography, sex/gender, and socio-economic status",
+                  "Support early-career researchers from underrepresented regions with long-term funding and mentorship",
+                  "Standardize and adapt tools (cognitive, clinical, genomic) across cultural and linguistic contexts",
+                  "Promote open science through equitable, federated data sharing platforms, and embed community engagement from research design to dissemination",
+                  "Value diversity as a driver of discovery, not as a confounder",
+                ].map((h) => (
+                  <div key={h} className="flex gap-2 text-xs text-gray-400">
+                    <span className="text-violet-500 shrink-0 mt-0.5">▸</span>
+                    <span>{h}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
+        <div className="flex items-center gap-3 mb-4">
+          <div className="w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold text-white shrink-0"
+            style={{ background: "linear-gradient(135deg, #7C3AED, #BE185D)" }}>3</div>
+          <h2 className="text-2xl font-bold text-gray-100">Defining the Diversity that Impacts AD</h2>
+        </div>
+
+        {/* KEY TAKEAWAY */}
+        <div className="rounded-xl p-4 mb-6 border-l-4" style={{ borderLeftColor: "#1E3A8A", background: "rgba(30,58,138,0.1)" }}>
+          <p className="text-sm font-semibold text-blue-200">
+            Key message: &quot;Diversity&quot; in AD research means three interconnected things — who is studied (ethnic and geographic diversity), how biology differs by sex, and whether the research infrastructure enables the global collaboration needed to study these differences at scale. All three are currently insufficient.
+          </p>
+        </div>
+
       {/* Navigation */}
       <div className="flex justify-between mt-12 pt-6 border-t" style={{ borderColor: "rgba(167,139,250,0.15)" }}>
         <div className="text-xs text-gray-600 self-center max-w-lg">
-          References: Livingston et al. 2020, 2024 (The Lancet) · Prado et al. 2023 (Scientific Data) ·
-          Wilkinson et al. 2016 (Scientific Data) · Boylan et al. 2024 (Lancet Digital Health) ·
-          Blackburn et al. 2018 (Res Involv Engagem) · UK Biobank WGS Consortium 2025 (Nature)
+          References: Livingston et al. 2020, 2024 (The Lancet) · Vilor-Tejedor et al. 2026 (Alzheimer&apos;s & Dementia) ·
+          Prado et al. 2023 (Scientific Data) · Wilkinson et al. 2016 (Scientific Data) · 
+          Boylan et al. 2024 (Lancet Digital Health) · Blackburn et al. 2018 (Res Involv Engagem) · 
+          UK Biobank WGS Consortium 2025 (Nature)
         </div>
-        <a href="/part2" className="btn-glow text-sm shrink-0 ml-4">
+        <a href="/ad-diversity-website/part2" className="btn-glow text-sm shrink-0 ml-4">
           Part II: Initiatives →
         </a>
       </div>

@@ -302,10 +302,10 @@ export default function OriginalResearch() {
 
       {/* Navigation */}
       <div className="flex justify-between mt-12 pt-6 border-t" style={{ borderColor: "rgba(167,139,250,0.15)" }}>
-        <a href="/part2/openscience" className="text-sm text-gray-400 hover:text-violet-300 transition-colors">
+        <a href="/ad-diversity-website/part2/openscience" className="text-sm text-gray-400 hover:text-violet-300 transition-colors">
           ← Open Science
         </a>
-        <a href="/" className="btn-glow text-sm">
+        <a href="/ad-diversity-website/" className="btn-glow text-sm">
           Back to Home →
         </a>
       </div>

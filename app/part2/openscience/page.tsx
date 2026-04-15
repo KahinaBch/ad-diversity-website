@@ -94,6 +94,34 @@ const initiatives = [
     color: "#0E7490",
     items: [
       {
+        name: "ADDI",
+        full: "Alzheimer's Disease Data Initiative",
+        desc: "Global open-science platform coordinating access to AD data across institutions, ethnicities, and world regions. ADDI's ADWorkbench provides secure, cloud-based computational infrastructure to researchers worldwide — particularly in LMICs — at no cost, directly addressing the infrastructure gap that prevents researchers in low-resource settings from participating in global science (Vilor-Tejedor et al., Alzheimer's & Dementia, 2026; doi:10.1002/alz.71069).",
+        url: "https://www.alzheimersdata.org/",
+        doi: "",
+      },
+      {
+        name: "Gates Sr. Fellowship",
+        full: "William H. Gates Sr. Fellowship (ADDI)",
+        desc: "Established in 2023 to support early-career researchers worldwide advancing innovative approaches to ADRD. Recruits from diverse countries, institutions, and disciplinary backgrounds. Provides financial support, mentorship, and infrastructure enabling independent, globally inclusive research. A model for how intentional investment in researcher diversity can break the cycle of underrepresentation (Vilor-Tejedor et al., 2026).",
+        url: "https://www.alzheimersdata.org/",
+        doi: "10.1002/alz.71069",
+      },
+      {
+        name: "WW-ADNI",
+        full: "World-Wide Alzheimer's Disease Neuroimaging Initiative",
+        desc: "Global consortium fostering scientific collaboration across diverse regions: North America, Argentina, Australia, Canada, China, Japan, Korea, Mexico, Taiwan. Enables cross-cultural, cross-ancestry analyses on a scale impossible in single-country studies.",
+        url: "https://adni.loni.usc.edu/",
+        doi: "",
+      },
+      {
+        name: "HCAP",
+        full: "Harmonized Cognitive Assessment Protocol",
+        desc: "Developed to generate internationally comparable cognitive measures across diverse cultural and linguistic contexts. By harmonizing assessment protocols across countries, the HCAP Network builds robust global data resources for cross-national analyses of cognitive aging and dementia risk — addressing the assessment standardisation problem highlighted by Vilor-Tejedor et al. (2026).",
+        url: "https://hcap.isr.umich.edu/",
+        doi: "",
+      },
+      {
         name: "AMP-AD",
         full: "Accelerating Medicines Partnership — Alzheimer's Disease",
         desc: "NIH-industry consortium with strong open-science mandate. All data and code deposited in Synapse. Enables multi-omics AD research (proteomics, transcriptomics, epigenomics) via the AD Knowledge Portal.",
@@ -103,7 +131,7 @@ const initiatives = [
       {
         name: "PPIE in AD Research",
         full: "Patient and Public Involvement and Engagement",
-        desc: "Evidence consistently shows that involving patients and the public in research design improves quality, relevance, and uptake. PPIE is critical to ensuring diverse communities can participate meaningfully in studies that affect them — particularly for cohorts from underrepresented backgrounds (Blackburn et al., Research Involvement and Engagement, 2018; doi:10.1186/s40900-018-0100-8).",
+        desc: "Evidence consistently shows that involving patients and the public in research design improves quality, relevance, and uptake. PPIE is critical to ensuring diverse communities can participate meaningfully in studies that affect them. Vilor-Tejedor et al. (2026) highlight community-based approaches as central to building trust, improving recruitment, addressing stigma, and shifting power dynamics in global dementia research (Blackburn et al., Research Involvement and Engagement, 2018; doi:10.1186/s40900-018-0100-8).",
         url: "https://www.nihr.ac.uk/documents/public-involvement-in-research/31771",
         doi: "10.1186/s40900-018-0100-8",
       },
@@ -139,13 +167,11 @@ export default function OpenSciencePage() {
 
       {/* Framing paragraph */}
       <div className="glass-card rounded-xl p-6 mb-10 border" style={{ borderColor: "rgba(124,58,237,0.2)" }}>
+        <p className="text-sm text-gray-300 leading-relaxed mb-3">
+          Sharing data across studies is essential to ensure that results are comparable and reproducible. Differences in data acquisition, processing pipelines, and cohort composition introduce substantial variability if not addressed through standardised preprocessing, quality control, and statistical harmonisation. The development of common data models, shared ontologies, and open analytical workflows are central to large-scale AD research — as is ensuring that the communities most affected by dementia are partners, not merely subjects, in the research enterprise.
+        </p>
         <p className="text-sm text-gray-300 leading-relaxed">
-          Sharing data across studies is essential to ensure that results are comparable and reproducible.
-          Differences in data acquisition, processing pipelines, and cohort composition introduce substantial
-          variability if not addressed through standardised preprocessing, quality control, and statistical
-          harmonisation. The development of common data models, shared ontologies, and open analytical
-          workflows are central to large-scale AD research — as is ensuring that the communities most affected
-          by dementia are partners, not merely subjects, in the research enterprise.
+          As Vilor-Tejedor et al. (2026) argue, diversity is not only an ethical goal but a scientific need — and this requires action at every level: diverse study participants, diverse research teams, culturally adapted tools, equitable data infrastructure, and community engagement embedded from research design to dissemination. Initiatives described below represent concrete progress toward this vision. (<em>Alzheimer&apos;s & Dementia</em>, 2026; doi:10.1002/alz.71069)
         </p>
       </div>
 
