@@ -62,7 +62,7 @@ export default function Home() {
           {/* Course badge */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-medium mb-6 border"
             style={{ borderColor: "rgba(167,139,250,0.3)", background: "rgba(107,33,168,0.15)", color: "#c4b5fd" }}>
-            GBM6330E — Final Project
+            GBM6330E · Final Project
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
@@ -74,7 +74,7 @@ export default function Home() {
           </h1>
 
           <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-3 leading-relaxed">
-            Inclusion of diversity in the prevention and diagnosis of neurodegenerative diseases —
+            Inclusion of diversity in the prevention and diagnosis of neurodegenerative diseases,
             the example of Alzheimer&apos;s disease.
           </p>
           <p className="text-gray-500 text-sm max-w-xl mx-auto mb-10">
@@ -183,7 +183,7 @@ export default function Home() {
           <p className="text-gray-400 text-sm leading-relaxed mb-4">
             The 2024 Lancet Commission identified{" "}
             <span style={{ color: "#BE185D" }} className="font-semibold">14 modifiable risk factors</span>{" "}
-            accounting for ~45% of dementia cases worldwide — yet the majority of evidence comes
+            accounting for ~45% of dementia cases worldwide. Yet the majority of evidence comes
             from high-income, predominantly European-descent cohorts. Genetic, environmental, and
             sex-specific risk factors remain poorly characterised in underrepresented populations.
           </p>

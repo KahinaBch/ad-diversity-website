@@ -22,7 +22,7 @@ const initiatives = [
       {
         name: "GAAIN",
         full: "Global Alzheimer's Association Interactive Network",
-        desc: "A meta-search engine enabling federated queries across multiple AD datasets without centralising data — an early implementation of federated analysis for AD.",
+        desc: "A meta-search engine enabling federated queries across multiple AD datasets without centralising data, an early implementation of federated analysis for AD.",
         url: "http://www.gaain.org/",
         doi: "",
       },
@@ -69,7 +69,7 @@ const initiatives = [
       {
         name: "IGAP",
         full: "International Genomics of Alzheimer's Project",
-        desc: "Meta-GWAS consortium that identified many foundational AD risk loci. Primarily European-descent populations — its results require replication and calibration in diverse ancestral groups.",
+        desc: "Meta-GWAS consortium that identified many foundational AD risk loci. Primarily European-descent populations. Its results require replication and calibration in diverse ancestral groups.",
         url: "https://www.niagads.org/igap",
         doi: "",
       },
@@ -96,7 +96,7 @@ const initiatives = [
       {
         name: "ADDI",
         full: "Alzheimer's Disease Data Initiative",
-        desc: "Global open-science platform coordinating access to AD data across institutions, ethnicities, and world regions. ADDI's ADWorkbench provides secure, cloud-based computational infrastructure to researchers worldwide — particularly in LMICs — at no cost, directly addressing the infrastructure gap that prevents researchers in low-resource settings from participating in global science (Vilor-Tejedor et al., Alzheimer's & Dementia, 2026; doi:10.1002/alz.71069).",
+        desc: "Global open-science platform coordinating access to AD data across institutions, ethnicities, and world regions. ADDI's ADWorkbench provides secure, cloud-based computational infrastructure to researchers worldwide, particularly in LMICs, at no cost, directly addressing the infrastructure gap that prevents researchers in low-resource settings from participating in global science (Vilor-Tejedor et al., Alzheimer's & Dementia, 2026; doi:10.1002/alz.71069).",
         url: "https://www.alzheimersdata.org/",
         doi: "",
       },
@@ -117,13 +117,13 @@ const initiatives = [
       {
         name: "HCAP",
         full: "Harmonized Cognitive Assessment Protocol",
-        desc: "Developed to generate internationally comparable cognitive measures across diverse cultural and linguistic contexts. By harmonizing assessment protocols across countries, the HCAP Network builds robust global data resources for cross-national analyses of cognitive aging and dementia risk — addressing the assessment standardisation problem highlighted by Vilor-Tejedor et al. (2026).",
+        desc: "Developed to generate internationally comparable cognitive measures across diverse cultural and linguistic contexts. By harmonizing assessment protocols across countries, the HCAP Network builds robust global data resources for cross-national analyses of cognitive aging and dementia risk, addressing the assessment standardisation problem highlighted by Vilor-Tejedor et al. (2026).",
         url: "https://hcap.isr.umich.edu/",
         doi: "",
       },
       {
         name: "AMP-AD",
-        full: "Accelerating Medicines Partnership — Alzheimer's Disease",
+        full: "Accelerating Medicines Partnership for Alzheimer's Disease",
         desc: "NIH-industry consortium with strong open-science mandate. All data and code deposited in Synapse. Enables multi-omics AD research (proteomics, transcriptomics, epigenomics) via the AD Knowledge Portal.",
         url: "https://adknowledgeportal.synapse.org/",
         doi: "",
@@ -152,14 +152,14 @@ export default function OpenSciencePage() {
       {/* Header */}
       <div className="mb-10">
         <div className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: "#BE185D" }}>
-          Part II — Open Science
+          Part II: Open Science
         </div>
         <h1 className="text-3xl font-extrabold text-gray-100 mb-3">
           Open Science, Governance & Harmonisation
         </h1>
         <p className="text-gray-400 text-sm max-w-2xl leading-relaxed">
           An evidence-based overview of the frameworks, platforms, and consortia enabling open, diverse, 
-          and reproducible Alzheimer&apos;s disease research — from the FAIR principles to federated analysis,
+          and reproducible Alzheimer&apos;s disease research, from the FAIR principles to federated analysis,
           data governance, and patient involvement.
         </p>
         <div className="section-divider mt-6" />
@@ -168,10 +168,10 @@ export default function OpenSciencePage() {
       {/* Framing paragraph */}
       <div className="glass-card rounded-xl p-6 mb-10 border" style={{ borderColor: "rgba(124,58,237,0.2)" }}>
         <p className="text-sm text-gray-300 leading-relaxed mb-3">
-          Sharing data across studies is essential to ensure that results are comparable and reproducible. Differences in data acquisition, processing pipelines, and cohort composition introduce substantial variability if not addressed through standardised preprocessing, quality control, and statistical harmonisation. The development of common data models, shared ontologies, and open analytical workflows are central to large-scale AD research — as is ensuring that the communities most affected by dementia are partners, not merely subjects, in the research enterprise.
+          Sharing data across studies is essential to ensure that results are comparable and reproducible. Differences in data acquisition, processing pipelines, and cohort composition introduce substantial variability if not addressed through standardised preprocessing, quality control, and statistical harmonisation. The development of common data models, shared ontologies, and open analytical workflows are central to large-scale AD research, ensuring also that the communities most affected by dementia are partners, not merely subjects, in the research enterprise.
         </p>
         <p className="text-sm text-gray-300 leading-relaxed">
-          As Vilor-Tejedor et al. (2026) argue, diversity is not only an ethical goal but a scientific need — and this requires action at every level: diverse study participants, diverse research teams, culturally adapted tools, equitable data infrastructure, and community engagement embedded from research design to dissemination. Initiatives described below represent concrete progress toward this vision. (<em>Alzheimer&apos;s & Dementia</em>, 2026; doi:10.1002/alz.71069)
+          As Vilor-Tejedor et al. (2026) argue, diversity is not only an ethical goal but a scientific need. It requires action at every level: diverse study participants, diverse research teams, culturally adapted tools, equitable data infrastructure, and community engagement embedded from research design to dissemination. Initiatives described below represent concrete progress toward this vision. (<em>Alzheimer&apos;s & Dementia</em>, 2026; doi:10.1002/alz.71069)
         </p>
       </div>
 
@@ -218,7 +218,7 @@ export default function OpenSciencePage() {
             As part of the original research component of this project, we conducted a reproducibility audit
             of papers published in <em>Alzheimer&apos;s & Dementia</em> (Wiley), adapting the methodology
             established by Boudreau et al. for <em>Magnetic Resonance in Medicine</em>. The pipeline detects
-            code and data sharing, geographic origin of first authors, and — uniquely for this study — 
+            code and data sharing, geographic origin of first authors, and, uniquely for this study, 
             performs sex-specific keyword analysis to quantify the proportion of papers performing 
             sex-stratified analyses.
           </p>

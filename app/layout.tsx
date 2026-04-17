@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "AD Diversity Research | GBM6330E",
-  description: "Inclusion of diversity in the prevention and diagnosis of neurodegenerative diseases — the example of Alzheimer's disease.",
+  description: "Inclusion of diversity in the prevention and diagnosis of neurodegenerative diseases: the example of Alzheimer's disease.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -130,7 +130,7 @@ const pillars = [
       {
         file: "fig3_country_distribution.png",
         title: "Where Does Published AD Research Come From?",
-        finding: "905 of 913 papers (99.1%) were successfully attributed to a first-author country. The distribution reveals strong concentration in North America and Europe, with minimal representation from Latin America, Africa, and South/Southeast Asia, the regions facing the fastest-growing dementia burden.",
+        finding: "905 of 913 papers (99.1%) were successfully attributed to a first-author country. The distribution reveals strong concentration in North America and Europe, with minimal representation from Latin America, Africa, and South/Southeast Asia, the regions facing the fastest-growing dementia burden. the fastest-growing dementia burden.",
         relevance: "The geographic origin of research teams shapes which questions are asked, which populations are recruited, and what counts as a priority. Researchers embedded in affected regions bring community trust and context-specific expertise that external teams cannot replicate. This figure maps the current baseline of geographic equity in AD research leadership.",
       },
       {
@@ -241,15 +241,18 @@ export default function OriginalResearch() {
                 measure: "Code/data sharing rates, geographic origin of labs, and gender composition of authorship.",
               },
             ].map((p) => (
-              <div key={p.n} className="rounded-xl p-4 border" style={{ borderColor: p.color + "30", background: p.color + "08" }}>
+              <a key={p.n} href={`#pillar-${p.n}`}
+                className="rounded-xl p-4 border block transition-all hover:opacity-80 hover:scale-[1.02]"
+                style={{ borderColor: p.color + "30", background: p.color + "08", textDecoration: "none" }}>
                 <div className="flex items-center gap-2 mb-2">
                   <div className="w-6 h-6 rounded-md flex items-center justify-center text-xs font-extrabold text-white shrink-0"
                     style={{ background: p.color }}>{p.n}</div>
                   <span className="text-xs font-semibold" style={{ color: p.accent }}>{p.label}</span>
+                  <span className="ml-auto text-xs" style={{ color: p.color + "99" }}>↓</span>
                 </div>
                 <p className="text-xs font-semibold text-gray-200 mb-1">{p.question}</p>
                 <p className="text-xs text-gray-500 leading-relaxed">{p.measure}</p>
-              </div>
+              </a>
             ))}
           </div>
         </div>
@@ -395,7 +398,7 @@ export default function OriginalResearch() {
 
         <div className="space-y-14">
           {pillars.map((pillar) => (
-            <div key={pillar.number}>
+            <div key={pillar.number} id={`pillar-${pillar.number}`} className="scroll-mt-24">
               {/* Pillar header */}
               <div className="flex items-start gap-4 mb-5">
                 <div className="w-10 h-10 rounded-xl flex items-center justify-center font-extrabold text-white shrink-0 text-base"

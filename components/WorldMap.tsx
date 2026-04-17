@@ -191,7 +191,7 @@ export default function WorldMap() {
 
       {mapData && (
         <p className="text-xs text-gray-600 mt-3 text-center italic">
-          {mapData.note} — Last updated {mapData.last_updated}.
+          {mapData.note} · Last updated {mapData.last_updated}.
         </p>
       )}
     </div>

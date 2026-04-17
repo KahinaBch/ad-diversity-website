@@ -5,7 +5,7 @@ export default function Part1() {
       {/* ── Page Header ──────────────────────────────────────────────────── */}
       <div className="mb-12">
         <div className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: "#7C3AED" }}>
-          Part I — State of the Art
+          Part I: State of the Art
         </div>
         <h1 className="text-4xl font-extrabold text-gray-100 mb-2">
           The Need for Diversity
@@ -14,7 +14,7 @@ export default function Part1() {
           in Alzheimer&apos;s Disease Research
         </p>
         <p className="text-gray-500 text-sm max-w-2xl leading-relaxed">
-          Background and motivation — defining the scope of this analysis
+          Background and motivation · defining the scope of this analysis
         </p>
         <div className="section-divider mt-6" />
       </div>
@@ -29,7 +29,7 @@ export default function Part1() {
 
         <div className="rounded-xl p-4 mb-6 border-l-4" style={{ borderLeftColor: "#7C3AED", background: "rgba(107,33,168,0.1)" }}>
           <p className="text-sm font-semibold text-violet-200">
-            Key message: AD is both extremely common and deeply complex — and that complexity is the reason why studying it in a single, narrow population is not enough.
+            Key message: AD is both extremely common and deeply complex, and that complexity is the reason why studying it in a single, narrow population is not enough.
           </p>
         </div>
 
@@ -105,7 +105,7 @@ export default function Part1() {
         </div>
 
         <div className="glass-card rounded-xl p-4 border mb-6" style={{ borderColor: "rgba(190,24,93,0.2)" }}>
-          <p className="text-xs text-pink-300 font-semibold mb-1">New in 2024 — Two additional risk factors:</p>
+          <p className="text-xs text-pink-300 font-semibold mb-1">New in 2024: Two additional risk factors:</p>
           <div className="flex gap-6 text-sm text-gray-300">
             <span><span className="text-pink-400 mr-1">▸</span>Untreated vision loss</span>
             <span><span className="text-pink-400 mr-1">▸</span>Elevated LDL cholesterol</span>
@@ -114,7 +114,7 @@ export default function Part1() {
 
         <div className="glass-card rounded-xl p-5 border" style={{ borderColor: "rgba(190,24,93,0.2)" }}>
           <div className="text-xs font-semibold text-pink-400 uppercase tracking-wider mb-3">
-            Figure — 14 Modifiable Risk Factors Across the Life Course (Lancet Commission 2024)
+            Figure: 14 Modifiable Risk Factors Across the Life Course (Lancet Commission 2024)
           </div>
           <div className="flex justify-center">
             <img
@@ -141,7 +141,7 @@ export default function Part1() {
 
         <div className="rounded-xl p-4 mb-6 border-l-4" style={{ borderLeftColor: "#1E3A8A", background: "rgba(30,58,138,0.1)" }}>
           <p className="text-sm font-semibold text-blue-200">
-            Key message: &quot;Diversity&quot; in AD research is defined here as three interconnected things — who is studied (ethnic and geographic diversity), how biology differs by sex, and whether the research infrastructure enables the global collaboration needed to study these differences at scale. All three are currently insufficient. The issue is not that prior research is wrong — it is that findings from homogeneous cohorts have restricted applicability to most of the world.
+            Key message: &quot;Diversity&quot; in AD research is defined here as three interconnected things: who is studied (ethnic and geographic diversity), how biology differs by sex, and whether the research infrastructure enables the global collaboration needed to study these differences at scale. All three are currently insufficient. The issue is not that prior research is wrong. It is that findings from homogeneous cohorts have restricted applicability to most of the world.
           </p>
         </div>
 
@@ -156,7 +156,7 @@ export default function Part1() {
         {/* Figure 1 — real image */}
         <div className="glass-card rounded-xl p-5 border mb-6" style={{ borderColor: "rgba(124,58,237,0.25)" }}>
           <div className="text-xs font-semibold text-violet-400 uppercase tracking-wider mb-1">
-            Figure 1 — Vilor-Tejedor et al. (2026)
+            Figure 1, Vilor-Tejedor et al. (2026)
           </div>
           <div className="text-sm font-semibold text-gray-200 mb-3">
             Global Mismatch Between Dementia Burden and Research Representation
@@ -171,7 +171,7 @@ export default function Part1() {
             <strong className="not-italic text-gray-400">(A)</strong> Bars: projected share of global dementia burden by 2050 (%) per region.
             Line: current research representation (%). Sub-Saharan Africa and South Asia face the steepest burden growth
             yet account for only 1–2% of research.{" "}
-            <strong className="not-italic text-gray-400">(B)</strong> Country-level representation scores — the United States (30) and UK (25)
+            <strong className="not-italic text-gray-400">(B)</strong> Country-level representation scores: the United States (30) and UK (25)
             dominate; Nigeria scores 1.{" "}
             Adapted from: Vilor-Tejedor et al. (2026). <em>Alzheimer&apos;s & Dementia</em>, 22(1), e71069.
             doi:10.1002/alz.71069. CC BY-NC-ND 4.0.
@@ -183,7 +183,7 @@ export default function Part1() {
           {/* Geographic */}
           <div className="glass-card rounded-xl p-6 border" style={{ borderColor: "rgba(30,58,138,0.3)" }}>
             <h3 className="text-sm font-bold mb-1" style={{ color: "#93C5FD" }}>
-              Geographic &amp; Ethnic Diversity — Why it matters
+              Geographic &amp; Ethnic Diversity: Why it matters
             </h3>
             <p className="text-xs text-gray-500 mb-3 italic">
               The same disease, studied in the same kind of people, will produce answers that only work for those people.
@@ -204,7 +204,7 @@ export default function Part1() {
           {/* Sex */}
           <div className="glass-card rounded-xl p-6 border" style={{ borderColor: "rgba(190,24,93,0.3)" }}>
             <h3 className="text-sm font-bold mb-1" style={{ color: "#F9A8D4" }}>
-              Sex &amp; Gender — Why it matters
+              Sex &amp; Gender: Why it matters
             </h3>
             <p className="text-xs text-gray-500 mb-3 italic">
               Two-thirds of people with AD are women, yet sex-stratified analyses remain the exception, not the norm.
@@ -231,7 +231,7 @@ export default function Part1() {
           {/* Figure 2 — real image */}
           <div className="glass-card rounded-xl p-5 border" style={{ borderColor: "rgba(14,116,144,0.25)" }}>
             <div className="text-xs font-semibold text-teal-400 uppercase tracking-wider mb-1">
-              Figure 2 — Vilor-Tejedor et al. (2026)
+              Figure 2, Vilor-Tejedor et al. (2026)
             </div>
             <div className="text-sm font-semibold text-gray-200 mb-3">
               Dimensions of Diversity in Global Dementia Research
@@ -244,8 +244,8 @@ export default function Part1() {
             />
             <p className="text-xs text-gray-500 text-center mt-3 leading-relaxed italic">
               <strong className="not-italic text-gray-400">Left:</strong> Scale of the global dementia burden (57M cases; 61% in LMICs) and historical focus on non-diverse populations.{" "}
-              <strong className="not-italic text-gray-400">Top right:</strong> Venn diagram — diversity across participants (ethnic/racial/sex/socioeconomic), researchers (institutional diversity, career support, geographic inclusion), and methods (open science, AI/ML, multimodal integration, community-based research) converges to enable better science.{" "}
-              <strong className="not-italic text-gray-400">Bottom:</strong> Geographic reach of the William H. Gates Sr. Fellowship — a model for equitable, international capacity building.{" "}
+              <strong className="not-italic text-gray-400">Top right:</strong> Venn diagram showing diversity across participants (ethnic/racial/sex/socioeconomic), researchers (institutional diversity, career support, geographic inclusion), and methods (open science, AI/ML, multimodal integration, community-based research) converges to enable better science.{" "}
+              <strong className="not-italic text-gray-400">Bottom:</strong> Geographic reach of the William H. Gates Sr. Fellowship, a model for equitable, international capacity building.{" "}
               Adapted from: Vilor-Tejedor et al. (2026). <em>Alzheimer&apos;s & Dementia</em>, 22(1), e71069.
               doi:10.1002/alz.71069. CC BY-NC-ND 4.0.
             </p>
@@ -254,7 +254,7 @@ export default function Part1() {
           {/* Data infrastructure */}
           <div className="glass-card rounded-xl p-6 border" style={{ borderColor: "rgba(107,33,168,0.3)" }}>
             <h3 className="text-sm font-bold mb-1" style={{ color: "#c4b5fd" }}>
-              Data Infrastructure, Open Science &amp; Researcher Diversity — Why it matters
+              Data Infrastructure, Open Science &amp; Researcher Diversity: Why it matters
             </h3>
             <p className="text-xs text-gray-500 mb-3 italic">
               Even when diverse data exist, they are often impossible to combine, and the researchers who could interpret them most meaningfully are often excluded from the system.
@@ -273,7 +273,7 @@ export default function Part1() {
 
             {/* Key priorities */}
             <div className="mt-4 p-4 rounded-lg" style={{ background: "rgba(107,33,168,0.1)", border: "1px solid rgba(107,33,168,0.2)" }}>
-              <p className="text-xs font-semibold text-violet-300 mb-2">Five priorities — Vilor-Tejedor et al. (Alzheimer&apos;s & Dementia, 2026; doi:10.1002/alz.71069)</p>
+              <p className="text-xs font-semibold text-violet-300 mb-2">Five priorities, Vilor-Tejedor et al. (Alzheimer&apos;s & Dementia, 2026; doi:10.1002/alz.71069)</p>
               <div className="space-y-1">
                 {[
                   "Prioritize representation in datasets across ethnicity, geography, sex/gender, and socio-economic status",

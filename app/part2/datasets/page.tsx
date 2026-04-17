@@ -7,7 +7,7 @@ export default function DatasetsPage() {
       {/* Header */}
       <div className="mb-10">
         <div className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: "#7C3AED" }}>
-          Part II — Datasets
+          Part II: Datasets
         </div>
         <h1 className="text-3xl font-extrabold text-gray-100 mb-3">
           AD Dataset Catalogue
@@ -45,7 +45,7 @@ export default function DatasetsPage() {
 
       <div className="section-divider mb-14" />
 
-      {/* Dataset Table — Neuroimaging & Genetics */}
+      {/* Dataset Table: Neuroimaging & Genetics */}
       <section className="mb-14">
         <div className="flex items-center justify-between mb-5">
           <div>

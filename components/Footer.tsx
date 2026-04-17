@@ -14,7 +14,7 @@ export default function Footer() {
               <span className="font-semibold text-violet-200 text-sm">GBM6330E Final Project</span>
             </div>
             <p className="text-xs text-gray-400 leading-relaxed mb-2">
-              Inclusion of diversity in the prevention and diagnosis of neurodegenerative diseases — the example of Alzheimer&apos;s disease.
+              Inclusion of diversity in the prevention and diagnosis of neurodegenerative diseases: the example of Alzheimer&apos;s disease.
             </p>
             <p className="text-xs text-gray-500 leading-relaxed">
               Built by{" "}
@@ -30,6 +30,11 @@ export default function Footer() {
                 GBM6330E: Emerging Biomedical Technologies
               </a>
               {" "}of Dr. Nikola Stikov at Polytechnique Montréal.
+            </p>
+            <p className="text-xs text-gray-600 leading-relaxed mt-2">
+              The layout of these interactive pages has been done with the help of{" "}
+              <a href="https://claude.ai" target="_blank" rel="noopener noreferrer"
+                className="text-gray-500 hover:text-violet-400 transition-colors">Claude.ai</a>.
             </p>
           </div>
 
@@ -84,8 +89,14 @@ export default function Footer() {
         <div className="section-divider mb-6" />
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-gray-500">
-          <p>© 2025 KahinaBch — GBM6330E. Open-source under MIT License.</p>
+          <p>© 2025 KahinaBch · GBM6330E · Open-source under MIT License.</p>
           <p>Built with Next.js · Deployed on GitHub Pages · Data from public scientific sources.</p>
+        </div>
+        <div className="mt-3 text-center text-xs" style={{ color: "rgba(124,58,237,0.5)" }}>
+          The layout of these interactive pages has been designed with{" "}
+          <a href="https://claude.ai" target="_blank" rel="noopener noreferrer"
+            className="hover:opacity-80 transition-opacity underline"
+            style={{ color: "rgba(124,58,237,0.7)" }}>Claude.ai</a>.
         </div>
       </div>
     </footer>

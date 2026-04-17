@@ -14,7 +14,7 @@ const TIMELINE: TimelineEntry[] = [
   {
     year: 1958,
     name: "BLSA",
-    description: "Baltimore Longitudinal Study of Aging — the longest-running scientific study of human aging in the United States.",
+    description: "Baltimore Longitudinal Study of Aging, the longest-running scientific study of human aging in the United States.",
     significance: "Established the template for longitudinal aging research before AD was fully characterised.",
     modality: "Clinical / Cognitive",
     color: "#1E3A8A",
@@ -30,7 +30,7 @@ const TIMELINE: TimelineEntry[] = [
   {
     year: 1992,
     name: "WHICAP",
-    description: "Washington Heights–Inwood Columbia Aging Project — a community-based study with exceptional ethnic diversity.",
+    description: "Washington Heights–Inwood Columbia Aging Project, a community-based study with exceptional ethnic diversity.",
     significance: "First major AD cohort specifically designed to include Caribbean Hispanic and African American populations.",
     modality: "Clinical / Cognitive",
     color: "#BE185D",
@@ -38,7 +38,7 @@ const TIMELINE: TimelineEntry[] = [
   {
     year: 1994,
     name: "ROSMAP",
-    description: "Religious Orders Study and Memory and Aging Project — two parallel longitudinal studies with post-mortem brain donation.",
+    description: "Religious Orders Study and Memory and Aging Project: two parallel longitudinal studies with post-mortem brain donation.",
     significance: "Unique clinical-to-neuropathology design enabling multi-omics integration (proteomics, epigenomics, transcriptomics).",
     modality: "Multi-omics / Neuropathology",
     color: "#7C3AED",
@@ -46,7 +46,7 @@ const TIMELINE: TimelineEntry[] = [
   {
     year: 1999,
     name: "NACC",
-    description: "National Alzheimer's Coordinating Center — harmonises data across 34 US ADRCs.",
+    description: "National Alzheimer's Coordinating Center, harmonising data across 34 US ADRCs.",
     significance: "Largest harmonised clinical–neuropathological database for AD in the USA.",
     modality: "Clinical / Genetics",
     color: "#1E3A8A",
@@ -54,7 +54,7 @@ const TIMELINE: TimelineEntry[] = [
   {
     year: 2001,
     name: "WRAP",
-    description: "Wisconsin Registry for Alzheimer's Prevention — enriched for parental history of AD.",
+    description: "Wisconsin Registry for Alzheimer's Prevention, enriched for parental history of AD.",
     significance: "Prevention-focused paradigm shift: studying at-risk individuals decades before symptom onset.",
     modality: "MRI / Cognitive",
     color: "#7C3AED",
@@ -62,7 +62,7 @@ const TIMELINE: TimelineEntry[] = [
   {
     year: 2004,
     name: "ADNI",
-    description: "Alzheimer's Disease Neuroimaging Initiative — public-private partnership to validate biomarkers.",
+    description: "Alzheimer's Disease Neuroimaging Initiative: public-private partnership to validate biomarkers.",
     significance: "Became the de-facto reference standard for AD neuroimaging and biomarker research. Spawned ADNI-GO, 2, 3, 4.",
     modality: "MRI / PET / CSF / Genetics",
     color: "#7C3AED",
@@ -78,7 +78,7 @@ const TIMELINE: TimelineEntry[] = [
   {
     year: 2006,
     name: "AIBL",
-    description: "Australian Imaging, Biomarker & Lifestyle study — major Asia-Pacific cohort.",
+    description: "Australian Imaging, Biomarker & Lifestyle study, major Asia-Pacific cohort.",
     significance: "Extended AD research to the Southern Hemisphere; strong amyloid PET and lifestyle data.",
     modality: "MRI / PET / Lifestyle",
     color: "#0E7490",
@@ -102,15 +102,15 @@ const TIMELINE: TimelineEntry[] = [
   {
     year: 2014,
     name: "A4 Study",
-    description: "Anti-Amyloid Treatment in Asymptomatic Alzheimer's — screened 6,700+ for amyloid positivity.",
-    significance: "First large-scale international prevention trial. Includes Japan — rare non-Western site.",
+    description: "Anti-Amyloid Treatment in Asymptomatic Alzheimer's, screened 6,700+ for amyloid positivity.",
+    significance: "First large-scale international prevention trial. Includes Japan, a rare non-Western site.",
     modality: "PET / MRI / Blood",
     color: "#7C3AED",
   },
   {
     year: 2015,
     name: "EPAD",
-    description: "European Prevention of Alzheimer's Dementia — adaptive-design pan-European trial platform.",
+    description: "European Prevention of Alzheimer's Dementia: adaptive-design pan-European trial platform.",
     significance: "Established European infrastructure for prevention trials with harmonised multi-modal data.",
     modality: "MRI / PET / CSF / EEG",
     color: "#BE185D",
@@ -126,7 +126,7 @@ const TIMELINE: TimelineEntry[] = [
   {
     year: 2016,
     name: "EMIF-AD",
-    description: "European Medical Information Framework — harmonising existing European cohort data.",
+    description: "European Medical Information Framework, harmonising existing European cohort data.",
     significance: "Demonstrated data harmonisation approach without new data collection; strong proteomics.",
     modality: "MRI / PET / Proteomics",
     color: "#BE185D",
@@ -134,7 +134,7 @@ const TIMELINE: TimelineEntry[] = [
   {
     year: 2017,
     name: "LASI-DAD",
-    description: "Longitudinal Aging Study in India — Diagnostic Assessment of Dementia.",
+    description: "Longitudinal Aging Study in India: Diagnostic Assessment of Dementia.",
     significance: "Largest population-based dementia study from a LMIC; critical for underrepresented populations.",
     modality: "Clinical / Cognitive / Genetics",
     color: "#065F46",
@@ -142,7 +142,7 @@ const TIMELINE: TimelineEntry[] = [
   {
     year: 2019,
     name: "OASIS-3",
-    description: "Open Access Series of Imaging Studies (longitudinal) — fully open access.",
+    description: "Open Access Series of Imaging Studies (longitudinal): fully open access.",
     significance: "Rare example of fully open multi-modal AD data; amyloid + tau PET freely available.",
     modality: "MRI / PET / CSF",
     color: "#7C3AED",
@@ -150,7 +150,7 @@ const TIMELINE: TimelineEntry[] = [
   {
     year: 2019,
     name: "ReDLat",
-    description: "Latin American Network for Early-Onset Dementia — 5 countries.",
+    description: "Latin American Network for Early-Onset Dementia, 5 countries.",
     significance: "First coordinated Latin American dementia research network. Includes Indigenous-descent populations.",
     modality: "MRI / Blood / Genetics",
     color: "#0E7490",
