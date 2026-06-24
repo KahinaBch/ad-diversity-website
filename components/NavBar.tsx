@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useTheme } from "./ThemeProvider";
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -31,6 +32,12 @@ export default function NavBar() {
   const [open, setOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const pathname = usePathname();
+  const { theme, resolved, setTheme } = useTheme();
+
+  function cycleTheme() {
+    const next = theme === "system" ? "light" : theme === "light" ? "dark" : "system";
+    setTheme(next);
+  }
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -94,18 +101,36 @@ export default function NavBar() {
             ))}
           </div>
 
-          {/* GitHub link */}
+          {/* Theme toggle + GitHub link */}
+          <div className="hidden md:flex items-center gap-2">
+          <button
+            onClick={cycleTheme}
+            className="theme-toggle"
+            aria-label={`Theme: ${theme}`}
+            title={`Theme: ${theme} (${resolved})`}
+          >
+            {resolved === "dark" ? (
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>
+            ) : (
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+              </svg>
+            )}
+          </button>
           <a
             href="https://github.com/KahinaBch/ad-diversity-website"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium text-violet-300 border border-violet-800/50 hover:border-violet-600 hover:text-white transition-all"
+            className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium text-violet-300 border border-violet-800/50 hover:border-violet-600 hover:text-white transition-all"
           >
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
             </svg>
             GitHub
           </a>
+          </div>
 
           {/* Mobile burger */}
           <button
@@ -145,6 +170,12 @@ export default function NavBar() {
                 ))}
               </div>
             ))}
+            <button
+              onClick={cycleTheme}
+              className="mx-3 mt-2 px-3 py-2 text-sm text-gray-300 hover:text-violet-200 flex items-center gap-2"
+            >
+              {resolved === "dark" ? "☀️" : "🌙"} Theme: {theme}
+            </button>
           </div>
         )}
       </div>
