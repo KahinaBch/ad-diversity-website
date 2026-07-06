@@ -19,14 +19,14 @@ interface Dataset {
 const ALL_TYPES = [
   "MRI", "PET", "CSF", "Blood", "Genetics", "Proteomics",
   "Cognitive", "Clinical", "Neuropathology", "Exposomics",
-  "Epigenomics", "Transcriptomics", "Lifestyle", "EEG",
+  "Epigenomics", "Transcriptomics", "Metabolomics", "Lifestyle", "EEG",
 ];
 
 export default function DatasetTable() {
   const [datasets, setDatasets] = useState<Dataset[]>([]);
   const [search, setSearch] = useState("");
   const [accessFilter, setAccessFilter] = useState<string>("all");
-  const [typeFilter, setTypeFilter] = useState<string>("all");
+  const [typeFilter, setTypeFilter] = useState<Set<string>>(new Set());
   const [sortKey, setSortKey] = useState<"year" | "name" | "n_subjects">("year");
   const [sortDir, setSortDir] = useState<"asc" | "desc">("asc");
   const [expanded, setExpanded] = useState<string | null>(null);
@@ -49,7 +49,7 @@ export default function DatasetTable() {
           x.origin.join(" ").toLowerCase().includes(search.toLowerCase())
       );
     if (accessFilter !== "all") d = d.filter((x) => x.access === accessFilter);
-    if (typeFilter !== "all") d = d.filter((x) => x.data_types.includes(typeFilter));
+    if (typeFilter.size > 0) d = d.filter((x) => x.data_types.some((t) => typeFilter.has(t)));
     d.sort((a, b) => {
       const av = a[sortKey];
       const bv = b[sortKey];
@@ -59,6 +59,14 @@ export default function DatasetTable() {
     });
     return d;
   }, [datasets, search, accessFilter, typeFilter, sortKey, sortDir]);
+
+  const toggleType = (t: string) => {
+    setTypeFilter((prev) => {
+      const next = new Set(prev);
+      next.has(t) ? next.delete(t) : next.add(t);
+      return next;
+    });
+  };
 
   const toggleSort = (key: typeof sortKey) => {
     if (key === sortKey) setSortDir((d) => (d === "asc" ? "desc" : "asc"));
@@ -103,7 +111,7 @@ export default function DatasetTable() {
       </div>
 
       {/* Filters */}
-      <div className="flex flex-wrap gap-3 mb-4">
+      <div className="flex flex-wrap gap-3 mb-3">
         <input
           type="text"
           value={search}
@@ -123,17 +131,36 @@ export default function DatasetTable() {
           <option value="partial">Application-based</option>
           <option value="restricted">Restricted</option>
         </select>
-        <select
-          value={typeFilter}
-          onChange={(e) => setTypeFilter(e.target.value)}
-          className="px-3 py-2 rounded-lg text-sm text-gray-200 border"
-          style={{ background: "var(--bg-card)", borderColor: "rgba(167,139,250,0.2)" }}
-        >
-          <option value="all">All data types</option>
-          {ALL_TYPES.map((t) => (
-            <option key={t} value={t}>{t}</option>
-          ))}
-        </select>
+      </div>
+
+      {/* Data type chips */}
+      <div className="flex flex-wrap gap-1.5 mb-4">
+        {typeFilter.size > 0 && (
+          <button
+            onClick={() => setTypeFilter(new Set())}
+            className="px-2.5 py-1 rounded-full text-xs font-medium border transition-all"
+            style={{ borderColor: "rgba(190,24,93,0.4)", color: "#f9a8d4", background: "rgba(190,24,93,0.12)" }}
+          >
+            Clear ✕
+          </button>
+        )}
+        {ALL_TYPES.map((t) => {
+          const active = typeFilter.has(t);
+          return (
+            <button
+              key={t}
+              onClick={() => toggleType(t)}
+              className="px-2.5 py-1 rounded-full text-xs font-medium border transition-all"
+              style={{
+                borderColor: active ? "rgba(167,139,250,0.6)" : "rgba(167,139,250,0.15)",
+                color: active ? "#c4b5fd" : "var(--text-dim)",
+                background: active ? "rgba(107,33,168,0.3)" : "transparent",
+              }}
+            >
+              {t}
+            </button>
+          );
+        })}
       </div>
 
       {/* Table */}
