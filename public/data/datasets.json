@@ -4,1048 +4,919 @@
     "name": "BLSA",
     "full_name": "Baltimore Longitudinal Study of Aging",
     "year": 1958,
-    "data_types": [
-      "MRI",
-      "PET",
-      "Blood",
-      "Cognitive",
-      "Clinical",
-      "Lifestyle"
-    ],
+    "data_types": ["MRI", "PET", "Blood", "Cognitive", "Clinical", "Lifestyle"],
     "access": "restricted",
     "n_subjects": 3000,
     "n_note": "~3,000+",
-    "origin": [
-      "USA"
-    ],
+    "origin": ["USA"],
     "doi": "10.1093/geronb/gbs055",
     "url": "https://www.blsa.nih.gov/",
-    "notes": "Oldest US longitudinal aging study. NIA-funded. Includes amyloid PET."
+    "notes": "Oldest US longitudinal aging study. NIA-funded. Includes amyloid PET.",
+    "data_level": ["preprocessed", "processed"],
+    "womens_health": "Women enrolled from 1978 onwards; limited menopause-specific data collected",
+    "access_difficulty": "hard",
+    "life_stage": ["midlife", "late life"],
+    "ethnic_diversity": "Predominantly White/European-American; limited racial diversity",
+    "design": "longitudinal"
   },
   {
     "id": "swedish-twin-registry",
     "name": "Swedish Twin Registry",
     "full_name": "Swedish Twin Registry",
     "year": 1961,
-    "data_types": [
-      "Clinical",
-      "Genetics",
-      "Cognitive",
-      "Lifestyle"
-    ],
+    "data_types": ["Clinical", "Genetics", "Cognitive", "Lifestyle"],
     "access": "restricted",
     "n_subjects": 194000,
     "n_note": "~194,000 twins registered",
-    "origin": [
-      "Sweden"
-    ],
+    "origin": ["Sweden"],
     "doi": "10.1375/twin.5.5.427",
     "url": "https://ki.se/en/research/research-infrastructure-and-environments/core-facilities-for-research/the-swedish-twin-registry",
-    "notes": "World's largest twin registry, hosted at Karolinska Institutet. Not primarily designed for AD research \u2014 used to disentangle genetic and environmental contributions to dementia through classical twin design."
+    "notes": "World's largest twin registry, hosted at Karolinska Institutet. Not primarily designed for AD research — used to disentangle genetic and environmental contributions to dementia through classical twin design.",
+    "data_level": ["processed"],
+    "womens_health": "unknown",
+    "access_difficulty": "hard",
+    "life_stage": ["early adulthood", "midlife", "late life"],
+    "ethnic_diversity": "Predominantly White/Scandinavian",
+    "design": "longitudinal"
   },
   {
     "id": "knight-adrc",
     "name": "Knight ADRC",
     "full_name": "Knight Alzheimer Disease Research Center at WUSTL",
     "year": 1979,
-    "data_types": [
-      "MRI",
-      "PET",
-      "CSF",
-      "Blood",
-      "Genetics",
-      "Proteomics",
-      "Cognitive",
-      "Neuropathology"
-    ],
+    "data_types": ["MRI", "PET", "CSF", "Blood", "Genetics", "Proteomics", "Cognitive", "Neuropathology"],
     "access": "restricted",
     "n_subjects": 3000,
     "n_note": "~3,000+",
-    "origin": [
-      "USA"
-    ],
+    "origin": ["USA"],
     "doi": "10.1016/j.jalz.2022.01.001",
     "url": "https://knightadrc.wustl.edu/",
-    "notes": "Deep phenotyping. Rich proteomics (CSF + plasma). Well-curated post-mortem."
+    "notes": "Deep phenotyping. Rich proteomics (CSF + plasma). Well-curated post-mortem.",
+    "data_level": ["raw", "preprocessed", "processed"],
+    "womens_health": "unknown",
+    "access_difficulty": "hard",
+    "life_stage": ["midlife", "late life"],
+    "ethnic_diversity": "Predominantly White; some African American representation",
+    "design": "longitudinal"
   },
   {
     "id": "whicap",
     "name": "WHICAP",
-    "full_name": "Washington Heights\u2013Inwood Columbia Aging Project",
+    "full_name": "Washington Heights–Inwood Columbia Aging Project",
     "year": 1992,
-    "data_types": [
-      "Clinical",
-      "Cognitive",
-      "Blood",
-      "Genetics"
-    ],
+    "data_types": ["Clinical", "Cognitive", "Blood", "Genetics"],
     "access": "restricted",
     "n_subjects": 3000,
     "n_note": "~3,000",
-    "origin": [
-      "USA"
-    ],
+    "origin": ["USA"],
     "doi": "10.1001/archneur.64.8.1119",
     "url": "https://www.maelstrom-research.org/study/whicap",
-    "notes": "Notably diverse cohort: Caribbean Hispanic and African American populations. NYC-based."
+    "notes": "Notably diverse cohort: Caribbean Hispanic and African American populations. NYC-based.",
+    "data_level": ["processed"],
+    "womens_health": "unknown",
+    "access_difficulty": "hard",
+    "life_stage": ["late life"],
+    "ethnic_diversity": "High — ~65% Caribbean Hispanic (Dominican) and African American",
+    "design": "longitudinal"
   },
   {
     "id": "rosmap",
     "name": "ROSMAP",
     "full_name": "Religious Orders Study and Memory and Aging Project",
     "year": 1994,
-    "data_types": [
-      "MRI",
-      "Genetics",
-      "Proteomics",
-      "Epigenomics",
-      "Transcriptomics",
-      "Neuropathology",
-      "Cognitive"
-    ],
+    "data_types": ["MRI", "Genetics", "Proteomics", "Epigenomics", "Transcriptomics", "Neuropathology", "Cognitive"],
     "access": "restricted",
     "n_subjects": 3000,
     "n_note": "~3,000",
-    "origin": [
-      "USA"
-    ],
+    "origin": ["USA"],
     "doi": "10.1001/archgenpsychiatry.2012.1461",
     "url": "https://dss.niagads.org/cohorts/religious-orders-study-memory-and-aging-project-rosmap/",
-    "notes": "Rich post-mortem multi-omics. Unique longitudinal clinical-to-neuropath design."
+    "notes": "Rich post-mortem multi-omics. Unique longitudinal clinical-to-neuropath design.",
+    "data_level": ["raw", "preprocessed", "processed"],
+    "womens_health": "Religious Orders Study includes nuns; sex-specific analyses available",
+    "access_difficulty": "moderate",
+    "life_stage": ["late life"],
+    "ethnic_diversity": "Predominantly White; limited racial diversity",
+    "design": "longitudinal"
   },
   {
     "id": "biocard",
     "name": "BIOCARD",
     "full_name": "Biomarkers of Cognitive Decline Among Normal Individuals",
     "year": 1995,
-    "data_types": [
-      "MRI",
-      "CSF",
-      "Blood",
-      "Cognitive",
-      "Clinical"
-    ],
+    "data_types": ["MRI", "CSF", "Blood", "Cognitive", "Clinical"],
     "access": "restricted",
     "n_subjects": 349,
     "n_note": "349",
-    "origin": [
-      "USA"
-    ],
+    "origin": ["USA"],
     "doi": "10.1016/j.jalz.2014.04.010",
     "url": "https://www.biocard-se.org/",
-    "notes": "Longitudinal study of cognitively normal volunteers at NIH. Rich longitudinal CSF biomarker data spanning 25+ years. Unique long-term follow-up."
+    "notes": "Longitudinal study of cognitively normal volunteers at NIH. Rich longitudinal CSF biomarker data spanning 25+ years. Unique long-term follow-up.",
+    "data_level": ["preprocessed", "processed"],
+    "womens_health": "unknown",
+    "access_difficulty": "hard",
+    "life_stage": ["midlife", "late life"],
+    "ethnic_diversity": "Predominantly White",
+    "design": "longitudinal"
   },
   {
     "id": "rush-map",
     "name": "Rush MAP",
     "full_name": "Rush Memory and Aging Project",
     "year": 1997,
-    "data_types": [
-      "Clinical",
-      "Cognitive",
-      "Neuropathology",
-      "MRI"
-    ],
+    "data_types": ["Clinical", "Cognitive", "Neuropathology", "MRI"],
     "access": "restricted",
     "n_subjects": 2000,
     "n_note": "~2,000 participants with brain donation",
-    "origin": [
-      "USA"
-    ],
+    "origin": ["USA"],
     "doi": "10.2174/156720512801322663",
     "url": "https://www.rushu.rush.edu/research-rush-university/departmental-research/rush-alzheimers-disease-center/rush-alzheimers-disease-center-research/epidemiologic-research/memory-aging-project",
-    "notes": "Longitudinal clinical-pathologic cohort from retirement communities in Chicago with brain donation at death. Foundational for linking ante-mortem clinical data to post-mortem neuropathology."
+    "notes": "Longitudinal clinical-pathologic cohort from retirement communities in Chicago with brain donation at death. Foundational for linking ante-mortem clinical data to post-mortem neuropathology.",
+    "data_level": ["raw", "processed"],
+    "womens_health": "unknown",
+    "access_difficulty": "hard",
+    "life_stage": ["late life"],
+    "ethnic_diversity": "Predominantly White; some African American",
+    "design": "longitudinal"
   },
   {
     "id": "nacc",
     "name": "NACC",
     "full_name": "National Alzheimer's Coordinating Center",
     "year": 1999,
-    "data_types": [
-      "Clinical",
-      "Neuropathology",
-      "MRI",
-      "Genetics",
-      "Cognitive"
-    ],
+    "data_types": ["Clinical", "Neuropathology", "MRI", "Genetics", "Cognitive"],
     "access": "restricted",
     "n_subjects": 50000,
     "n_note": "50,000+",
-    "origin": [
-      "USA"
-    ],
+    "origin": ["USA"],
     "doi": "10.1097/WAD.0b013e318214bb18",
     "url": "https://naccdata.org/",
-    "notes": "Harmonised data across 34 US Alzheimer's Disease Research Centers. Includes post-mortem neuropathology."
+    "notes": "Harmonised data across 34 US Alzheimer's Disease Research Centers. Includes post-mortem neuropathology.",
+    "data_level": ["processed"],
+    "womens_health": "unknown",
+    "access_difficulty": "moderate",
+    "life_stage": ["midlife", "late life"],
+    "ethnic_diversity": "Moderate — includes African American, Hispanic, and Asian minorities across ADRC sites",
+    "design": "longitudinal"
   },
   {
     "id": "three-city",
     "name": "3C Study",
     "full_name": "Three-City Study (Étude des 3 Cités)",
     "year": 1999,
-    "data_types": [
-      "Clinical",
-      "Cognitive",
-      "MRI",
-      "Blood",
-      "Genetics",
-      "Lifestyle"
-    ],
+    "data_types": ["Clinical", "Cognitive", "MRI", "Blood", "Genetics", "Lifestyle"],
     "access": "restricted",
     "n_subjects": 9294,
     "n_note": "~9,294",
-    "origin": [
-      "France"
-    ],
+    "origin": ["France"],
     "doi": "10.1007/s10654-003-4234-9",
     "url": "https://the-three-city-study-3c.com",
-    "notes": "Large French community-based longitudinal cohort across Bordeaux, Dijon, and Montpellier. Investigates the relationship between vascular diseases and dementia. Rich data on vascular risk factors, genetics, and cognitive decline."
+    "notes": "Large French community-based longitudinal cohort across Bordeaux, Dijon, and Montpellier. Investigates the relationship between vascular diseases and dementia. Rich data on vascular risk factors, genetics, and cognitive decline.",
+    "data_level": ["preprocessed", "processed"],
+    "womens_health": "unknown",
+    "access_difficulty": "hard",
+    "life_stage": ["late life"],
+    "ethnic_diversity": "Predominantly White/French",
+    "design": "longitudinal"
   },
   {
     "id": "wrap",
     "name": "WRAP",
     "full_name": "Wisconsin Registry for Alzheimer's Prevention",
     "year": 2001,
-    "data_types": [
-      "MRI",
-      "PET",
-      "Blood",
-      "Genetics",
-      "Cognitive",
-      "Lifestyle"
-    ],
+    "data_types": ["MRI", "PET", "Blood", "Genetics", "Cognitive", "Lifestyle"],
     "access": "restricted",
     "n_subjects": 1500,
     "n_note": "~1,500",
-    "origin": [
-      "USA"
-    ],
+    "origin": ["USA"],
     "doi": "10.1016/j.jalz.2010.03.013",
     "url": "https://wrap.wisc.edu/",
-    "notes": "Prevention-focused registry. Parental history of AD enrichment. Longitudinal."
+    "notes": "Prevention-focused registry. Parental history of AD enrichment. Longitudinal.",
+    "data_level": ["raw", "preprocessed"],
+    "womens_health": "unknown",
+    "access_difficulty": "hard",
+    "life_stage": ["midlife", "late life"],
+    "ethnic_diversity": "Predominantly White/European-American",
+    "design": "longitudinal"
   },
   {
     "id": "adni",
     "name": "ADNI",
     "full_name": "Alzheimer's Disease Neuroimaging Initiative",
     "year": 2004,
-    "data_types": [
-      "MRI",
-      "PET",
-      "CSF",
-      "Blood",
-      "Genetics",
-      "Cognitive",
-      "Clinical"
-    ],
+    "data_types": ["MRI", "PET", "CSF", "Blood", "Genetics", "Cognitive", "Clinical"],
     "access": "partial",
     "n_subjects": 2000,
     "n_note": "~2,000+ (multiple phases)",
-    "origin": [
-      "USA"
-    ],
+    "origin": ["USA"],
     "doi": "10.1016/j.jalz.2010.05.007",
     "url": "https://adni.loni.usc.edu/",
-    "notes": "Gold-standard AD neuroimaging cohort. Multiple phases (ADNI-1, GO, 2, 3, 4). Predominantly white/European-American."
+    "notes": "Gold-standard AD neuroimaging cohort. Multiple phases (ADNI-1, GO, 2, 3, 4). Predominantly white/European-American.",
+    "data_level": ["raw", "preprocessed", "processed"],
+    "womens_health": "unknown",
+    "access_difficulty": "easy",
+    "life_stage": ["late life"],
+    "ethnic_diversity": "Predominantly White/European-American; ADNI-4 actively recruiting underrepresented minorities",
+    "design": "longitudinal"
   },
   {
     "id": "addneuromed",
     "name": "AddNeuroMed",
     "full_name": "AddNeuroMed",
     "year": 2005,
-    "data_types": [
-      "MRI",
-      "Blood",
-      "CSF",
-      "Genetics",
-      "Cognitive",
-      "Clinical"
-    ],
+    "data_types": ["MRI", "Blood", "CSF", "Genetics", "Cognitive", "Clinical"],
     "access": "partial",
     "n_subjects": 698,
     "n_note": "~698",
-    "origin": [
-      "UK",
-      "Finland",
-      "France",
-      "Greece",
-      "Italy",
-      "Poland"
-    ],
+    "origin": ["UK", "Finland", "France", "Greece", "Italy", "Poland"],
     "doi": "10.1111/j.1749-6632.2009.05064.x",
     "url": "https://www.innomed-addneuromed.com/en",
-    "notes": "Pan-European multi-site study. Good geographic diversity within Europe."
+    "notes": "Pan-European multi-site study. Good geographic diversity within Europe.",
+    "data_level": ["preprocessed", "processed"],
+    "womens_health": "unknown",
+    "access_difficulty": "hard",
+    "life_stage": ["late life"],
+    "ethnic_diversity": "European only; limited diversity within European populations",
+    "design": "cross-sectional"
   },
   {
     "id": "sydney-mas",
     "name": "Sydney MAS",
     "full_name": "Sydney Memory and Ageing Study",
     "year": 2005,
-    "data_types": [
-      "MRI",
-      "Cognitive",
-      "Genetics",
-      "Clinical",
-      "Lifestyle"
-    ],
+    "data_types": ["MRI", "Cognitive", "Genetics", "Clinical", "Lifestyle"],
     "access": "restricted",
     "n_subjects": 1037,
-    "n_note": "1,037 participants aged 70\u201390",
-    "origin": [
-      "Australia"
-    ],
+    "n_note": "1,037 participants aged 70–90",
+    "origin": ["Australia"],
     "doi": "10.1017/S1041610210001067",
     "url": "https://doi.org/10.1017/S1041610210001067",
-    "notes": "Longitudinal study of community-dwelling older Australians investigating risk factors for MCI and dementia. Includes neuropsychological testing, neuroimaging, genetics, and lifestyle factors."
+    "notes": "Longitudinal study of community-dwelling older Australians investigating risk factors for MCI and dementia. Includes neuropsychological testing, neuroimaging, genetics, and lifestyle factors.",
+    "data_level": ["processed"],
+    "womens_health": "unknown",
+    "access_difficulty": "hard",
+    "life_stage": ["late life"],
+    "ethnic_diversity": "Predominantly White/Australian",
+    "design": "longitudinal"
   },
   {
     "id": "aibl",
     "name": "AIBL",
     "full_name": "Australian Imaging, Biomarker & Lifestyle Flagship Study",
     "year": 2006,
-    "data_types": [
-      "MRI",
-      "PET",
-      "Blood",
-      "CSF",
-      "Genetics",
-      "Cognitive",
-      "Lifestyle"
-    ],
+    "data_types": ["MRI", "PET", "Blood", "CSF", "Genetics", "Cognitive", "Lifestyle"],
     "access": "partial",
     "n_subjects": 3000,
     "n_note": "3,000+",
-    "origin": [
-      "Australia"
-    ],
+    "origin": ["Australia"],
     "doi": "10.1017/S1041610210000001",
     "url": "https://aibl.csiro.au/",
-    "notes": "Major Australian cohort. Strong amyloid PET and lifestyle data."
+    "notes": "Major Australian cohort. Strong amyloid PET and lifestyle data.",
+    "data_level": ["raw", "preprocessed"],
+    "womens_health": "unknown",
+    "access_difficulty": "moderate",
+    "life_stage": ["late life"],
+    "ethnic_diversity": "Predominantly White/Australian",
+    "design": "longitudinal"
   },
   {
     "id": "uk-biobank",
     "name": "UK Biobank",
     "full_name": "UK Biobank",
     "year": 2006,
-    "data_types": [
-      "MRI",
-      "Genetics",
-      "Proteomics",
-      "Metabolomics",
-      "Exposomics",
-      "Blood",
-      "Cognitive",
-      "Lifestyle"
-    ],
+    "data_types": ["MRI", "Genetics", "Proteomics", "Metabolomics", "Exposomics", "Blood", "Cognitive", "Lifestyle"],
     "access": "restricted",
     "n_subjects": 500000,
     "n_note": "500,000+ (imaging ~40,000)",
-    "origin": [
-      "UK"
-    ],
+    "origin": ["UK"],
     "doi": "10.1371/journal.pmed.1001779",
     "url": "https://www.ukbiobank.ac.uk/",
-    "notes": "Population-level biobank. Application-based access. Largest MRI+genetics cohort."
-  },
-  {
-    "id": "oasis1",
-    "name": "OASIS-1",
-    "full_name": "Open Access Series of Imaging Studies \u2014 Cross-sectional",
-    "year": 2007,
-    "data_types": [
-      "MRI",
-      "Clinical"
-    ],
-    "access": "open",
-    "n_subjects": 416,
-    "n_note": "416",
-    "origin": [
-      "USA"
-    ],
-    "doi": "10.1162/jocn.2007.19.9.1498",
-    "url": "https://www.oasis-brains.org/",
-    "notes": "Fully open access. Cross-sectional. Age range 18\u201396."
-  },
-  {
-    "id": "jadni",
-    "name": "J-ADNI",
-    "full_name": "Japanese Alzheimer's Disease Neuroimaging Initiative",
-    "year": 2008,
-    "data_types": [
-      "MRI",
-      "PET",
-      "CSF",
-      "Blood",
-      "Genetics",
-      "Cognitive"
-    ],
-    "access": "restricted",
-    "n_subjects": 500,
-    "n_note": "~500",
-    "origin": [
-      "Japan"
-    ],
-    "doi": "10.1016/j.jalz.2015.10.012",
-    "url": "https://www.gaaindata.org/partner/J-ADNI",
-    "notes": "Japanese harmonised replication of the ADNI protocol. Enables direct comparison of biomarker profiles between Japanese and North American populations."
-  },
-  {
-    "id": "mapt",
-    "name": "MAPT",
-    "full_name": "Multidomain Alzheimer Preventive Trial",
-    "year": 2008,
-    "data_types": [
-      "MRI",
-      "Cognitive",
-      "Blood",
-      "Lifestyle",
-      "Clinical"
-    ],
-    "access": "restricted",
-    "n_subjects": 1680,
-    "n_note": "1,680",
-    "origin": [
-      "France"
-    ],
-    "doi": "10.1016/j.jalz.2013.07.001",
-    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4652787/",
-    "notes": "French multi-domain lifestyle intervention trial in elderly at-risk individuals. Strong data on omega-3 supplementation and cognitive training. 13 sites across France."
-  },
-  {
-    "id": "sages",
-    "name": "SAGES",
-    "full_name": "Successful AGing after Elective Surgery \u2014 Cognitive Substudy",
-    "year": 2010,
-    "data_types": [
-      "Clinical",
-      "Cognitive",
-      "Blood"
-    ],
-    "access": "restricted",
-    "n_subjects": 560,
-    "n_note": "~560",
-    "origin": [
-      "USA"
-    ],
-    "doi": "10.1111/jgs.13793",
-    "url": "https://pubmed.ncbi.nlm.nih.gov/26662213/",
-    "notes": "Longitudinal study examining perioperative cognitive decline. Includes diverse urban Boston population. Notably higher minority representation than most AD cohorts."
-  },
-  {
-    "id": "habs-ad",
-    "name": "HABS-AD",
-    "full_name": "Harvard Aging Brain Study",
-    "year": 2010,
-    "data_types": [
-      "MRI",
-      "PET",
-      "Cognitive",
-      "Blood",
-      "Clinical"
-    ],
-    "access": "restricted",
-    "n_subjects": 600,
-    "n_note": "~600 cognitively normal older adults",
-    "origin": [
-      "USA"
-    ],
-    "doi": "10.1002/trc2.70140",
-    "url": "https://habs.mgh.harvard.edu",
-    "notes": "Longitudinal study at Massachusetts General Hospital investigating the earliest stages of AD in cognitively normal older adults. Emphasises amyloid and tau PET imaging to track preclinical AD trajectories."
-  },
-  {
-    "id": "memento",
-    "name": "MEMENTO",
-    "full_name": "MEMENTO Cohort",
-    "year": 2011,
-    "data_types": [
-      "MRI",
-      "PET",
-      "CSF",
-      "Blood",
-      "Cognitive",
-      "Clinical"
-    ],
-    "access": "restricted",
-    "n_subjects": 2323,
-    "n_note": "~2,323",
-    "origin": [
-      "France"
-    ],
-    "doi": "10.1093/aje/kwv285",
-    "url": "https://www.fondation-alzheimer.org/la-recherche/cohorte-memento/",
-    "notes": "French multi-center cohort of outpatients with subjective cognitive decline (SCD) or mild cognitive impairment (MCI). Recruits from 26 memory clinics across France. Rich multi-modal longitudinal biomarker data."
-  },
-  {
-    "id": "bisc",
-    "name": "BiSC",
-    "full_name": "Barcelona Life Study Cohort",
-    "year": 2018,
-    "data_types": [
-      "MRI",
-      "Clinical",
-      "Lifestyle",
-      "Exposomics",
-      "Genetics",
-      "Blood"
-    ],
-    "access": "partial",
-    "n_subjects": 1086,
-    "n_note": "1,086 pregnant women; 1,033 children",
-    "origin": [
-      "Spain"
-    ],
-    "doi": "",
-    "url": "https://projectebisc.org/en/home/",
-    "notes": "Exposome birth cohort enrolled October 2018–April 2021 at three Barcelona university hospitals (Hospital Sant Joan de Déu, Hospital de la Santa Creu i Sant Pau, Hospital Clínic). Evaluates socio-environmental and genetic determinants of foetal and child health, growth, and development, as well as maternal mental and physical health during and after pregnancy. Data collected via interviews, questionnaires, home visits, personal sensors, hospital records, ultrasound, MRI, and biological samples. Follow-ups ongoing to 48 months postnatally. Gated data access available."
-  },
-  {
-    "id": "prevent-ad",
-    "name": "PREVENT-AD",
-    "full_name": "Pre-symptomatic Evaluation of Experimental or Novel Treatments for Alzheimer Disease",
-    "year": 2011,
-    "data_types": [
-      "MRI",
-      "PET",
-      "CSF",
-      "Blood",
-      "Genetics",
-      "Cognitive"
-    ],
-    "access": "restricted",
-    "n_subjects": 400,
-    "n_note": "~400",
-    "origin": [
-      "Canada"
-    ],
-    "doi": "",
-    "url": "https://openpreventad.loris.ca",
-    "notes": "Focus on individuals at familial risk for AD. Canadian French cohort."
-  },
-  {
-    "id": "adsp",
-    "name": "ADSP",
-    "full_name": "Alzheimer's Disease Sequencing Project",
-    "year": 2012,
-    "data_types": [
-      "Genetics",
-      "Clinical",
-      "Cognitive"
-    ],
-    "access": "restricted",
-    "n_subjects": 100000,
-    "n_note": "100,000+ (whole-genome & whole-exome)",
-    "origin": [
-      "USA"
-    ],
-    "doi": "10.1016/j.jalz.2022.09.009",
-    "url": "https://adsp.niagads.org/",
-    "notes": "NIH initiative sequencing whole genomes and exomes of AD cases and controls to identify disease-causing and protective variants. Prioritises diverse populations including African American, Hispanic/Latino, and Asian individuals. Data via NIAGADS."
-  },
-  {
-    "id": "alfa",
-    "name": "ALFA",
-    "full_name": "Alzheimer and Families (ALFA) Study",
-    "year": 2013,
-    "data_types": [
-      "MRI",
-      "PET",
-      "CSF",
-      "Blood",
-      "Genetics",
-      "Cognitive",
-      "Lifestyle"
-    ],
-    "access": "partial",
-    "n_subjects": 2743,
-    "n_note": "2,743",
-    "origin": [
-      "Spain"
-    ],
-    "doi": "10.1016/j.trci.2016.02.003",
-    "url": "https://www.barcelonabeta.org/en/alfa-study/about-the-alfa-study",
-    "notes": "Catalan cohort of cognitively unimpaired adults, mostly offspring of AD patients. Led by the Barcelona Beta Brain Research Center (BBRC). Strong amyloid/tau PET and CSF biomarker data. ALFA+ sub-study with richer biomarker profiling."
-  },
-  {
-    "id": "a4",
-    "name": "A4 Study",
-    "full_name": "Anti-Amyloid Treatment in Asymptomatic Alzheimer's",
-    "year": 2014,
-    "data_types": [
-      "MRI",
-      "PET",
-      "Blood",
-      "Cognitive",
-      "Clinical"
-    ],
-    "access": "restricted",
-    "n_subjects": 4486,
-    "n_note": "4,486",
-    "origin": [
-      "USA",
-      "Canada",
-      "Australia",
-      "Japan"
-    ],
-    "doi": "10.1126/scitranslmed.3007941",
-    "url": "https://a4study.org/",
-    "notes": "Prevention trial enriched for amyloid positivity. Diverse international sites."
-  },
-  {
-    "id": "korean-brain-aging",
-    "name": "KBASE",
-    "full_name": "Korean Brain Aging Study for Early Diagnosis and Prediction of Alzheimer's Disease",
-    "year": 2014,
-    "data_types": [
-      "MRI",
-      "PET",
-      "Blood",
-      "Genetics",
-      "Cognitive",
-      "Lifestyle"
-    ],
-    "access": "restricted",
-    "n_subjects": 600,
-    "n_note": "~600",
-    "origin": [
-      "South Korea"
-    ],
-    "doi": "10.4306/pi.2017.14.6.851",
-    "url": "http://kbase.kr/eng/main/index.php",
-    "notes": "First large-scale Korean cohort for AD biomarker research. Critical Asian-population resource for amyloid PET and genetic studies."
-  },
-  {
-    "id": "epad",
-    "name": "EPAD",
-    "full_name": "European Prevention of Alzheimer's Dementia",
-    "year": 2015,
-    "data_types": [
-      "MRI",
-      "PET",
-      "CSF",
-      "EEG",
-      "Blood",
-      "Genetics",
-      "Cognitive"
-    ],
-    "access": "partial",
-    "n_subjects": 2096,
-    "n_note": "~2,096",
-    "origin": [
-      "UK",
-      "France",
-      "Spain",
-      "Germany",
-      "Netherlands",
-      "Sweden"
-    ],
-    "doi": "10.1016/S2215-0366(15)00454-X",
-    "url": "https://ep-ad.org/",
-    "notes": "Prevention-focused. Longitudinal. Multi-modal imaging. European-only."
-  },
-  {
-    "id": "delcode",
-    "name": "DELCODE",
-    "full_name": "DZNE-Longitudinal Cognitive Impairment and Dementia Study",
-    "year": 2015,
-    "data_types": [
-      "MRI",
-      "CSF",
-      "Blood",
-      "Genetics",
-      "Cognitive",
-      "EEG"
-    ],
-    "access": "restricted",
-    "n_subjects": 1000,
-    "n_note": "~1,000",
-    "origin": [
-      "Germany"
-    ],
-    "doi": "10.1186/s13195-017-0314-2",
-    "url": "https://www.dzne.de/",
-    "notes": "German prevention study. Subjective cognitive decline enriched. 10 DZNE sites."
-  },
-  {
-    "id": "mayo-rna",
-    "name": "Mayo Clinic AD Study",
-    "full_name": "Mayo Clinic Alzheimer's Disease Genetics Study (AMP-AD)",
-    "year": 2016,
-    "data_types": [
-      "Transcriptomics",
-      "Genetics",
-      "Neuropathology",
-      "Clinical"
-    ],
-    "access": "restricted",
-    "n_subjects": 2000,
-    "n_note": "~2,000",
-    "origin": [
-      "USA"
-    ],
-    "doi": "10.1038/nn.4165",
-    "url": "https://adknowledgeportal.synapse.org/",
-    "notes": "Part of the AMP-AD consortium. RNA-seq from temporal cortex and cerebellum across AD and control brains. Deposited in Synapse. Complementary to ROSMAP for cross-cohort transcriptomic replication."
-  },
-  {
-    "id": "msbb",
-    "name": "MSBB",
-    "full_name": "Mount Sinai Brain Bank (AMP-AD)",
-    "year": 2016,
-    "data_types": [
-      "Transcriptomics",
-      "Proteomics",
-      "Neuropathology",
-      "Genetics",
-      "Clinical"
-    ],
-    "access": "restricted",
-    "n_subjects": 300,
-    "n_note": "~300 donors",
-    "origin": [
-      "USA"
-    ],
-    "doi": "10.1038/sdata.2018.185",
-    "url": "https://adknowledgeportal.synapse.org/",
-    "notes": "Multi-region RNA-seq and proteomics from Mount Sinai Brain Bank AD cases and controls. Part of AMP-AD. Includes 4 brain regions per donor, enabling network-based analyses. Available via Synapse."
-  },
-  {
-    "id": "bcube",
-    "name": "B-CUBE",
-    "full_name": "Bordeaux Cohort for Brain and Cognitive Aging (B-CUBE)",
-    "year": 2016,
-    "data_types": [
-      "MRI",
-      "Blood",
-      "Cognitive",
-      "Clinical",
-      "Lifestyle"
-    ],
-    "access": "restricted",
-    "n_subjects": 2000,
-    "n_note": "2,000+ volontaires bordelais âgés de 55 à 80 ans",
-    "origin": [
-      "France"
-    ],
-    "doi": "",
-    "url": "https://cohorte-b-cube.fr",
-    "notes": "Bordeaux-based longitudinal cohort of 2,000+ volunteers aged 55–80. Investigates the influence of life trajectories and biological factors on health and brain aging."
+    "notes": "Population-level biobank. Application-based access. Largest MRI+genetics cohort.",
+    "data_level": ["raw", "preprocessed", "processed"],
+    "womens_health": "Yes — menopause age, HRT use, reproductive history, and hormone-related variables systematically collected",
+    "access_difficulty": "moderate",
+    "life_stage": ["midlife", "late life"],
+    "ethnic_diversity": "Moderate — includes South Asian, Black, and mixed populations; original sample ~94% White but improving",
+    "design": "longitudinal"
   },
   {
     "id": "lifelines",
     "name": "Lifelines",
     "full_name": "Lifelines Biobank",
     "year": 2006,
-    "data_types": [
-      "Genetics",
-      "Blood",
-      "Clinical",
-      "Cognitive",
-      "Lifestyle",
-      "Metabolomics",
-      "Exposomics"
-    ],
+    "data_types": ["Genetics", "Blood", "Clinical", "Cognitive", "Lifestyle", "Metabolomics", "Exposomics"],
     "access": "partial",
     "n_subjects": 167000,
     "n_note": "~167,000",
-    "origin": [
-      "Netherlands"
-    ],
+    "origin": ["Netherlands"],
     "doi": "10.1093/ije/dys064",
     "url": "https://www.lifelines-biobank.com/explore",
-    "notes": "Large multigenerational population-based cohort from the northern Netherlands. Three-generation design covering participants aged 6 months to 93 years. Collects extensive phenotypic, genomic, and lifestyle data with long-term follow-up. Gated access for researchers."
+    "notes": "Large multigenerational population-based cohort from the northern Netherlands. Three-generation design covering participants aged 6 months to 93 years. Collects extensive phenotypic, genomic, and lifestyle data with long-term follow-up. Gated access for researchers.",
+    "data_level": ["raw", "preprocessed", "processed"],
+    "womens_health": "Yes — menopause status, reproductive history, and hormonal contraceptive use collected",
+    "access_difficulty": "moderate",
+    "life_stage": ["childhood", "early adulthood", "midlife", "late life"],
+    "ethnic_diversity": "Predominantly White/Dutch; limited diversity due to northern Netherlands geography",
+    "design": "longitudinal"
   },
   {
-    "id": "all-of-us",
-    "name": "All of Us",
-    "full_name": "All of Us Research Program",
+    "id": "oasis1",
+    "name": "OASIS-1",
+    "full_name": "Open Access Series of Imaging Studies — Cross-sectional",
+    "year": 2007,
+    "data_types": ["MRI", "Clinical"],
+    "access": "open",
+    "n_subjects": 416,
+    "n_note": "416",
+    "origin": ["USA"],
+    "doi": "10.1162/jocn.2007.19.9.1498",
+    "url": "https://www.oasis-brains.org/",
+    "notes": "Fully open access. Cross-sectional. Age range 18–96.",
+    "data_level": ["preprocessed"],
+    "womens_health": "unknown",
+    "access_difficulty": "easy",
+    "life_stage": ["early adulthood", "midlife", "late life"],
+    "ethnic_diversity": "Predominantly White",
+    "design": "cross-sectional"
+  },
+  {
+    "id": "jadni",
+    "name": "J-ADNI",
+    "full_name": "Japanese Alzheimer's Disease Neuroimaging Initiative",
+    "year": 2008,
+    "data_types": ["MRI", "PET", "CSF", "Blood", "Genetics", "Cognitive"],
+    "access": "restricted",
+    "n_subjects": 500,
+    "n_note": "~500",
+    "origin": ["Japan"],
+    "doi": "10.1016/j.jalz.2015.10.012",
+    "url": "https://www.gaaindata.org/partner/J-ADNI",
+    "notes": "Japanese harmonised replication of the ADNI protocol. Enables direct comparison of biomarker profiles between Japanese and North American populations.",
+    "data_level": ["preprocessed", "processed"],
+    "womens_health": "unknown",
+    "access_difficulty": "hard",
+    "life_stage": ["late life"],
+    "ethnic_diversity": "Japanese only",
+    "design": "longitudinal"
+  },
+  {
+    "id": "mapt",
+    "name": "MAPT",
+    "full_name": "Multidomain Alzheimer Preventive Trial",
+    "year": 2008,
+    "data_types": ["MRI", "Cognitive", "Blood", "Lifestyle", "Clinical"],
+    "access": "restricted",
+    "n_subjects": 1680,
+    "n_note": "1,680",
+    "origin": ["France"],
+    "doi": "10.1016/j.jalz.2013.07.001",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4652787/",
+    "notes": "French multi-domain lifestyle intervention trial in elderly at-risk individuals. Strong data on omega-3 supplementation and cognitive training. 13 sites across France.",
+    "data_level": ["processed"],
+    "womens_health": "unknown",
+    "access_difficulty": "hard",
+    "life_stage": ["late life"],
+    "ethnic_diversity": "Predominantly White/French",
+    "design": "longitudinal"
+  },
+  {
+    "id": "bisc",
+    "name": "BiSC",
+    "full_name": "Barcelona Life Study Cohort",
     "year": 2018,
-    "data_types": [
-      "Genetics",
-      "Clinical",
-      "Lifestyle",
-      "Blood",
-      "Cognitive"
-    ],
+    "data_types": ["MRI", "Clinical", "Lifestyle", "Exposomics", "Genetics", "Blood"],
     "access": "partial",
-    "n_subjects": 800000,
-    "n_note": "800,000+ enrolled",
-    "origin": [
-      "USA"
-    ],
-    "doi": "10.1056/NEJMsr1809937",
-    "url": "https://allofus.nih.gov/",
-    "notes": "NIH precision medicine initiative aiming to enroll 1 million+ diverse US participants. Strongly prioritises historically underrepresented populations. Includes EHR, genomics, wearable data, and lifestyle surveys. Researcher access via the Researcher Workbench."
+    "n_subjects": 1086,
+    "n_note": "1,086 pregnant women; 1,033 children",
+    "origin": ["Spain"],
+    "doi": "",
+    "url": "https://projectebisc.org/en/home/",
+    "notes": "Exposome birth cohort enrolled October 2018–April 2021 at three Barcelona university hospitals (Hospital Sant Joan de Déu, Hospital de la Santa Creu i Sant Pau, Hospital Clínic). Evaluates socio-environmental and genetic determinants of foetal and child health, growth, and development, as well as maternal mental and physical health during and after pregnancy. Data collected via interviews, questionnaires, home visits, personal sensors, hospital records, ultrasound, MRI, and biological samples. Follow-ups ongoing to 48 months postnatally. Gated data access available.",
+    "data_level": ["raw", "preprocessed"],
+    "womens_health": "Yes — maternal mental and physical health, pregnancy outcomes, hormonal variables, and reproductive history systematically collected",
+    "access_difficulty": "moderate",
+    "life_stage": ["childhood"],
+    "ethnic_diversity": "Moderate — urban Barcelona population with some ethnic diversity",
+    "design": "longitudinal"
+  },
+  {
+    "id": "sages",
+    "name": "SAGES",
+    "full_name": "Successful AGing after Elective Surgery — Cognitive Substudy",
+    "year": 2010,
+    "data_types": ["Clinical", "Cognitive", "Blood"],
+    "access": "restricted",
+    "n_subjects": 560,
+    "n_note": "~560",
+    "origin": ["USA"],
+    "doi": "10.1111/jgs.13793",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/26662213/",
+    "notes": "Longitudinal study examining perioperative cognitive decline. Includes diverse urban Boston population. Notably higher minority representation than most AD cohorts.",
+    "data_level": ["processed"],
+    "womens_health": "unknown",
+    "access_difficulty": "hard",
+    "life_stage": ["late life"],
+    "ethnic_diversity": "Moderate — urban Boston population with higher minority representation than typical AD cohorts",
+    "design": "longitudinal"
+  },
+  {
+    "id": "habs-ad",
+    "name": "HABS-AD",
+    "full_name": "Harvard Aging Brain Study",
+    "year": 2010,
+    "data_types": ["MRI", "PET", "Cognitive", "Blood", "Clinical"],
+    "access": "restricted",
+    "n_subjects": 600,
+    "n_note": "~600 cognitively normal older adults",
+    "origin": ["USA"],
+    "doi": "10.1002/trc2.70140",
+    "url": "https://habs.mgh.harvard.edu",
+    "notes": "Longitudinal study at Massachusetts General Hospital investigating the earliest stages of AD in cognitively normal older adults. Emphasises amyloid and tau PET imaging to track preclinical AD trajectories.",
+    "data_level": ["preprocessed"],
+    "womens_health": "unknown",
+    "access_difficulty": "hard",
+    "life_stage": ["late life"],
+    "ethnic_diversity": "Predominantly White",
+    "design": "longitudinal"
+  },
+  {
+    "id": "memento",
+    "name": "MEMENTO",
+    "full_name": "MEMENTO Cohort",
+    "year": 2011,
+    "data_types": ["MRI", "PET", "CSF", "Blood", "Cognitive", "Clinical"],
+    "access": "restricted",
+    "n_subjects": 2323,
+    "n_note": "~2,323",
+    "origin": ["France"],
+    "doi": "10.1093/aje/kwv285",
+    "url": "https://www.fondation-alzheimer.org/la-recherche/cohorte-memento/",
+    "notes": "French multi-center cohort of outpatients with subjective cognitive decline (SCD) or mild cognitive impairment (MCI). Recruits from 26 memory clinics across France. Rich multi-modal longitudinal biomarker data.",
+    "data_level": ["preprocessed", "processed"],
+    "womens_health": "unknown",
+    "access_difficulty": "hard",
+    "life_stage": ["midlife", "late life"],
+    "ethnic_diversity": "Predominantly White/French",
+    "design": "longitudinal"
+  },
+  {
+    "id": "prevent-ad",
+    "name": "PREVENT-AD",
+    "full_name": "Pre-symptomatic Evaluation of Experimental or Novel Treatments for Alzheimer Disease",
+    "year": 2011,
+    "data_types": ["MRI", "PET", "CSF", "Blood", "Genetics", "Cognitive"],
+    "access": "restricted",
+    "n_subjects": 400,
+    "n_note": "~400",
+    "origin": ["Canada"],
+    "doi": "",
+    "url": "https://openpreventad.loris.ca",
+    "notes": "Focus on individuals at familial risk for AD. Canadian French cohort.",
+    "data_level": ["raw", "preprocessed", "processed"],
+    "womens_health": "unknown",
+    "access_difficulty": "easy",
+    "life_stage": ["midlife", "late life"],
+    "ethnic_diversity": "Predominantly White/French Canadian",
+    "design": "longitudinal"
+  },
+  {
+    "id": "adsp",
+    "name": "ADSP",
+    "full_name": "Alzheimer's Disease Sequencing Project",
+    "year": 2012,
+    "data_types": ["Genetics", "Clinical", "Cognitive"],
+    "access": "restricted",
+    "n_subjects": 100000,
+    "n_note": "100,000+ (whole-genome & whole-exome)",
+    "origin": ["USA"],
+    "doi": "10.1016/j.jalz.2022.09.009",
+    "url": "https://adsp.niagads.org/",
+    "notes": "NIH initiative sequencing whole genomes and exomes of AD cases and controls to identify disease-causing and protective variants. Prioritises diverse populations including African American, Hispanic/Latino, and Asian individuals. Data via NIAGADS.",
+    "data_level": ["raw", "processed"],
+    "womens_health": "unknown",
+    "access_difficulty": "hard",
+    "life_stage": ["late life"],
+    "ethnic_diversity": "Very high — explicitly designed to include African American, Hispanic/Latino, and Asian populations",
+    "design": "cross-sectional"
+  },
+  {
+    "id": "alfa",
+    "name": "ALFA",
+    "full_name": "Alzheimer and Families (ALFA) Study",
+    "year": 2013,
+    "data_types": ["MRI", "PET", "CSF", "Blood", "Genetics", "Cognitive", "Lifestyle"],
+    "access": "partial",
+    "n_subjects": 2743,
+    "n_note": "2,743",
+    "origin": ["Spain"],
+    "doi": "10.1016/j.trci.2016.02.003",
+    "url": "https://www.barcelonabeta.org/en/alfa-study/about-the-alfa-study",
+    "notes": "Catalan cohort of cognitively unimpaired adults, mostly offspring of AD patients. Led by the Barcelona Beta Brain Research Center (BBRC). Strong amyloid/tau PET and CSF biomarker data. ALFA+ sub-study with richer biomarker profiling.",
+    "data_level": ["preprocessed", "processed"],
+    "womens_health": "unknown",
+    "access_difficulty": "moderate",
+    "life_stage": ["midlife"],
+    "ethnic_diversity": "Predominantly White/Spanish",
+    "design": "longitudinal"
+  },
+  {
+    "id": "a4",
+    "name": "A4 Study",
+    "full_name": "Anti-Amyloid Treatment in Asymptomatic Alzheimer's",
+    "year": 2014,
+    "data_types": ["MRI", "PET", "Blood", "Cognitive", "Clinical"],
+    "access": "restricted",
+    "n_subjects": 4486,
+    "n_note": "4,486",
+    "origin": ["USA", "Canada", "Australia", "Japan"],
+    "doi": "10.1126/scitranslmed.3007941",
+    "url": "https://a4study.org/",
+    "notes": "Prevention trial enriched for amyloid positivity. Diverse international sites.",
+    "data_level": ["preprocessed"],
+    "womens_health": "unknown",
+    "access_difficulty": "hard",
+    "life_stage": ["late life"],
+    "ethnic_diversity": "Predominantly White; some diversity across international sites",
+    "design": "longitudinal"
+  },
+  {
+    "id": "korean-brain-aging",
+    "name": "KBASE",
+    "full_name": "Korean Brain Aging Study for Early Diagnosis and Prediction of Alzheimer's Disease",
+    "year": 2014,
+    "data_types": ["MRI", "PET", "Blood", "Genetics", "Cognitive", "Lifestyle"],
+    "access": "restricted",
+    "n_subjects": 600,
+    "n_note": "~600",
+    "origin": ["South Korea"],
+    "doi": "10.4306/pi.2017.14.6.851",
+    "url": "http://kbase.kr/eng/main/index.php",
+    "notes": "First large-scale Korean cohort for AD biomarker research. Critical Asian-population resource for amyloid PET and genetic studies.",
+    "data_level": ["preprocessed"],
+    "womens_health": "unknown",
+    "access_difficulty": "hard",
+    "life_stage": ["late life"],
+    "ethnic_diversity": "Korean only",
+    "design": "longitudinal"
+  },
+  {
+    "id": "epad",
+    "name": "EPAD",
+    "full_name": "European Prevention of Alzheimer's Dementia",
+    "year": 2015,
+    "data_types": ["MRI", "PET", "CSF", "EEG", "Blood", "Genetics", "Cognitive"],
+    "access": "partial",
+    "n_subjects": 2096,
+    "n_note": "~2,096",
+    "origin": ["UK", "France", "Spain", "Germany", "Netherlands", "Sweden"],
+    "doi": "10.1016/S2215-0366(15)00454-X",
+    "url": "https://ep-ad.org/",
+    "notes": "Prevention-focused. Longitudinal. Multi-modal imaging. European-only.",
+    "data_level": ["preprocessed", "processed"],
+    "womens_health": "unknown",
+    "access_difficulty": "moderate",
+    "life_stage": ["midlife", "late life"],
+    "ethnic_diversity": "European only; predominantly White",
+    "design": "longitudinal"
+  },
+  {
+    "id": "delcode",
+    "name": "DELCODE",
+    "full_name": "DZNE-Longitudinal Cognitive Impairment and Dementia Study",
+    "year": 2015,
+    "data_types": ["MRI", "CSF", "Blood", "Genetics", "Cognitive", "EEG"],
+    "access": "restricted",
+    "n_subjects": 1000,
+    "n_note": "~1,000",
+    "origin": ["Germany"],
+    "doi": "10.1186/s13195-017-0314-2",
+    "url": "https://www.dzne.de/",
+    "notes": "German prevention study. Subjective cognitive decline enriched. 10 DZNE sites.",
+    "data_level": ["preprocessed"],
+    "womens_health": "unknown",
+    "access_difficulty": "hard",
+    "life_stage": ["late life"],
+    "ethnic_diversity": "Predominantly White/German",
+    "design": "longitudinal"
+  },
+  {
+    "id": "bcube",
+    "name": "B-CUBE",
+    "full_name": "Bordeaux Cohort for Brain and Cognitive Aging (B-CUBE)",
+    "year": 2016,
+    "data_types": ["MRI", "Blood", "Cognitive", "Clinical", "Lifestyle"],
+    "access": "restricted",
+    "n_subjects": 2000,
+    "n_note": "2,000+ volontaires bordelais âgés de 55 à 80 ans",
+    "origin": ["France"],
+    "doi": "",
+    "url": "https://cohorte-b-cube.fr",
+    "notes": "Bordeaux-based longitudinal cohort of 2,000+ volunteers aged 55–80. Investigates the influence of life trajectories and biological factors on health and brain aging.",
+    "data_level": ["unknown"],
+    "womens_health": "unknown",
+    "access_difficulty": "hard",
+    "life_stage": ["midlife", "late life"],
+    "ethnic_diversity": "Predominantly White/French",
+    "design": "longitudinal"
+  },
+  {
+    "id": "mayo-rna",
+    "name": "Mayo Clinic AD Study",
+    "full_name": "Mayo Clinic Alzheimer's Disease Genetics Study (AMP-AD)",
+    "year": 2016,
+    "data_types": ["Transcriptomics", "Genetics", "Neuropathology", "Clinical"],
+    "access": "restricted",
+    "n_subjects": 2000,
+    "n_note": "~2,000",
+    "origin": ["USA"],
+    "doi": "10.1038/nn.4165",
+    "url": "https://adknowledgeportal.synapse.org/",
+    "notes": "Part of the AMP-AD consortium. RNA-seq from temporal cortex and cerebellum across AD and control brains. Deposited in Synapse. Complementary to ROSMAP for cross-cohort transcriptomic replication.",
+    "data_level": ["raw", "preprocessed"],
+    "womens_health": "unknown",
+    "access_difficulty": "moderate",
+    "life_stage": ["late life"],
+    "ethnic_diversity": "Predominantly White",
+    "design": "cross-sectional"
+  },
+  {
+    "id": "msbb",
+    "name": "MSBB",
+    "full_name": "Mount Sinai Brain Bank (AMP-AD)",
+    "year": 2016,
+    "data_types": ["Transcriptomics", "Proteomics", "Neuropathology", "Genetics", "Clinical"],
+    "access": "restricted",
+    "n_subjects": 300,
+    "n_note": "~300 donors",
+    "origin": ["USA"],
+    "doi": "10.1038/sdata.2018.185",
+    "url": "https://adknowledgeportal.synapse.org/",
+    "notes": "Multi-region RNA-seq and proteomics from Mount Sinai Brain Bank AD cases and controls. Part of AMP-AD. Includes 4 brain regions per donor, enabling network-based analyses. Available via Synapse.",
+    "data_level": ["raw", "preprocessed"],
+    "womens_health": "unknown",
+    "access_difficulty": "moderate",
+    "life_stage": ["late life"],
+    "ethnic_diversity": "Moderate — New York City donor population with some ethnic diversity",
+    "design": "cross-sectional"
   },
   {
     "id": "lasi-dad",
     "name": "LASI-DAD",
-    "full_name": "Longitudinal Aging Study in India \u2014 Diagnostic Assessment of Dementia",
+    "full_name": "Longitudinal Aging Study in India — Diagnostic Assessment of Dementia",
     "year": 2017,
-    "data_types": [
-      "Clinical",
-      "Cognitive",
-      "Blood",
-      "Genetics"
-    ],
+    "data_types": ["Clinical", "Cognitive", "Blood", "Genetics"],
     "access": "restricted",
     "n_subjects": 4096,
     "n_note": "4,096",
-    "origin": [
-      "India"
-    ],
+    "origin": ["India"],
     "doi": "10.1136/bmjopen-2019-030300",
     "url": "https://lasi-dad.org",
-    "notes": "Largest population-based dementia study in India. Critical for LMIC representation."
+    "notes": "Largest population-based dementia study in India. Critical for LMIC representation.",
+    "data_level": ["processed"],
+    "womens_health": "unknown",
+    "access_difficulty": "hard",
+    "life_stage": ["late life"],
+    "ethnic_diversity": "High — multi-ethnic Indian population across diverse states and linguistic groups",
+    "design": "longitudinal"
   },
   {
     "id": "h3africa-brain",
     "name": "H3Africa Brain",
-    "full_name": "Human Heredity and Health in Africa \u2014 Brain Health",
+    "full_name": "Human Heredity and Health in Africa — Brain Health",
     "year": 2017,
-    "data_types": [
-      "Clinical",
-      "Genetics",
-      "Cognitive",
-      "Blood"
-    ],
+    "data_types": ["Clinical", "Genetics", "Cognitive", "Blood"],
     "access": "restricted",
     "n_subjects": 2000,
     "n_note": "~2,000",
-    "origin": [
-      "Ghana",
-      "Nigeria",
-      "Uganda",
-      "Tanzania"
-    ],
+    "origin": ["Ghana", "Nigeria", "Uganda", "Tanzania"],
     "doi": "10.1093/hmg/ddaf113",
     "url": "https://h3africa.org/",
-    "notes": "Critical resource for African-descent populations. Addresses the severe gap in sub-Saharan African representation in dementia genetics. Includes genetic data from populations not represented in IGAP or EADB."
+    "notes": "Critical resource for African-descent populations. Addresses the severe gap in sub-Saharan African representation in dementia genetics. Includes genetic data from populations not represented in IGAP or EADB.",
+    "data_level": ["raw", "processed"],
+    "womens_health": "unknown",
+    "access_difficulty": "hard",
+    "life_stage": ["late life"],
+    "ethnic_diversity": "Very high — sub-Saharan African populations from Ghana, Nigeria, Uganda, Tanzania; among the most underrepresented in AD research",
+    "design": "cross-sectional"
   },
   {
     "id": "care-registry",
     "name": "CARE Registry",
     "full_name": "CARE Registry (Sweden)",
     "year": 2018,
-    "data_types": [
-      "Clinical",
-      "Cognitive"
-    ],
+    "data_types": ["Clinical", "Cognitive"],
     "access": "restricted",
     "n_subjects": 0,
     "n_note": "Register-based; national linkage",
-    "origin": [
-      "Sweden"
-    ],
+    "origin": ["Sweden"],
     "doi": "10.1177/1403494819859737",
     "url": "https://doi.org/10.1177/1403494819859737",
-    "notes": "Swedish register-based cohort linking national health registers for large-scale epidemiological research on risk factors, treatment, and outcomes in dementia."
+    "notes": "Swedish register-based cohort linking national health registers for large-scale epidemiological research on risk factors, treatment, and outcomes in dementia.",
+    "data_level": ["processed"],
+    "womens_health": "unknown",
+    "access_difficulty": "hard",
+    "life_stage": ["late life"],
+    "ethnic_diversity": "Predominantly White/Swedish",
+    "design": "longitudinal"
+  },
+  {
+    "id": "all-of-us",
+    "name": "All of Us",
+    "full_name": "All of Us Research Program",
+    "year": 2018,
+    "data_types": ["Genetics", "Clinical", "Lifestyle", "Blood", "Cognitive"],
+    "access": "partial",
+    "n_subjects": 800000,
+    "n_note": "800,000+ enrolled",
+    "origin": ["USA"],
+    "doi": "10.1056/NEJMsr1809937",
+    "url": "https://allofus.nih.gov/",
+    "notes": "NIH precision medicine initiative aiming to enroll 1 million+ diverse US participants. Strongly prioritises historically underrepresented populations. Includes EHR, genomics, wearable data, and lifestyle surveys. Researcher access via the Researcher Workbench.",
+    "data_level": ["raw", "preprocessed", "processed"],
+    "womens_health": "Yes — menstrual history, menopause status, reproductive health, and hormonal variables collected in surveys",
+    "access_difficulty": "easy",
+    "life_stage": ["early adulthood", "midlife", "late life"],
+    "ethnic_diversity": "Very high — >50% participants from underrepresented minorities; explicitly designed for diversity",
+    "design": "longitudinal"
   },
   {
     "id": "oasis3",
     "name": "OASIS-3",
-    "full_name": "Open Access Series of Imaging Studies \u2014 Longitudinal Neuroimaging, Clinical, and Cognitive Dataset for Normal Aging and Alzheimer Disease",
+    "full_name": "Open Access Series of Imaging Studies — Longitudinal Neuroimaging, Clinical, and Cognitive Dataset for Normal Aging and Alzheimer Disease",
     "year": 2019,
-    "data_types": [
-      "MRI",
-      "PET",
-      "CSF",
-      "Blood",
-      "Clinical",
-      "Cognitive"
-    ],
+    "data_types": ["MRI", "PET", "CSF", "Blood", "Clinical", "Cognitive"],
     "access": "open",
     "n_subjects": 1378,
     "n_note": "1,378",
-    "origin": [
-      "USA"
-    ],
+    "origin": ["USA"],
     "doi": "10.1101/2019.12.13.19014902",
     "url": "https://www.oasis-brains.org/",
-    "notes": "Longitudinal. Open access. Includes amyloid/tau PET."
+    "notes": "Longitudinal. Open access. Includes amyloid/tau PET.",
+    "data_level": ["raw", "preprocessed"],
+    "womens_health": "unknown",
+    "access_difficulty": "easy",
+    "life_stage": ["midlife", "late life"],
+    "ethnic_diversity": "Predominantly White",
+    "design": "longitudinal"
   },
   {
     "id": "redlat",
     "name": "ReDLat",
     "full_name": "Red Latina de Demencias Tempranas (Latin American Network for Early-Onset Dementia)",
     "year": 2019,
-    "data_types": [
-      "MRI",
-      "Blood",
-      "Genetics",
-      "Cognitive",
-      "Clinical"
-    ],
+    "data_types": ["MRI", "Blood", "Genetics", "Cognitive", "Clinical"],
     "access": "restricted",
     "n_subjects": 1200,
     "n_note": "~1,200",
-    "origin": [
-      "Argentina",
-      "Brazil",
-      "Chile",
-      "Colombia",
-      "Mexico"
-    ],
+    "origin": ["Argentina", "Brazil", "Chile", "Colombia", "Mexico"],
     "doi": "10.1002/alz70860_104080",
     "url": "https://red-lat.com",
-    "notes": "Crucial for Latin American diversity. Includes Indigenous-descent and mestizo populations."
+    "notes": "Crucial for Latin American diversity. Includes Indigenous-descent and mestizo populations.",
+    "data_level": ["preprocessed"],
+    "womens_health": "unknown",
+    "access_difficulty": "hard",
+    "life_stage": ["early adulthood", "midlife"],
+    "ethnic_diversity": "High — Indigenous-descent, mestizo, and mixed populations across 5 Latin American countries",
+    "design": "longitudinal"
   },
   {
     "id": "vip-vietnamese",
     "name": "VIP",
-    "full_name": "Cognitive Aging Program \u2014 Vietnamese American Immigrants",
+    "full_name": "Cognitive Aging Program — Vietnamese American Immigrants",
     "year": 2020,
-    "data_types": [
-      "Cognitive",
-      "Clinical",
-      "Lifestyle"
-    ],
+    "data_types": ["Cognitive", "Clinical", "Lifestyle"],
     "access": "restricted",
     "n_subjects": 450,
     "n_note": "~450 Vietnamese American immigrants",
-    "origin": [
-      "USA",
-      "Vietnam"
-    ],
+    "origin": ["USA", "Vietnam"],
     "doi": "10.1002/alz.70097",
     "url": "https://doi.org/10.1002/alz.70097",
-    "notes": "Longitudinal study of cognitive aging in Vietnamese American immigrants, addressing a critically underrepresented population. Not exclusively AD \u2014 focuses on cognitive aging with culturally adapted assessments."
+    "notes": "Longitudinal study of cognitive aging in Vietnamese American immigrants, addressing a critically underrepresented population. Not exclusively AD — focuses on cognitive aging with culturally adapted assessments.",
+    "data_level": ["processed"],
+    "womens_health": "unknown",
+    "access_difficulty": "hard",
+    "life_stage": ["late life"],
+    "ethnic_diversity": "Vietnamese American immigrants — a critically underrepresented Asian-American subgroup",
+    "design": "longitudinal"
   },
   {
     "id": "anmerge",
     "name": "ANMerge",
     "full_name": "AddNeuroMed Merged Dataset",
     "year": 2021,
-    "data_types": [
-      "MRI",
-      "Blood",
-      "Genetics",
-      "Cognitive",
-      "Clinical"
-    ],
+    "data_types": ["MRI", "Blood", "Genetics", "Cognitive", "Clinical"],
     "access": "open",
     "n_subjects": 700,
     "n_note": "~700",
-    "origin": [
-      "UK",
-      "Finland",
-      "France",
-      "Greece",
-      "Italy",
-      "Poland"
-    ],
+    "origin": ["UK", "Finland", "France", "Greece", "Italy", "Poland"],
     "doi": "10.3233/JAD-200948",
     "url": "https://www.synapse.org/",
-    "notes": "Fully open harmonised version of AddNeuroMed. Available via Synapse."
+    "notes": "Fully open harmonised version of AddNeuroMed. Available via Synapse.",
+    "data_level": ["preprocessed", "processed"],
+    "womens_health": "unknown",
+    "access_difficulty": "easy",
+    "life_stage": ["late life"],
+    "ethnic_diversity": "European only; limited diversity",
+    "design": "cross-sectional"
   },
   {
     "id": "readd-adsp",
     "name": "READD-ADSP",
     "full_name": "Recruitment and Retention for Alzheimer's Disease Diversity Genetic Cohorts in the ADSP",
     "year": 2021,
-    "data_types": [
-      "Genetics",
-      "Clinical"
-    ],
+    "data_types": ["Genetics", "Clinical"],
     "access": "restricted",
     "n_subjects": 0,
     "n_note": "Ongoing recruitment initiative",
-    "origin": [
-      "USA"
-    ],
+    "origin": ["USA"],
     "doi": "10.1002/alz.074860",
     "url": "https://doi.org/10.1002/alz.074860",
-    "notes": "Initiative within the Alzheimer's Disease Sequencing Project (ADSP) focused specifically on improving recruitment of underrepresented racial and ethnic groups in AD genetic studies."
+    "notes": "Initiative within the Alzheimer's Disease Sequencing Project (ADSP) focused specifically on improving recruitment of underrepresented racial and ethnic groups in AD genetic studies.",
+    "data_level": ["unknown"],
+    "womens_health": "unknown",
+    "access_difficulty": "hard",
+    "life_stage": ["late life"],
+    "ethnic_diversity": "Very high — recruitment initiative explicitly targeting underrepresented racial and ethnic minorities",
+    "design": "unknown"
   },
   {
     "id": "sea-ad",
     "name": "SEA-AD",
     "full_name": "Seattle Alzheimer's Disease Brain Cell Atlas",
     "year": 2022,
-    "data_types": [
-      "Transcriptomics",
-      "Epigenomics",
-      "Neuropathology"
-    ],
+    "data_types": ["Transcriptomics", "Epigenomics", "Neuropathology"],
     "access": "open",
     "n_subjects": 84,
     "n_note": "84 donors",
-    "origin": [
-      "USA"
-    ],
+    "origin": ["USA"],
     "doi": "10.1038/s41593-024-01611-5",
     "url": "https://portal.brain-map.org/explore/seattle-alzheimers-disease",
-    "notes": "Single-cell and single-nucleus RNA-seq + ATAC-seq from 84 human brain donors spanning the full AD neuropathological spectrum. Produced by the Allen Institute for Brain Science. Fully open via the Allen Brain Map portal and Synapse."
+    "notes": "Single-cell and single-nucleus RNA-seq + ATAC-seq from 84 human brain donors spanning the full AD neuropathological spectrum. Produced by the Allen Institute for Brain Science. Fully open via the Allen Brain Map portal and Synapse.",
+    "data_level": ["raw"],
+    "womens_health": "unknown",
+    "access_difficulty": "easy",
+    "life_stage": ["late life"],
+    "ethnic_diversity": "Moderate — Allen Institute donor diversity",
+    "design": "cross-sectional"
   },
   {
     "id": "acad",
     "name": "ACAD",
     "full_name": "Asian Cohort for Alzheimer's Disease",
     "year": 2022,
-    "data_types": [
-      "Genetics",
-      "MRI",
-      "Blood",
-      "CSF",
-      "Clinical",
-      "Cognitive"
-    ],
+    "data_types": ["Genetics", "MRI", "Blood", "CSF", "Clinical", "Cognitive"],
     "access": "restricted",
     "n_subjects": 5000,
     "n_note": "~5,000 across multiple sites",
-    "origin": [
-      "USA",
-      "China",
-      "Singapore",
-      "South Korea",
-      "Japan"
-    ],
+    "origin": ["USA", "China", "Singapore", "South Korea", "Japan"],
     "doi": "10.1002/alz.13611",
     "url": "https://doi.org/10.1002/alz.13611",
-    "notes": "Multi-site consortium recruiting individuals of Asian ancestry across North America and Asia. Directly addresses the European-ancestry bias in AD GWAS by studying populations historically excluded from large-scale genomics."
+    "notes": "Multi-site consortium recruiting individuals of Asian ancestry across North America and Asia. Directly addresses the European-ancestry bias in AD GWAS by studying populations historically excluded from large-scale genomics.",
+    "data_level": ["unknown"],
+    "womens_health": "unknown",
+    "access_difficulty": "hard",
+    "life_stage": ["late life"],
+    "ethnic_diversity": "Very high — diverse Asian ancestries (Chinese, Korean, Japanese, Singaporean) across North America and Asia",
+    "design": "longitudinal"
   },
   {
     "id": "brainlat",
     "name": "BrainLat",
     "full_name": "Latin American Brain Health Institute Neuroimaging Dataset",
     "year": 2023,
-    "data_types": [
-      "MRI",
-      "EEG",
-      "Cognitive",
-      "Clinical"
-    ],
+    "data_types": ["MRI", "EEG", "Cognitive", "Clinical"],
     "access": "open",
     "n_subjects": 780,
     "n_note": "780",
-    "origin": [
-      "Argentina",
-      "Chile",
-      "Colombia",
-      "Mexico",
-      "Peru"
-    ],
+    "origin": ["Argentina", "Chile", "Colombia", "Mexico", "Peru"],
     "doi": "10.1038/s41597-023-02806-8",
     "url": "https://doi.org/10.1038/s41597-023-02806-8",
-    "notes": "First open multimodal neuroimaging dataset of neurodegeneration from Latin America. Includes AD, bvFTD, PD, MS and healthy controls. MRI (anatomical, functional, diffusion) + high-density EEG. BIDS format. Hosted on Synapse. Critical resource for underrepresented population neuroscience."
+    "notes": "First open multimodal neuroimaging dataset of neurodegeneration from Latin America. Includes AD, bvFTD, PD, MS and healthy controls. MRI (anatomical, functional, diffusion) + high-density EEG. BIDS format. Hosted on Synapse. Critical resource for underrepresented population neuroscience.",
+    "data_level": ["raw"],
+    "womens_health": "unknown",
+    "access_difficulty": "easy",
+    "life_stage": ["midlife", "late life"],
+    "ethnic_diversity": "High — Latin American populations across 5 countries including indigenous and mixed-ancestry groups",
+    "design": "cross-sectional"
   },
   {
     "id": "valiant",
     "name": "VALIANT",
     "full_name": "VALIANT Study",
     "year": 2024,
-    "data_types": [
-      "Blood",
-      "Clinical"
-    ],
+    "data_types": ["Blood", "Clinical"],
     "access": "restricted",
     "n_subjects": 0,
     "n_note": "Not reported",
-    "origin": [
-      "Multiple"
-    ],
+    "origin": ["Multiple"],
     "doi": "10.1016/j.imbio.2025.153039",
     "url": "https://doi.org/10.1016/j.imbio.2025.153039",
-    "notes": "Study investigating immune and inflammatory biomarkers in Alzheimer's disease. Primary aim was immunological characterisation \u2014 not a general AD epidemiological cohort."
+    "notes": "Study investigating immune and inflammatory biomarkers in Alzheimer's disease. Primary aim was immunological characterisation — not a general AD epidemiological cohort.",
+    "data_level": ["unknown"],
+    "womens_health": "unknown",
+    "access_difficulty": "hard",
+    "life_stage": ["unknown"],
+    "ethnic_diversity": "unknown",
+    "design": "unknown"
   }
 ]

@@ -24,7 +24,7 @@ export default function WorldMap() {
   const [hovered, setHovered] = useState<string | null>(null);
   const [worldGeo, setWorldGeo] = useState<unknown>(null);
 
-  const BASE = process.env.NODE_ENV === "production" ? "/ad-diversity-website" : "";
+  const BASE = "/ad-diversity-website";
 
   useEffect(() => {
     fetch(`${BASE}/data/world-datasets.json`)
