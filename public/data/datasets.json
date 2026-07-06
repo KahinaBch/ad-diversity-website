@@ -478,24 +478,24 @@
   },
   {
     "id": "bisc",
-    "name": "BISC",
-    "full_name": "Berlin Initiative Study Cohort",
-    "year": 2009,
+    "name": "BiSC",
+    "full_name": "Barcelona Life Study Cohort",
+    "year": 2019,
     "data_types": [
+      "MRI",
       "Clinical",
-      "Blood",
-      "Cognitive",
-      "Lifestyle"
+      "Lifestyle",
+      "Exposomics"
     ],
     "access": "restricted",
-    "n_subjects": 2069,
-    "n_note": "~2,069",
+    "n_subjects": 1200,
+    "n_note": "~1,200 pregnant women (target)",
     "origin": [
-      "Germany"
+      "Spain"
     ],
-    "doi": "10.1159/000346796",
-    "url": "https://www.charite.de/",
-    "notes": "Population-based cohort of community-dwelling adults aged 70+ in Berlin. Focuses on the intersection of kidney function, cardiovascular risk, and cognitive aging including dementia."
+    "doi": "",
+    "url": "https://projectebisc.org/en/home/",
+    "notes": "Barcelona-based birth cohort coordinated by ISGlobal. Investigates the effect of air pollution on fetal and infant brain development via prenatal and postnatal MRI. Recruits pregnant women in their first trimester from BCNatal and Hospital de la Santa Creu i Sant Pau. Funded by an ERC Advanced Grant (AIR-NB). Long-term aim to follow mothers and newborns across their lifespan."
   },
   {
     "id": "prevent-ad",
