@@ -732,6 +732,30 @@
     "notes": "Bordeaux-based longitudinal cohort of 2,000+ volunteers aged 55–80. Investigates the influence of life trajectories and biological factors on health and brain aging."
   },
   {
+    "id": "lifelines",
+    "name": "Lifelines",
+    "full_name": "Lifelines Biobank",
+    "year": 2006,
+    "data_types": [
+      "Genetics",
+      "Blood",
+      "Clinical",
+      "Cognitive",
+      "Lifestyle",
+      "Metabolomics",
+      "Exposomics"
+    ],
+    "access": "partial",
+    "n_subjects": 167000,
+    "n_note": "~167,000",
+    "origin": [
+      "Netherlands"
+    ],
+    "doi": "10.1093/ije/dys064",
+    "url": "https://www.lifelines-biobank.com/explore",
+    "notes": "Large multigenerational population-based cohort from the northern Netherlands. Three-generation design covering participants aged 6 months to 93 years. Collects extensive phenotypic, genomic, and lifestyle data with long-term follow-up. Gated access for researchers."
+  },
+  {
     "id": "all-of-us",
     "name": "All of Us",
     "full_name": "All of Us Research Program",
