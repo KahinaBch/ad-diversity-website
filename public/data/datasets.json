@@ -80,8 +80,8 @@
       "Genetics"
     ],
     "access": "restricted",
-    "n_subjects": 5000,
-    "n_note": "~5,000",
+    "n_subjects": 3000,
+    "n_note": "~3,000",
     "origin": [
       "USA"
     ],
@@ -177,6 +177,29 @@
     "doi": "10.1097/WAD.0b013e318214bb18",
     "url": "https://naccdata.org/",
     "notes": "Harmonised data across 34 US Alzheimer's Disease Research Centers. Includes post-mortem neuropathology."
+  },
+  {
+    "id": "three-city",
+    "name": "3C Study",
+    "full_name": "Three-City Study (Étude des 3 Cités)",
+    "year": 1999,
+    "data_types": [
+      "Clinical",
+      "Cognitive",
+      "MRI",
+      "Blood",
+      "Genetics",
+      "Lifestyle"
+    ],
+    "access": "restricted",
+    "n_subjects": 9294,
+    "n_note": "~9,294",
+    "origin": [
+      "France"
+    ],
+    "doi": "10.1007/s10654-003-4234-9",
+    "url": "https://the-three-city-study-3c.com",
+    "notes": "Large French community-based longitudinal cohort across Bordeaux, Dijon, and Montpellier. Investigates the relationship between vascular diseases and dementia. Rich data on vascular risk factors, genetics, and cognitive decline."
   },
   {
     "id": "wrap",
@@ -431,6 +454,50 @@
     "notes": "Longitudinal study at Massachusetts General Hospital investigating the earliest stages of AD in cognitively normal older adults. Emphasises amyloid and tau PET imaging to track preclinical AD trajectories."
   },
   {
+    "id": "memento",
+    "name": "MEMENTO",
+    "full_name": "MEMENTO Cohort",
+    "year": 2011,
+    "data_types": [
+      "MRI",
+      "PET",
+      "CSF",
+      "Blood",
+      "Cognitive",
+      "Clinical"
+    ],
+    "access": "restricted",
+    "n_subjects": 2323,
+    "n_note": "~2,323",
+    "origin": [
+      "France"
+    ],
+    "doi": "10.1093/aje/kwv285",
+    "url": "https://www.memento-cohort.fr/",
+    "notes": "French multi-center cohort of outpatients with subjective cognitive decline (SCD) or mild cognitive impairment (MCI). Recruits from 26 memory clinics across France. Rich multi-modal longitudinal biomarker data."
+  },
+  {
+    "id": "bisc",
+    "name": "BISC",
+    "full_name": "Berlin Initiative Study Cohort",
+    "year": 2009,
+    "data_types": [
+      "Clinical",
+      "Blood",
+      "Cognitive",
+      "Lifestyle"
+    ],
+    "access": "restricted",
+    "n_subjects": 2069,
+    "n_note": "~2,069",
+    "origin": [
+      "Germany"
+    ],
+    "doi": "10.1159/000346796",
+    "url": "https://www.charite.de/",
+    "notes": "Population-based cohort of community-dwelling adults aged 70+ in Berlin. Focuses on the intersection of kidney function, cardiovascular risk, and cognitive aging including dementia."
+  },
+  {
     "id": "prevent-ad",
     "name": "PREVENT-AD",
     "full_name": "Pre-symptomatic Evaluation of Experimental or Novel Treatments for Alzheimer Disease",
@@ -639,6 +706,50 @@
     "doi": "10.1038/sdata.2018.185",
     "url": "https://adknowledgeportal.synapse.org/",
     "notes": "Multi-region RNA-seq and proteomics from Mount Sinai Brain Bank AD cases and controls. Part of AMP-AD. Includes 4 brain regions per donor, enabling network-based analyses. Available via Synapse."
+  },
+  {
+    "id": "bcube",
+    "name": "BCube",
+    "full_name": "BCube Cohort",
+    "year": 2016,
+    "data_types": [
+      "MRI",
+      "Blood",
+      "Cognitive",
+      "Clinical",
+      "Genetics"
+    ],
+    "access": "restricted",
+    "n_subjects": 0,
+    "n_note": "To be confirmed",
+    "origin": [
+      "Canada"
+    ],
+    "doi": "",
+    "url": "",
+    "notes": "Details to be confirmed."
+  },
+  {
+    "id": "all-of-us",
+    "name": "All of Us",
+    "full_name": "All of Us Research Program",
+    "year": 2018,
+    "data_types": [
+      "Genetics",
+      "Clinical",
+      "Lifestyle",
+      "Blood",
+      "Cognitive"
+    ],
+    "access": "partial",
+    "n_subjects": 800000,
+    "n_note": "800,000+ enrolled",
+    "origin": [
+      "USA"
+    ],
+    "doi": "10.1056/NEJMsr1809937",
+    "url": "https://allofus.nih.gov/",
+    "notes": "NIH precision medicine initiative aiming to enroll 1 million+ diverse US participants. Strongly prioritises historically underrepresented populations. Includes EHR, genomics, wearable data, and lifestyle surveys. Researcher access via the Researcher Workbench."
   },
   {
     "id": "lasi-dad",
