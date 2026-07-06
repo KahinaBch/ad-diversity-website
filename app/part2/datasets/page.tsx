@@ -1,5 +1,5 @@
-import DatasetTable from "@/components/DatasetTable";
 import DatasetTimeline from "@/components/DatasetTimeline";
+import CatalogueClient from "./CatalogueClient";
 
 export default function DatasetsPage() {
   return (
@@ -69,7 +69,7 @@ export default function DatasetsPage() {
             Contribute
           </a>
         </div>
-        <DatasetTable />
+        <CatalogueClient />
       </section>
 
       <div className="section-divider mb-14" />

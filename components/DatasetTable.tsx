@@ -113,7 +113,13 @@ function ChipFilter({
   );
 }
 
-export default function DatasetTable() {
+interface DatasetTableProps {
+  selectedIds?: Set<string>;
+  onSelectionChange?: (ids: Set<string>) => void;
+  onDataLoad?: (datasets: Dataset[]) => void;
+}
+
+export default function DatasetTable({ selectedIds, onSelectionChange, onDataLoad }: DatasetTableProps = {}) {
   const [datasets, setDatasets] = useState<Dataset[]>([]);
   const [search, setSearch]     = useState("");
   const [accessFilter, setAccessFilter] = useState("all");
@@ -131,7 +137,13 @@ export default function DatasetTable() {
   const BASE = "/ad-diversity-website";
 
   useEffect(() => {
-    fetch(`${BASE}/data/datasets.json`).then((r) => r.json()).then(setDatasets);
+    fetch(`${BASE}/data/datasets.json`)
+      .then((r) => r.json())
+      .then((data: Dataset[]) => {
+        setDatasets(data);
+        onDataLoad?.(data);
+      });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [BASE]);
 
   function toggle<T>(set: Set<T>, val: T): Set<T> {
@@ -326,6 +338,19 @@ export default function DatasetTable() {
         <table className="data-table">
           <thead>
             <tr>
+              {selectedIds !== undefined && (
+                <th className="w-8">
+                  <input type="checkbox"
+                    className="accent-violet-500"
+                    checked={filtered.length > 0 && filtered.every((d) => selectedIds.has(d.id))}
+                    onChange={(e) => {
+                      const next = new Set(selectedIds);
+                      filtered.forEach((d) => e.target.checked ? next.add(d.id) : next.delete(d.id));
+                      onSelectionChange?.(next);
+                    }}
+                  />
+                </th>
+              )}
               <th><button onClick={() => toggleSort("name")} className="flex items-center">Dataset <SortIcon k="name" /></button></th>
               <th><button onClick={() => toggleSort("year")} className="flex items-center">Year <SortIcon k="year" /></button></th>
               <th>Data Types</th>
@@ -346,6 +371,18 @@ export default function DatasetTable() {
               return (
                 <>
                   <tr key={d.id} onClick={() => setExpanded(expanded === d.id ? null : d.id)} className="cursor-pointer">
+                    {selectedIds !== undefined && (
+                      <td onClick={(e) => e.stopPropagation()}>
+                        <input type="checkbox" className="accent-violet-500"
+                          checked={selectedIds.has(d.id)}
+                          onChange={(e) => {
+                            const next = new Set(selectedIds);
+                            e.target.checked ? next.add(d.id) : next.delete(d.id);
+                            onSelectionChange?.(next);
+                          }}
+                        />
+                      </td>
+                    )}
                     <td>
                       <div className="font-semibold text-violet-300">{d.name}</div>
                       <div className="text-gray-500 text-xs mt-0.5 max-w-xs truncate">{d.full_name}</div>
@@ -427,7 +464,7 @@ export default function DatasetTable() {
 
                   {expanded === d.id && (
                     <tr key={`${d.id}-exp`}>
-                      <td colSpan={6 + visibleCols.size} className="px-4 py-3 text-xs text-gray-400 italic"
+                      <td colSpan={6 + visibleCols.size + (selectedIds !== undefined ? 1 : 0)} className="px-4 py-3 text-xs text-gray-400 italic"
                         style={{ background: "rgba(107,33,168,0.08)" }}>
                         <span className="font-medium text-violet-300 not-italic">Notes: </span>
                         {d.notes}{" "}
