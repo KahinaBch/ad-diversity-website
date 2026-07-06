@@ -709,25 +709,25 @@
   },
   {
     "id": "bcube",
-    "name": "BCube",
-    "full_name": "BCube Cohort",
+    "name": "B-CUBE",
+    "full_name": "Bordeaux Cohort for Brain and Cognitive Aging (B-CUBE)",
     "year": 2016,
     "data_types": [
       "MRI",
       "Blood",
       "Cognitive",
       "Clinical",
-      "Genetics"
+      "Lifestyle"
     ],
     "access": "restricted",
-    "n_subjects": 0,
-    "n_note": "To be confirmed",
+    "n_subjects": 2000,
+    "n_note": "2,000+ volontaires bordelais âgés de 55 à 80 ans",
     "origin": [
-      "Canada"
+      "France"
     ],
     "doi": "",
-    "url": "",
-    "notes": "Details to be confirmed."
+    "url": "https://cohorte-b-cube.fr",
+    "notes": "Bordeaux-based longitudinal cohort of 2,000+ volunteers aged 55–80. Investigates the influence of life trajectories and biological factors on health and brain aging."
   },
   {
     "id": "all-of-us",
