@@ -480,22 +480,24 @@
     "id": "bisc",
     "name": "BiSC",
     "full_name": "Barcelona Life Study Cohort",
-    "year": 2019,
+    "year": 2018,
     "data_types": [
       "MRI",
       "Clinical",
       "Lifestyle",
-      "Exposomics"
+      "Exposomics",
+      "Genetics",
+      "Blood"
     ],
-    "access": "restricted",
-    "n_subjects": 1200,
-    "n_note": "~1,200 pregnant women (target)",
+    "access": "partial",
+    "n_subjects": 1086,
+    "n_note": "1,086 pregnant women; 1,033 children",
     "origin": [
       "Spain"
     ],
     "doi": "",
     "url": "https://projectebisc.org/en/home/",
-    "notes": "Barcelona-based birth cohort coordinated by ISGlobal. Investigates the effect of air pollution on fetal and infant brain development via prenatal and postnatal MRI. Recruits pregnant women in their first trimester from BCNatal and Hospital de la Santa Creu i Sant Pau. Funded by an ERC Advanced Grant (AIR-NB). Long-term aim to follow mothers and newborns across their lifespan."
+    "notes": "Exposome birth cohort enrolled October 2018–April 2021 at three Barcelona university hospitals (Hospital Sant Joan de Déu, Hospital de la Santa Creu i Sant Pau, Hospital Clínic). Evaluates socio-environmental and genetic determinants of foetal and child health, growth, and development, as well as maternal mental and physical health during and after pregnancy. Data collected via interviews, questionnaires, home visits, personal sensors, hospital records, ultrasound, MRI, and biological samples. Follow-ups ongoing to 48 months postnatally. Gated data access available."
   },
   {
     "id": "prevent-ad",
