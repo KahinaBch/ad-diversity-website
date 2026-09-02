@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import { useTheme } from "./ThemeProvider";
 
 interface Region {
   id: string;
@@ -23,6 +24,8 @@ export default function WorldMap() {
   const [selected, setSelected] = useState<Region | null>(null);
   const [hovered, setHovered] = useState<string | null>(null);
   const [worldGeo, setWorldGeo] = useState<unknown>(null);
+  const { resolved: theme } = useTheme();
+  const isLight = theme === "light";
 
   const BASE = "/ad-diversity-website";
 
@@ -40,6 +43,7 @@ export default function WorldMap() {
 
   useEffect(() => {
     if (!mapData || !worldGeo || !svgRef.current) return;
+    // re-draw when theme changes too
 
     const drawMap = async () => {
       const d3 = await import("d3");
@@ -59,11 +63,17 @@ export default function WorldMap() {
 
       const path = d3.geoPath().projection(projection);
 
-      svg.append("rect").attr("width", W).attr("height", H).attr("fill", "#0a0618");
+      const mapBg = isLight ? "#EEE8F5" : "#0a0618";
+      const countryFill = isLight ? "#D8D0E8" : "#1a0f35";
+      const countryStroke = isLight ? "rgba(107,33,168,0.15)" : "rgba(109,40,217,0.2)";
+      const graticulStroke = isLight ? "rgba(107,33,168,0.08)" : "rgba(167,139,250,0.06)";
+      const labelColor = isLight ? "#2D1B5E" : "#DDD6FE";
+
+      svg.append("rect").attr("width", W).attr("height", H).attr("fill", mapBg);
 
       const graticule = d3.geoGraticule();
       svg.append("path").datum(graticule()).attr("d", path).attr("fill", "none")
-        .attr("stroke", "rgba(167,139,250,0.06)").attr("stroke-width", 0.5);
+        .attr("stroke", graticulStroke).attr("stroke-width", 0.5);
 
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const countries = topojson.feature(worldGeo as any, (worldGeo as any).objects.countries);
@@ -72,7 +82,7 @@ export default function WorldMap() {
         .data((countries as any).features).join("path")
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         .attr("d", (d: any) => path(d) || "")
-        .attr("fill", "#1a0f35").attr("stroke", "rgba(109,40,217,0.2)").attr("stroke-width", 0.4);
+        .attr("fill", countryFill).attr("stroke", countryStroke).attr("stroke-width", 0.4);
 
       const maxCount = Math.max(...mapData.regions.map((r) => r.count));
       const radiusScale = d3.scaleSqrt().domain([0, maxCount]).range([0, 55]);
@@ -108,7 +118,7 @@ export default function WorldMap() {
 
         if (r > 20) {
           bubbleG.append("text").attr("x", x).attr("y", y + r + 14)
-            .attr("text-anchor", "middle").attr("fill", "#DDD6FE")
+            .attr("text-anchor", "middle").attr("fill", labelColor)
             .attr("font-size", "9").attr("font-weight", "500")
             .attr("pointer-events", "none").text(region.name);
         }
@@ -116,12 +126,12 @@ export default function WorldMap() {
     };
 
     drawMap();
-  }, [mapData, worldGeo, selected, hovered, BASE]);
+  }, [mapData, worldGeo, selected, hovered, BASE, isLight]);
 
   return (
     <div className="w-full">
       <div className="relative rounded-xl overflow-hidden border"
-        style={{ borderColor: "rgba(167,139,250,0.2)", background: "#0a0618" }}>
+        style={{ borderColor: "rgba(167,139,250,0.2)", background: isLight ? "#EEE8F5" : "#0a0618" }}>
         {!mapData || !worldGeo ? (
           <div className="flex items-center justify-center h-64">
             <div className="text-violet-400 text-sm animate-pulse">Loading map…</div>
@@ -154,12 +164,12 @@ export default function WorldMap() {
               <h3 className="text-base font-bold" style={{ color: selected.color }}>{selected.name}</h3>
               <p className="text-xs text-gray-400 mt-0.5">{selected.count} documented datasets</p>
             </div>
-            <button onClick={() => setSelected(null)} className="text-gray-500 hover:text-white text-lg leading-none">×</button>
+            <button onClick={() => setSelected(null)} className="text-gray-500 hover:text-gray-800 dark:hover:text-white text-lg leading-none">×</button>
           </div>
           <div className="flex flex-wrap gap-1.5">
             {selected.datasets.map((ds) => (
-              <span key={ds} className="px-2 py-0.5 rounded-md text-xs font-medium text-gray-200"
-                style={{ background: selected.color + "25", border: `1px solid ${selected.color}40` }}>
+              <span key={ds} className="px-2 py-0.5 rounded-md text-xs font-medium"
+                style={{ color: isLight ? "#2D1B5E" : "#e5e7eb", background: selected.color + "25", border: `1px solid ${selected.color}40` }}>
                 {ds}
               </span>
             ))}

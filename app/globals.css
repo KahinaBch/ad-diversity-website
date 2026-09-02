@@ -192,10 +192,10 @@ body {
 @layer utilities {
   [data-theme="light"] .text-gray-100 { color: #1F1535; }
   [data-theme="light"] .text-gray-200 { color: #2D2248; }
-  [data-theme="light"] .text-gray-300 { color: #4A3D6B; }
-  [data-theme="light"] .text-gray-400 { color: #6B6280; }
-  [data-theme="light"] .text-gray-500 { color: #8B8598; }
-  [data-theme="light"] .text-gray-600 { color: #9CA3AF; }
+  [data-theme="light"] .text-gray-300 { color: #3D2F60; }
+  [data-theme="light"] .text-gray-400 { color: #4A3D6B; }
+  [data-theme="light"] .text-gray-500 { color: #5C5072; }
+  [data-theme="light"] .text-gray-600 { color: #6B6280; }
   [data-theme="light"] .text-white { color: #1F1535; }
 
   [data-theme="light"] .text-violet-200 { color: #6B21A8; }
