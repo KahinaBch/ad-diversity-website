@@ -32,6 +32,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Sync dataset catalogue
+        run: npm run sync:catalogue
+
       - name: Build
         run: npm run build
 

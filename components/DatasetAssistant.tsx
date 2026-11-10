@@ -1,22 +1,6 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
-
-interface Dataset {
-  id: string;
-  name: string;
-  full_name: string;
-  data_types: string[];
-  access: string;
-  n_subjects: number;
-  origin: string[];
-  design?: string;
-  life_stage?: string[];
-  ethnic_diversity?: string;
-  womens_health?: string;
-  access_difficulty?: string;
-  data_level?: string[];
-  url: string;
-}
+import { type Dataset, ACCESS_LABEL, accessLevel, diversityLevel } from "@/lib/catalogue";
 
 interface Message {
   role: "user" | "assistant";
@@ -124,27 +108,20 @@ function detectFactors(query: string): ScoreFactors {
   };
 }
 
-function DIVERSITY_LVL(text: string): string {
-  const t = (text ?? "").toLowerCase();
-  if (t.startsWith("very high")) return "very high";
-  if (t.startsWith("high"))      return "high";
-  if (t.startsWith("moderate"))  return "moderate";
-  if (t === "unknown")           return "unknown";
-  return "low";
-}
+const hasWomensHealth = (d: Dataset) =>
+  !!d.womens_health && d.womens_health.trim().toLowerCase() !== "unknown";
 
 function scoreDataset(d: Dataset, f: ScoreFactors): number {
   let score = 0;
   const types = d.data_types.map((t) => t.toLowerCase());
-  const diversityLvl = DIVERSITY_LVL(d.ethnic_diversity ?? "unknown");
+  const diversityLvl = diversityLevel(d);
 
   if (f.wantsDiversity) {
-    if (diversityLvl === "very high") score += 6;
-    else if (diversityLvl === "high") score += 4;
-    else if (diversityLvl === "moderate") score += 2;
+    if (diversityLvl === "high") score += 6;
+    else if (diversityLvl === "medium") score += 3;
   }
   if (f.wantsWomens) {
-    if ((d.womens_health ?? "").toLowerCase() !== "unknown" && d.womens_health) score += 4;
+    if (hasWomensHealth(d)) score += 4;
     if (d.id === "bisc") score += 4;
     if (d.id === "prevent-ad") score += 2;
   }
@@ -166,8 +143,9 @@ function scoreDataset(d: Dataset, f: ScoreFactors): number {
     if (d.id === "wrap" || d.id === "prevent-ad" || d.id === "alfa") score += 3;
   }
   if (f.wantsOpen) {
-    if (d.access === "open") score += 5;
-    else if (d.access === "partial") score += 2;
+    const lvl = accessLevel(d);
+    if (lvl === "open") score += 5;
+    else if (lvl === "easy") score += 2;
   }
   if (f.wantsOmics) {
     if (types.includes("proteomics"))     score += 4;
@@ -195,12 +173,13 @@ function detectGaps(datasets: Dataset[], f: ScoreFactors): string[] {
   const gaps: string[] = [];
 
   if (f.wantsDiversity) {
-    const highDiv = datasets.filter((d) => ["very high", "high"].includes(DIVERSITY_LVL(d.ethnic_diversity ?? "")));
-    if (highDiv.length < 3)
-      gaps.push("Only " + highDiv.length + " cohort(s) with high or very high ethnic diversity — major under-representation of non-European populations in AD research.");
+    const highDiv = datasets.filter((d) => diversityLevel(d) === "high");
+    const lowDiv = datasets.filter((d) => diversityLevel(d) === "low");
+    if (lowDiv.length > datasets.length / 2)
+      gaps.push(`Only ${highDiv.length} of ${datasets.length} cohorts are rated as highly ethnically diverse, while ${lowDiv.length} are rated low: non-European populations remain under-represented in AD research.`);
   }
   if (f.wantsWomens) {
-    const withWomen = datasets.filter((d) => d.womens_health && d.womens_health !== "unknown");
+    const withWomen = datasets.filter(hasWomensHealth);
     if (withWomen.length < datasets.length / 2)
       gaps.push("Less than half of cohorts report detailed women's health data (menopause, HRT) — a critical gap for understanding sex-specific AD risk.");
   }
@@ -225,7 +204,7 @@ function detectGaps(datasets: Dataset[], f: ScoreFactors): string[] {
   if (f.wantsGenetics) {
     const gen = datasets.filter((d) => d.data_types.map((t) => t.toLowerCase()).includes("genetics"));
     if (gen.length > 0 && f.wantsDiversity) {
-      const divGen = gen.filter((d) => ["very high", "high"].includes(DIVERSITY_LVL(d.ethnic_diversity ?? "")));
+      const divGen = gen.filter((d) => diversityLevel(d) === "high");
       if (divGen.length < 3)
         gaps.push("GWAS data in diverse populations is scarce — most genetic studies are European-centric, limiting polygenic score generalizability.");
     }
@@ -267,8 +246,8 @@ function generateResponse(
   }
 
   topMatches.slice(0, 5).forEach((d, i) => {
-    const divLvl = DIVERSITY_LVL(d.ethnic_diversity ?? "unknown");
-    const accessLabel = d.access === "open" ? "open access" : d.access === "partial" ? "application-required" : "restricted";
+    const divLvl = diversityLevel(d);
+    const accessLabel = ACCESS_LABEL[accessLevel(d)].toLowerCase();
     const n = d.n_subjects >= 1000 ? `${(d.n_subjects / 1000).toFixed(0)}k` : String(d.n_subjects);
     response += `**${i + 1}. ${d.name}** (${d.origin.join(", ")} · n≈${n} · ${accessLabel})\n`;
     response += `   ${d.full_name}. Design: ${d.design ?? "unknown"}. Diversity: ${divLvl}. Data: ${d.data_types.slice(0, 5).join(", ")}.\n\n`;

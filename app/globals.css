@@ -202,6 +202,9 @@ body {
   [data-theme="light"] .text-violet-300 { color: #7C3AED; }
   [data-theme="light"] .text-violet-400 { color: #6B21A8; }
 
+  /* Data-type pills in the dataset table use inline pale-violet text */
+  [data-theme="light"] .type-pill { color: #6B21A8 !important; background: rgba(107, 33, 168, 0.1) !important; }
+
   [data-theme="light"] .border-purple-900\/30 { border-color: rgba(107, 33, 168, 0.15); }
   [data-theme="light"] .border-violet-800\/50 { border-color: rgba(107, 33, 168, 0.25); }
 

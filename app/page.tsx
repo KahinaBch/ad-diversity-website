@@ -1,4 +1,5 @@
 import Link from "next/link";
+import catalogue from "@/public/data/datasets.json";
 
 const sections = [
   {
@@ -30,10 +31,13 @@ const sections = [
   },
 ];
 
+// Counts come from the synced catalogue at build time.
+const countryCount = new Set(catalogue.flatMap((d) => d.origin)).size;
+
 const stats = [
-  { value: "31+", label: "Documented datasets", color: "#7C3AED" },
+  { value: String(catalogue.length), label: "Documented datasets", color: "#7C3AED" },
   { value: "6", label: "World regions covered", color: "#BE185D" },
-  { value: "20+", label: "Countries represented", color: "#1E3A8A" },
+  { value: String(countryCount), label: "Countries represented", color: "#1E3A8A" },
   { value: "3", label: "Open sub-repositories", color: "#0E7490" },
 ];
 

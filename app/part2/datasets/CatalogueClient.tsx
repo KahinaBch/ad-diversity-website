@@ -3,27 +3,7 @@ import { useState, useCallback } from "react";
 import DatasetTable from "@/components/DatasetTable";
 import CohortCharts from "@/components/CohortCharts";
 import DatasetAssistant from "@/components/DatasetAssistant";
-
-interface Dataset {
-  id: string;
-  name: string;
-  full_name: string;
-  year: number;
-  data_types: string[];
-  access: "open" | "partial" | "restricted";
-  n_subjects: number;
-  n_note: string;
-  origin: string[];
-  doi: string;
-  url: string;
-  notes: string;
-  data_level?: string[];
-  womens_health?: string;
-  access_difficulty?: string;
-  life_stage?: string[];
-  ethnic_diversity?: string;
-  design?: string;
-}
+import type { Dataset } from "@/lib/catalogue";
 
 export default function CatalogueClient() {
   const [allDatasets, setAllDatasets] = useState<Dataset[]>([]);

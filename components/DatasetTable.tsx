@@ -1,44 +1,31 @@
 "use client";
-import { useEffect, useState, useMemo } from "react";
-
-interface Dataset {
-  id: string;
-  name: string;
-  full_name: string;
-  year: number;
-  data_types: string[];
-  access: "open" | "partial" | "restricted";
-  n_subjects: number;
-  n_note: string;
-  origin: string[];
-  doi: string;
-  url: string;
-  notes: string;
-  data_level?: string[];
-  womens_health?: string;
-  access_difficulty?: string;
-  life_stage?: string[];
-  ethnic_diversity?: string;
-  design?: string;
-}
+import { Fragment, useEffect, useState, useMemo, type ReactNode } from "react";
+import {
+  type Dataset, type AccessLevel, type DiversityLevel,
+  ACCESS_LEVELS, ACCESS_LABEL, DIVERSITY_LEVELS,
+  accessLevel, diversityLevel, participantLabel, isLink,
+} from "@/lib/catalogue";
 
 const ALL_TYPES = [
   "MRI", "PET", "CSF", "Blood", "Genetics", "Proteomics",
   "Cognitive", "Clinical", "Neuropathology", "Exposomics",
-  "Epigenomics", "Transcriptomics", "Metabolomics", "Lifestyle", "EEG",
+  "Epigenomics", "Transcriptomics", "Metabolomics", "Lifestyle", "EEG", "Sleep",
 ];
 
 const ALL_DESIGNS   = ["longitudinal", "cross-sectional", "both"];
 const ALL_STAGES    = ["childhood", "early adulthood", "midlife", "late life"];
 const ALL_LEVELS    = ["raw", "preprocessed", "processed"];
 const ALL_DIFFICULTY = ["easy", "moderate", "hard"];
+const DIVERSITY_OPTIONS = DIVERSITY_LEVELS.filter((l) => l !== "unknown");
 
 const OPTIONAL_COLUMNS = [
   { key: "design",            label: "Study Design" },
   { key: "data_level",        label: "Data Level" },
   { key: "life_stage",        label: "Life Stage" },
+  { key: "age",               label: "Age at Entry" },
   { key: "access_difficulty", label: "Access Difficulty" },
   { key: "ethnic_diversity",  label: "Ethnic Diversity" },
+  { key: "percent_women",     label: "% Women" },
   { key: "womens_health",     label: "Women's Health" },
 ] as const;
 
@@ -63,23 +50,33 @@ const DESIGN_STYLE: Record<string, PillStyle> = {
 const LEVEL_STYLE: PillStyle = { bg: "rgba(30,58,138,0.15)", color: "#93c5fd", border: "rgba(30,58,138,0.3)" };
 const STAGE_STYLE: PillStyle = { bg: "rgba(190,24,93,0.1)",  color: "#f9a8d4", border: "rgba(190,24,93,0.2)" };
 
-// Derive diversity level from free-text field
-function diversityLevel(text: string): "very high" | "high" | "moderate" | "low" | "unknown" {
-  const t = text.toLowerCase();
-  if (t.startsWith("very high")) return "very high";
-  if (t.startsWith("high"))      return "high";
-  if (t.startsWith("moderate"))  return "moderate";
-  if (t === "unknown")           return "unknown";
-  return "low";
-}
-
-const DIVERSITY_STYLE: Record<string, PillStyle> = {
-  "very high": { bg: "rgba(34,197,94,0.15)",  color: "#22c55e", border: "rgba(34,197,94,0.3)"  },
-  high:        { bg: "rgba(132,204,22,0.12)", color: "#84cc16", border: "rgba(132,204,22,0.3)" },
-  moderate:    { bg: "rgba(234,179,8,0.12)",  color: "#ca8a04", border: "rgba(234,179,8,0.3)"  },
-  low:         { bg: "rgba(239,68,68,0.1)",   color: "#ef4444", border: "rgba(239,68,68,0.25)" },
-  unknown:     { bg: "transparent",           color: "var(--text-dim)", border: "transparent"   },
+const DIVERSITY_STYLE: Record<DiversityLevel, PillStyle> = {
+  high:    { bg: "rgba(34,197,94,0.15)", color: "#22c55e", border: "rgba(34,197,94,0.3)"  },
+  medium:  { bg: "rgba(234,179,8,0.12)", color: "#ca8a04", border: "rgba(234,179,8,0.3)"  },
+  low:     { bg: "rgba(239,68,68,0.1)",  color: "#ef4444", border: "rgba(239,68,68,0.25)" },
+  unknown: { bg: "transparent",          color: "var(--text-dim)", border: "transparent"   },
 };
+
+const ACCESS_BADGE: Record<AccessLevel, string> = {
+  open: "badge-open", easy: "badge-partial", extensive: "badge-restricted",
+};
+
+const isKnown = (v: string | null | undefined): v is string =>
+  !!v && v.trim() !== "" && v.trim().toLowerCase() !== "unknown";
+
+/** Renders text with any http(s) URLs turned into links. */
+function Linkify({ text }: { text: string }) {
+  const parts = text.split(/(https?:\/\/[^\s\])]+)/g);
+  return (
+    <>
+      {parts.map((p, i) =>
+        /^https?:\/\//.test(p)
+          ? <a key={i} href={p} target="_blank" rel="noopener noreferrer" className="text-violet-400 underline break-all">link ↗</a>
+          : <Fragment key={i}>{p}</Fragment>
+      )}
+    </>
+  );
+}
 
 function ChipFilter({
   label, options, active, onToggle, styleMap,
@@ -113,6 +110,19 @@ function ChipFilter({
   );
 }
 
+function DetailLink({ href, children, primary }: { href: string; children: ReactNode; primary?: boolean }) {
+  return (
+    <a href={href} target="_blank" rel="noopener noreferrer"
+      onClick={(e) => e.stopPropagation()}
+      className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-medium border not-italic transition-colors hover:border-violet-400"
+      style={primary
+        ? { background: "rgba(124,58,237,0.25)", color: "#c4b5fd", borderColor: "rgba(167,139,250,0.5)" }
+        : { background: "transparent", color: "#a78bfa", borderColor: "rgba(167,139,250,0.25)" }}>
+      {children}
+    </a>
+  );
+}
+
 interface DatasetTableProps {
   selectedIds?: Set<string>;
   onSelectionChange?: (ids: Set<string>) => void;
@@ -122,12 +132,13 @@ interface DatasetTableProps {
 export default function DatasetTable({ selectedIds, onSelectionChange, onDataLoad }: DatasetTableProps = {}) {
   const [datasets, setDatasets] = useState<Dataset[]>([]);
   const [search, setSearch]     = useState("");
-  const [accessFilter, setAccessFilter] = useState("all");
+  const [accessFilter, setAccessFilter] = useState<"all" | AccessLevel>("all");
   const [typeFilter, setTypeFilter]     = useState<Set<string>>(new Set());
   const [designFilter, setDesignFilter]     = useState<Set<string>>(new Set());
   const [stageFilter, setStageFilter]       = useState<Set<string>>(new Set());
   const [levelFilter, setLevelFilter]       = useState<Set<string>>(new Set());
   const [diffFilter, setDiffFilter]         = useState<Set<string>>(new Set());
+  const [divFilter, setDivFilter]           = useState<Set<string>>(new Set());
   const [sortKey, setSortKey]   = useState<"year" | "name" | "n_subjects">("year");
   const [sortDir, setSortDir]   = useState<"asc" | "desc">("asc");
   const [expanded, setExpanded] = useState<string | null>(null);
@@ -148,35 +159,41 @@ export default function DatasetTable({ selectedIds, onSelectionChange, onDataLoa
 
   function toggle<T>(set: Set<T>, val: T): Set<T> {
     const next = new Set(set);
-    next.has(val) ? next.delete(val) : next.add(val);
+    if (next.has(val)) next.delete(val); else next.add(val);
     return next;
   }
 
   const filtered = useMemo(() => {
     let d = [...datasets];
-    if (search)
+    if (search) {
+      const q = search.toLowerCase();
       d = d.filter((x) =>
-        x.name.toLowerCase().includes(search.toLowerCase()) ||
-        x.full_name.toLowerCase().includes(search.toLowerCase()) ||
-        x.origin.join(" ").toLowerCase().includes(search.toLowerCase())
+        x.name.toLowerCase().includes(q) ||
+        x.full_name.toLowerCase().includes(q) ||
+        x.origin.join(" ").toLowerCase().includes(q)
       );
-    if (accessFilter !== "all") d = d.filter((x) => x.access === accessFilter);
+    }
+    if (accessFilter !== "all") d = d.filter((x) => accessLevel(x) === accessFilter);
     if (typeFilter.size > 0)   d = d.filter((x) => [...typeFilter].every((t) => x.data_types.includes(t)));
     if (designFilter.size > 0) d = d.filter((x) => x.design && designFilter.has(x.design));
     if (stageFilter.size > 0)  d = d.filter((x) => x.life_stage && [...stageFilter].some((s) => x.life_stage!.includes(s)));
     if (levelFilter.size > 0)  d = d.filter((x) => x.data_level && [...levelFilter].every((l) => x.data_level!.includes(l)));
     if (diffFilter.size > 0)   d = d.filter((x) => x.access_difficulty && diffFilter.has(x.access_difficulty));
+    if (divFilter.size > 0)    d = d.filter((x) => divFilter.has(diversityLevel(x)));
     d.sort((a, b) => {
       const av = a[sortKey], bv = b[sortKey];
       if (typeof av === "string" && typeof bv === "string")
         return sortDir === "asc" ? av.localeCompare(bv) : bv.localeCompare(av);
-      return sortDir === "asc" ? (av as number) - (bv as number) : (bv as number) - (av as number);
+      // Missing numbers always sort last
+      if (typeof av !== "number") return 1;
+      if (typeof bv !== "number") return -1;
+      return sortDir === "asc" ? av - bv : bv - av;
     });
     return d;
-  }, [datasets, search, accessFilter, typeFilter, designFilter, stageFilter, levelFilter, diffFilter, sortKey, sortDir]);
+  }, [datasets, search, accessFilter, typeFilter, designFilter, stageFilter, levelFilter, diffFilter, divFilter, sortKey, sortDir]);
 
   const toggleCol = (k: OptionalColKey) =>
-    setVisibleCols((prev) => { const n = new Set(prev); n.has(k) ? n.delete(k) : n.add(k); return n; });
+    setVisibleCols((prev) => toggle(prev, k));
 
   const toggleSort = (key: typeof sortKey) => {
     if (key === sortKey) setSortDir((d) => (d === "asc" ? "desc" : "asc"));
@@ -188,10 +205,9 @@ export default function DatasetTable({ selectedIds, onSelectionChange, onDataLoa
       ? <span className="ml-1 text-violet-400">{sortDir === "asc" ? "↑" : "↓"}</span>
       : <span className="ml-1 text-gray-600">↕</span>;
 
-  const AccessBadge = ({ a }: { a: string }) => {
-    const cls = a === "open" ? "badge-open" : a === "partial" ? "badge-partial" : "badge-restricted";
-    const label = a === "open" ? "Open" : a === "partial" ? "Application" : "Restricted";
-    return <span className={`badge ${cls}`}>{label}</span>;
+  const AccessBadge = ({ d }: { d: Dataset }) => {
+    const lvl = accessLevel(d);
+    return <span className={`badge ${ACCESS_BADGE[lvl]} whitespace-nowrap`}>{ACCESS_LABEL[lvl]}</span>;
   };
 
   const Pill = ({ label, style }: { label: string; style: PillStyle }) => (
@@ -201,19 +217,26 @@ export default function DatasetTable({ selectedIds, onSelectionChange, onDataLoa
     </span>
   );
 
-  const hasActiveFilters = designFilter.size + stageFilter.size + levelFilter.size + diffFilter.size > 0;
+  const Dash = () => <span className="text-xs text-gray-600">—</span>;
+
+  const hasActiveFilters = designFilter.size + stageFilter.size + levelFilter.size + diffFilter.size + divFilter.size > 0;
+  const showColumnFilters = ["design", "life_stage", "data_level", "access_difficulty", "ethnic_diversity"]
+    .some((k) => visibleCols.has(k as OptionalColKey));
 
   if (!datasets.length)
     return <div className="text-center py-16 text-violet-400 animate-pulse">Loading dataset catalogue…</div>;
 
+  const colCount = 6 + visibleCols.size + (selectedIds !== undefined ? 1 : 0);
+
   return (
     <div>
       {/* Stats bar */}
-      <div className="grid grid-cols-3 gap-3 mb-5">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5">
         {[
-          { label: "Total Datasets", value: datasets.length },
-          { label: "Shown",          value: filtered.length },
-          { label: "Open Access",    value: datasets.filter((d) => d.access === "open").length },
+          { label: "Total Datasets",     value: datasets.length },
+          { label: "Shown",              value: filtered.length },
+          { label: "Open Access",        value: datasets.filter((d) => accessLevel(d) === "open").length },
+          { label: "With Request Link",  value: datasets.filter((d) => isLink(d.data_request_link)).length },
         ].map((s) => (
           <div key={s.label} className="glass-card rounded-lg p-3 text-center">
             <div className="text-xl font-bold text-violet-300">{s.value}</div>
@@ -230,13 +253,11 @@ export default function DatasetTable({ selectedIds, onSelectionChange, onDataLoa
           className="flex-1 min-w-48 px-3 py-2 rounded-lg text-sm text-gray-200 placeholder-gray-600 border"
           style={{ background: "var(--bg-card)", borderColor: "rgba(167,139,250,0.2)" }}
         />
-        <select value={accessFilter} onChange={(e) => setAccessFilter(e.target.value)}
+        <select value={accessFilter} onChange={(e) => setAccessFilter(e.target.value as "all" | AccessLevel)}
           className="px-3 py-2 rounded-lg text-sm text-gray-200 border"
           style={{ background: "var(--bg-card)", borderColor: "rgba(167,139,250,0.2)" }}>
           <option value="all">All access</option>
-          <option value="open">Open</option>
-          <option value="partial">Application-based</option>
-          <option value="restricted">Restricted</option>
+          {ACCESS_LEVELS.map((l) => <option key={l} value={l}>{ACCESS_LABEL[l]}</option>)}
         </select>
 
         {/* Column picker */}
@@ -302,13 +323,13 @@ export default function DatasetTable({ selectedIds, onSelectionChange, onDataLoa
       </div>
 
       {/* Dynamic column filters */}
-      {(visibleCols.has("design") || visibleCols.has("life_stage") || visibleCols.has("data_level") || visibleCols.has("access_difficulty")) && (
+      {showColumnFilters && (
         <div className="flex flex-col gap-2 mb-4 p-3 rounded-xl border"
           style={{ borderColor: "rgba(167,139,250,0.1)", background: "rgba(107,33,168,0.05)" }}>
           <div className="flex items-center justify-between">
             <span className="text-xs text-gray-500 uppercase tracking-wider">Column filters</span>
             {hasActiveFilters && (
-              <button onClick={() => { setDesignFilter(new Set()); setStageFilter(new Set()); setLevelFilter(new Set()); setDiffFilter(new Set()); }}
+              <button onClick={() => { setDesignFilter(new Set()); setStageFilter(new Set()); setLevelFilter(new Set()); setDiffFilter(new Set()); setDivFilter(new Set()); }}
                 className="text-xs text-pink-400 hover:text-pink-300 transition-colors">
                 Clear all ✕
               </button>
@@ -329,6 +350,10 @@ export default function DatasetTable({ selectedIds, onSelectionChange, onDataLoa
           {visibleCols.has("access_difficulty") && (
             <ChipFilter label="Access Difficulty" options={ALL_DIFFICULTY} active={diffFilter}
               onToggle={(v) => setDiffFilter((p) => toggle(p, v))} styleMap={DIFFICULTY_STYLE} />
+          )}
+          {visibleCols.has("ethnic_diversity") && (
+            <ChipFilter label="Ethnic Diversity" options={DIVERSITY_OPTIONS} active={divFilter}
+              onToggle={(v) => setDivFilter((p) => toggle(p, v))} styleMap={DIVERSITY_STYLE} />
           )}
         </div>
       )}
@@ -360,38 +385,46 @@ export default function DatasetTable({ selectedIds, onSelectionChange, onDataLoa
               {visibleCols.has("design")            && <th>Study Design</th>}
               {visibleCols.has("data_level")        && <th>Data Level</th>}
               {visibleCols.has("life_stage")        && <th>Life Stage</th>}
+              {visibleCols.has("age")               && <th>Age at Entry</th>}
               {visibleCols.has("access_difficulty") && <th>Access Difficulty</th>}
               {visibleCols.has("ethnic_diversity")  && <th>Ethnic Diversity</th>}
-              {visibleCols.has("womens_health")     && <th>Women's Health</th>}
+              {visibleCols.has("percent_women")     && <th>% Women</th>}
+              {visibleCols.has("womens_health")     && <th>Women&apos;s Health</th>}
             </tr>
           </thead>
           <tbody>
             {filtered.map((d) => {
-              const divLevel = diversityLevel(d.ethnic_diversity ?? "unknown");
+              const divLevel = diversityLevel(d);
+              const verified = d.curation_status?.toLowerCase() === "verified";
               return (
-                <>
-                  <tr key={d.id} onClick={() => setExpanded(expanded === d.id ? null : d.id)} className="cursor-pointer">
+                <Fragment key={d.id}>
+                  <tr onClick={() => setExpanded(expanded === d.id ? null : d.id)} className="cursor-pointer">
                     {selectedIds !== undefined && (
                       <td onClick={(e) => e.stopPropagation()}>
                         <input type="checkbox" className="accent-violet-500"
                           checked={selectedIds.has(d.id)}
                           onChange={(e) => {
                             const next = new Set(selectedIds);
-                            e.target.checked ? next.add(d.id) : next.delete(d.id);
+                            if (e.target.checked) next.add(d.id); else next.delete(d.id);
                             onSelectionChange?.(next);
                           }}
                         />
                       </td>
                     )}
                     <td>
-                      <div className="font-semibold text-violet-300">{d.name}</div>
+                      <div className="font-semibold text-violet-300 flex items-center gap-1.5">
+                        {d.name}
+                        {verified && (
+                          <span title={`Verified${d.curated_on ? ` on ${d.curated_on}` : ""}`} className="text-xs" style={{ color: "#22c55e" }}>✓</span>
+                        )}
+                      </div>
                       <div className="text-gray-500 text-xs mt-0.5 max-w-xs truncate">{d.full_name}</div>
                     </td>
-                    <td className="text-gray-300">{d.year}</td>
+                    <td className="text-gray-300">{d.year ?? "—"}</td>
                     <td>
                       <div className="flex flex-wrap gap-1">
                         {d.data_types.slice(0, 4).map((t) => (
-                          <span key={t} className="px-1.5 py-0.5 rounded text-xs"
+                          <span key={t} className="type-pill px-1.5 py-0.5 rounded text-xs"
                             style={{ background: "rgba(107,33,168,0.25)", color: "#c4b5fd", border: "1px solid rgba(167,139,250,0.15)" }}>
                             {t}
                           </span>
@@ -399,8 +432,10 @@ export default function DatasetTable({ selectedIds, onSelectionChange, onDataLoa
                         {d.data_types.length > 4 && <span className="text-xs text-gray-500">+{d.data_types.length - 4}</span>}
                       </div>
                     </td>
-                    <td><AccessBadge a={d.access} /></td>
-                    <td className="text-gray-300 whitespace-nowrap">{d.n_note}</td>
+                    <td><AccessBadge d={d} /></td>
+                    <td className="text-gray-300 whitespace-nowrap" title={d.n_note || undefined}>
+                      {d.n_subjects.toLocaleString("en-US")}
+                    </td>
                     <td>
                       <div className="flex flex-wrap gap-1">
                         {d.origin.map((o) => <span key={o} className="text-xs text-gray-400">{o}</span>)}
@@ -409,73 +444,131 @@ export default function DatasetTable({ selectedIds, onSelectionChange, onDataLoa
 
                     {visibleCols.has("design") && (
                       <td>
-                        {d.design && d.design !== "unknown"
+                        {isKnown(d.design)
                           ? <Pill label={d.design} style={DESIGN_STYLE[d.design] ?? DESIGN_STYLE.unknown} />
-                          : <span className="text-xs text-gray-600">—</span>}
+                          : <Dash />}
                       </td>
                     )}
                     {visibleCols.has("data_level") && (
                       <td>
                         <div className="flex flex-wrap gap-1">
-                          {(d.data_level ?? ["unknown"]).map((l) =>
-                            l === "unknown"
-                              ? <span key={l} className="text-xs text-gray-600">—</span>
-                              : <Pill key={l} label={l} style={LEVEL_STYLE} />
-                          )}
+                          {(d.data_level ?? []).filter(isKnown).length
+                            ? d.data_level!.filter(isKnown).map((l) => <Pill key={l} label={l} style={LEVEL_STYLE} />)
+                            : <Dash />}
                         </div>
                       </td>
                     )}
                     {visibleCols.has("life_stage") && (
                       <td>
                         <div className="flex flex-wrap gap-1">
-                          {(d.life_stage ?? ["unknown"]).map((s) =>
-                            s === "unknown"
-                              ? <span key={s} className="text-xs text-gray-600">—</span>
-                              : <Pill key={s} label={s} style={STAGE_STYLE} />
-                          )}
+                          {(d.life_stage ?? []).filter(isKnown).length
+                            ? d.life_stage!.filter(isKnown).map((s) => <Pill key={s} label={s} style={STAGE_STYLE} />)
+                            : <Dash />}
                         </div>
+                      </td>
+                    )}
+                    {visibleCols.has("age") && (
+                      <td className="text-xs text-gray-300 whitespace-nowrap">
+                        {isKnown(d.age_range_at_entry) || d.mean_age_baseline != null ? (
+                          <div className="flex flex-col">
+                            {isKnown(d.age_range_at_entry) && <span>{d.age_range_at_entry}</span>}
+                            {d.mean_age_baseline != null && <span className="text-gray-500">mean {d.mean_age_baseline}</span>}
+                          </div>
+                        ) : <Dash />}
                       </td>
                     )}
                     {visibleCols.has("access_difficulty") && (
                       <td>
-                        {d.access_difficulty
+                        {isKnown(d.access_difficulty)
                           ? <Pill label={d.access_difficulty} style={DIFFICULTY_STYLE[d.access_difficulty] ?? DIFFICULTY_STYLE.unknown} />
-                          : <span className="text-xs text-gray-600">—</span>}
+                          : <Dash />}
                       </td>
                     )}
                     {visibleCols.has("ethnic_diversity") && (
                       <td>
-                        <div className="flex flex-col gap-1">
-                          <Pill label={divLevel} style={DIVERSITY_STYLE[divLevel]} />
-                          {d.ethnic_diversity && d.ethnic_diversity !== "unknown" && (
-                            <span className="text-xs text-gray-500 max-w-[180px] leading-tight">{d.ethnic_diversity}</span>
+                        <div className="flex flex-col gap-1 items-start">
+                          {divLevel !== "unknown" ? <Pill label={divLevel} style={DIVERSITY_STYLE[divLevel]} /> : <Dash />}
+                          {isKnown(d.ethnic_diversity_note) && (
+                            <span className="text-xs text-gray-500 max-w-[200px] leading-tight">{d.ethnic_diversity_note}</span>
                           )}
                         </div>
                       </td>
                     )}
+                    {visibleCols.has("percent_women") && (
+                      <td className="text-xs text-gray-300 whitespace-nowrap">
+                        {d.percent_women != null ? `${d.percent_women}%` : <Dash />}
+                      </td>
+                    )}
                     {visibleCols.has("womens_health") && (
                       <td className="text-xs text-gray-400 max-w-xs">
-                        {d.womens_health && d.womens_health !== "unknown"
-                          ? d.womens_health
-                          : <span className="text-gray-600">—</span>}
+                        {isKnown(d.womens_health) ? d.womens_health : <Dash />}
                       </td>
                     )}
                   </tr>
 
                   {expanded === d.id && (
-                    <tr key={`${d.id}-exp`}>
-                      <td colSpan={6 + visibleCols.size + (selectedIds !== undefined ? 1 : 0)} className="px-4 py-3 text-xs text-gray-400 italic"
+                    <tr>
+                      <td colSpan={colCount} className="px-4 py-4 text-xs text-gray-400"
                         style={{ background: "rgba(107,33,168,0.08)" }}>
-                        <span className="font-medium text-violet-300 not-italic">Notes: </span>
-                        {d.notes}{" "}
-                        <a href={d.url} target="_blank" rel="noopener noreferrer" className="text-violet-400 underline ml-1">
-                          Official site ↗
-                        </a>
-                        {d.doi && <span className="ml-2 text-gray-600 font-mono text-xs">doi:{d.doi}</span>}
+                        <div className="space-y-3 max-w-4xl">
+                          {d.notes && (
+                            <p><span className="font-medium text-violet-300">Notes: </span>{d.notes}</p>
+                          )}
+
+                          <div className="flex flex-wrap items-center gap-2">
+                            <span className="font-medium text-violet-300">Access:</span>
+                            <AccessBadge d={d} />
+                            {isLink(d.data_request_link) && <DetailLink href={d.data_request_link} primary>Request data ↗</DetailLink>}
+                            {isLink(d.datasheet_link) && <DetailLink href={d.datasheet_link}>Datasheet / codebook ↗</DetailLink>}
+                            <DetailLink href={d.url}>Official site ↗</DetailLink>
+                            {d.doi && <DetailLink href={`https://doi.org/${d.doi}`}>doi:{d.doi} ↗</DetailLink>}
+                          </div>
+                          {isKnown(d.access_requirements) && (
+                            <p className="leading-relaxed"><span className="font-medium text-violet-300">How to access: </span>{d.access_requirements}</p>
+                          )}
+
+                          <div className="grid sm:grid-cols-2 gap-x-6 gap-y-1.5">
+                              <p>
+                                <span className="font-medium text-violet-300">Participants: </span>{participantLabel(d)}
+                              </p>
+                              {d.percent_women != null && (
+                                <p>
+                                  <span className="font-medium text-violet-300">Women: </span>{d.percent_women}%
+                                  {isKnown(d.percent_women_source) && (
+                                    <span className="text-gray-500"> ({<Linkify text={d.percent_women_source} />})</span>
+                                  )}
+                                </p>
+                              )}
+                              {(isKnown(d.age_range_at_entry) || d.mean_age_baseline != null) && (
+                                <p>
+                                  <span className="font-medium text-violet-300">Age at entry: </span>
+                                  {[isKnown(d.age_range_at_entry) ? d.age_range_at_entry : null,
+                                    d.mean_age_baseline != null ? `mean ${d.mean_age_baseline}` : null]
+                                    .filter(Boolean).join(" · ")}
+                                </p>
+                              )}
+                              {isKnown(d.ethnic_diversity_note) && (
+                                <p>
+                                  <span className="font-medium text-violet-300">Ethnic diversity: </span>
+                                  {divLevel !== "unknown" && <span className="capitalize">{divLevel}. </span>}
+                                  {d.ethnic_diversity_note}
+                                </p>
+                              )}
+                          </div>
+                          {isKnown(d.womens_health) && (
+                            <p><span className="font-medium text-violet-300">Women&apos;s health data: </span>{d.womens_health}</p>
+                          )}
+
+                          <p className="text-gray-600">
+                            {verified
+                              ? `✓ Entry verified${d.curated_by ? ` by ${d.curated_by}` : ""}${d.curated_on ? ` on ${d.curated_on}` : ""}.`
+                              : "This entry has not been curated yet."}
+                          </p>
+                        </div>
                       </td>
                     </tr>
                   )}
-                </>
+                </Fragment>
               );
             })}
           </tbody>
@@ -487,7 +580,7 @@ export default function DatasetTable({ selectedIds, onSelectionChange, onDataLoa
       )}
 
       <p className="text-xs text-gray-600 mt-3">
-        Click any row to expand details.{" "}
+        Click any row for access details, request links and notes. ✓ = verified entry.{" "}
         <a href="https://github.com/KahinaBch/ad-dataset-catalogue" target="_blank" rel="noopener noreferrer"
           className="text-violet-500 underline">
           Contribute a missing dataset via GitHub PR

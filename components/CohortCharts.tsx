@@ -1,48 +1,14 @@
 "use client";
-
-interface Dataset {
-  id: string;
-  name: string;
-  n_subjects: number;
-  n_note: string;
-  design?: string;
-  ethnic_diversity?: string;
-  access: string;
-  life_stage?: string[];
-  data_types: string[];
-  origin: string[];
-}
-
-// Known % women from published literature
-const PCT_WOMEN: Record<string, number> = {
-  "rosmap": 67, "wrap": 67, "mapt": 67, "prevent-ad": 70, "whicap": 67,
-  "oasis1": 67, "oasis3": 64, "aibl": 57, "alfa": 57, "nacc": 60,
-  "adni": 47, "uk-biobank": 54, "all-of-us": 60, "memento": 60,
-  "epad": 55, "three-city": 61, "habs-ad": 60, "biocard": 62,
-  "jadni": 42, "lasi-dad": 52, "bisc": 100,
-};
-
-const DIVERSITY_LEVEL = (text: string) => {
-  const t = (text ?? "").toLowerCase();
-  if (t.startsWith("very high")) return "Very high";
-  if (t.startsWith("high"))      return "High";
-  if (t.startsWith("moderate"))  return "Moderate";
-  if (t === "unknown")           return "Unknown";
-  return "Low";
-};
-
-const DIVERSITY_COLOR: Record<string, string> = {
-  "Very high": "#22c55e", "High": "#84cc16",
-  "Moderate": "#eab308", "Low": "#ef4444", "Unknown": "#6b7280",
-};
+import {
+  type Dataset,
+  ACCESS_LEVELS, ACCESS_LABEL, ACCESS_COLOR,
+  DIVERSITY_LEVELS, DIVERSITY_COLOR,
+  accessLevel, diversityLevel,
+} from "@/lib/catalogue";
 
 const DESIGN_COLOR: Record<string, string> = {
   "longitudinal": "#a78bfa", "cross-sectional": "#93c5fd",
   "both": "#f9a8d4", "unknown": "#6b7280",
-};
-
-const ACCESS_COLOR: Record<string, string> = {
-  "open": "#22c55e", "partial": "#eab308", "restricted": "#ef4444",
 };
 
 const STAGE_COLOR: Record<string, string> = {
@@ -173,23 +139,24 @@ export default function CohortCharts({ datasets }: { datasets: Dataset[] }) {
     .filter((d) => d.n_subjects > 0)
     .sort((a, b) => b.n_subjects - a.n_subjects)
     .slice(0, 12)
-    .map((d) => ({ label: d.name, value: d.n_subjects, color: "#7c3aed", sub: d.n_note }));
+    .map((d) => ({ label: d.name, value: d.n_subjects, color: "#7c3aed" }));
 
   // % Women bar (only cohorts with known data)
   const womenBars = datasets
-    .filter((d) => PCT_WOMEN[d.id] !== undefined)
+    .filter((d): d is Dataset & { percent_women: number } => typeof d.percent_women === "number")
     .map((d) => ({
       label: d.name,
-      value: PCT_WOMEN[d.id],
-      color: PCT_WOMEN[d.id] >= 60 ? "#f9a8d4" : PCT_WOMEN[d.id] >= 50 ? "#c4b5fd" : "#93c5fd",
+      value: d.percent_women,
+      color: d.percent_women >= 60 ? "#f9a8d4" : d.percent_women >= 50 ? "#c4b5fd" : "#93c5fd",
     }))
     .sort((a, b) => b.value - a.value);
 
   // Diversity donut
-  const diversityCounts = { "Very high": 0, "High": 0, "Moderate": 0, "Low": 0, "Unknown": 0 };
-  datasets.forEach((d) => { diversityCounts[DIVERSITY_LEVEL(d.ethnic_diversity ?? "unknown")]++; });
-  const diversityData = Object.entries(diversityCounts)
-    .map(([label, value]) => ({ label, value, color: DIVERSITY_COLOR[label] }));
+  const diversityData = DIVERSITY_LEVELS.map((lvl) => ({
+    label: lvl,
+    value: datasets.filter((d) => diversityLevel(d) === lvl).length,
+    color: DIVERSITY_COLOR[lvl],
+  }));
 
   // Design donut
   const designCounts: Record<string, number> = {};
@@ -198,10 +165,11 @@ export default function CohortCharts({ datasets }: { datasets: Dataset[] }) {
     .map(([label, value]) => ({ label, value, color: DESIGN_COLOR[label] ?? "#6b7280" }));
 
   // Access donut
-  const accessCounts: Record<string, number> = {};
-  datasets.forEach((d) => { accessCounts[d.access] = (accessCounts[d.access] ?? 0) + 1; });
-  const accessData = Object.entries(accessCounts)
-    .map(([label, value]) => ({ label, value, color: ACCESS_COLOR[label] ?? "#6b7280" }));
+  const accessData = ACCESS_LEVELS.map((lvl) => ({
+    label: ACCESS_LABEL[lvl],
+    value: datasets.filter((d) => accessLevel(d) === lvl).length,
+    color: ACCESS_COLOR[lvl],
+  }));
 
   // Life stage donut
   const stageCounts: Record<string, number> = {};
@@ -231,7 +199,7 @@ export default function CohortCharts({ datasets }: { datasets: Dataset[] }) {
       {/* Charts grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mb-6">
         <DonutChart title="Ethnic Diversity Level" data={diversityData}
-          note="Derived from qualitative descriptions in dataset notes" />
+          note="Curated rating (low / medium / high) from the catalogue" />
         <DonutChart title="Study Design" data={designData} />
         <DonutChart title="Data Access" data={accessData} />
         {stageData.length > 0 && (
@@ -251,7 +219,7 @@ export default function CohortCharts({ datasets }: { datasets: Dataset[] }) {
           title={`% Women — ${womenBars.length} of ${datasets.length} selected cohorts have published sex data`}
           data={womenBars}
           unit="%"
-          note="Values from published cohort descriptions. BiSC recruits pregnant women only (100%). Pink = ≥60%, purple = 50–59%, blue = <50%."
+          note="Curated values from the catalogue; some refer to a study subset (e.g. the MRI sample), see each dataset's details in the table for the source. Pink = ≥60%, purple = 50–59%, blue = <50%."
         />
       )}
 
