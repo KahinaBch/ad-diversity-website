@@ -19,15 +19,17 @@ const REMOTE =
   "https://raw.githubusercontent.com/KahinaBch/ad-dataset-catalogue/main/data/neuroimaging_genetics.json";
 const LOCAL = path.join(ROOT, "../ad-dataset-catalogue/data/neuroimaging_genetics.json");
 
+// Returns the file's exact bytes; it is copied unchanged so the website copy
+// stays byte-identical to the catalogue.
 async function load() {
   if (process.argv.includes("--local")) {
     console.log(`Reading ${LOCAL}`);
-    return JSON.parse(await readFile(LOCAL, "utf8"));
+    return readFile(LOCAL);
   }
   console.log(`Downloading ${REMOTE}`);
   const res = await fetch(REMOTE);
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  return res.json();
+  return Buffer.from(await res.arrayBuffer());
 }
 
 function validate(data) {
@@ -48,12 +50,20 @@ function validate(data) {
   return errors;
 }
 
-let data;
+let raw;
 try {
-  data = await load();
+  raw = await load();
 } catch (err) {
   console.warn(`⚠ Could not load the catalogue (${err.message}); keeping the existing ${path.relative(ROOT, OUT)}.`);
   process.exit(0);
+}
+
+let data;
+try {
+  data = JSON.parse(raw.toString("utf8"));
+} catch (err) {
+  console.error(`✗ Catalogue is not valid JSON (${err.message}); datasets.json was not updated.`);
+  process.exit(1);
 }
 
 const errors = validate(data);
@@ -63,5 +73,5 @@ if (errors.length) {
   process.exit(1);
 }
 
-await writeFile(OUT, JSON.stringify(data, null, 2) + "\n");
+await writeFile(OUT, raw);
 console.log(`✓ Wrote ${data.length} datasets to ${path.relative(ROOT, OUT)}`);

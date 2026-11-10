@@ -41,7 +41,7 @@
     "access_difficulty": "moderate",
     "ethnic_diversity": "Low",
     "ethnic_diversity_note": "Predominantly White/European-American; limited racial diversity",
-    "percent_women": 37,
+    "percent_women": 37.0,
     "percent_women_source": "AI2D harmonised MRI subset 52.6% (n=1,152), not whole cohort [https://pennlinc.github.io/AI2D/docs/datasets/BLSA]",
     "womens_health": "Women enrolled from 1978 onwards; limited menopause-specific data collected",
     "curation_status": "Verified",
@@ -150,20 +150,49 @@
       "MRI",
       "Genetics",
       "Proteomics",
+      "Metabolomics",
       "Epigenomics",
       "Transcriptomics",
       "Neuropathology",
-      "Cognitive"
+      "Cognitive",
+      "Clinical",
+      "Blood",
+      "Lifestyle",
+      "Sleep"
     ],
-    "access": "restricted",
-    "n_subjects": 3000,
-    "n_note": "~3,000",
+    "access": "partial",
+    "n_subjects": 3322,
+    "n_note": "3,322 enrolled, 1,475 autopsied (Oct 2017); WGS 1,425; bulk RNA-seq 1,417",
     "origin": [
       "USA"
     ],
-    "doi": "10.1001/archgenpsychiatry.2012.1461",
-    "url": "https://dss.niagads.org/cohorts/religious-orders-study-memory-and-aging-project-rosmap/",
-    "notes": "Rich post-mortem multi-omics. Unique longitudinal clinical-to-neuropath design."
+    "doi": "10.1038/sdata.2018.142",
+    "url": "https://www.radc.rush.edu/",
+    "notes": "Rich post-mortem multi-omics. Unique longitudinal clinical-to-neuropath design.",
+    "access_level": "Application-based (Easy)",
+    "data_request_link": "https://www.radc.rush.edu/requests.htm",
+    "datasheet_link": "https://www.radc.rush.edu/docs/var/variables.htm",
+    "access_requirements": "RADC account + signed DUA for de-identified data; omics via AD Knowledge Portal (Synapse) DUA; specimens reviewed by Biospecimen Distribution Committee (merit, funding) + MTA. Fees/timelines not published.",
+    "design": "longitudinal",
+    "data_level": [
+      "raw",
+      "preprocessed",
+      "processed"
+    ],
+    "life_stage": [
+      "late life"
+    ],
+    "age_range_at_entry": null,
+    "mean_age_baseline": null,
+    "access_difficulty": "moderate",
+    "ethnic_diversity": "Low",
+    "ethnic_diversity_note": "~7% African American (ROS 7.1%, MAP 6.9%); released genotypes European ancestry only",
+    "percent_women": 72.7,
+    "percent_women_source": "72.7% of 3,322 enrolled (Oct 2017) — https://link.springer.com/10.1038/sdata.2018.142",
+    "womens_health": "Religious Orders Study includes nuns; sex-specific analyses available",
+    "curation_status": "Verified",
+    "curated_on": "2026-11-10",
+    "curated_by": "Kahina Baouche"
   },
   {
     "id": "biocard",
@@ -754,26 +783,6 @@
     "curation_status": "Verified",
     "curated_on": "2026-11-10",
     "curated_by": "Kahina Baouche"
-  },
-  {
-    "id": "adsp",
-    "name": "ADSP",
-    "full_name": "Alzheimer's Disease Sequencing Project",
-    "year": 2012,
-    "data_types": [
-      "Genetics",
-      "Clinical",
-      "Cognitive"
-    ],
-    "access": "restricted",
-    "n_subjects": 100000,
-    "n_note": "100,000+ (whole-genome & whole-exome)",
-    "origin": [
-      "USA"
-    ],
-    "doi": "10.1016/j.jalz.2022.09.009",
-    "url": "https://adsp.niagads.org/",
-    "notes": "NIH initiative sequencing whole genomes and exomes of AD cases and controls to identify disease-causing and protective variants. Prioritises diverse populations including African American, Hispanic/Latino, and Asian individuals. Data via NIAGADS."
   },
   {
     "id": "alfa",
@@ -1377,31 +1386,6 @@
     "curation_status": "Verified",
     "curated_on": "2026-11-10",
     "curated_by": "Kahina Baouche"
-  },
-  {
-    "id": "brainlat",
-    "name": "BrainLat",
-    "full_name": "Latin American Brain Health Institute Neuroimaging Dataset",
-    "year": 2023,
-    "data_types": [
-      "MRI",
-      "EEG",
-      "Cognitive",
-      "Clinical"
-    ],
-    "access": "open",
-    "n_subjects": 780,
-    "n_note": "780",
-    "origin": [
-      "Argentina",
-      "Chile",
-      "Colombia",
-      "Mexico",
-      "Peru"
-    ],
-    "doi": "10.1038/s41597-023-02806-8",
-    "url": "https://doi.org/10.1038/s41597-023-02806-8",
-    "notes": "First open multimodal neuroimaging dataset of neurodegeneration from Latin America. Includes AD, bvFTD, PD, MS and healthy controls. MRI (anatomical, functional, diffusion) + high-density EEG. BIDS format. Hosted on Synapse. Critical resource for underrepresented population neuroscience."
   },
   {
     "id": "swedish-twin-registry",
