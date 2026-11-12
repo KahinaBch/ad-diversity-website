@@ -1,21 +1,34 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { useTheme } from "./ThemeProvider";
+import { type Dataset, type RegionSummary, groupByRegion } from "@/lib/catalogue";
 
-interface Region {
-  id: string;
-  name: string;
+interface Region extends RegionSummary {
   count: number;
-  centroid: [number, number];
-  datasets: string[];
-  color: string;
 }
 
 interface MapData {
   regions: Region[];
   total: number;
-  last_updated: string;
-  note: string;
+  unmapped: string[];
+  last_updated: string | null;
+}
+
+// Builds the map from the catalogue (public/data/datasets.json).
+function buildMapData(datasets: Dataset[]): MapData {
+  const { regions, unmapped } = groupByRegion(datasets);
+  const curatedDates = datasets.map((d) => d.curated_on).filter((v): v is string => !!v).sort();
+  return {
+    regions: regions.map((r) => ({ ...r, count: r.datasets.length })),
+    total: datasets.length,
+    unmapped,
+    last_updated: curatedDates.at(-1) ?? null,
+  };
+}
+
+// Three legend sizes scaled to the largest region (e.g. max 25 → 5, 12, 25).
+function legendSteps(max: number): number[] {
+  return [...new Set([Math.max(1, Math.round(max / 5)), Math.max(1, Math.round(max / 2)), max])];
 }
 
 export default function WorldMap() {
@@ -30,9 +43,9 @@ export default function WorldMap() {
   const BASE = "/ad-diversity-website";
 
   useEffect(() => {
-    fetch(`${BASE}/data/world-datasets.json`)
+    fetch(`${BASE}/data/datasets.json`)
       .then((r) => r.json())
-      .then(setMapData);
+      .then((data: Dataset[]) => setMapData(buildMapData(data)));
   }, [BASE]);
 
   useEffect(() => {
@@ -144,10 +157,10 @@ export default function WorldMap() {
           <div className="absolute bottom-3 left-3 glass-card rounded-lg p-3 text-xs">
             <p className="text-violet-300 font-semibold mb-2">Bubble size ∝ datasets available</p>
             <div className="flex items-center gap-3">
-              {[5, 12, 22].map((n) => (
+              {legendSteps(Math.max(...mapData.regions.map((r) => r.count))).map((n, _, all) => (
                 <div key={n} className="flex flex-col items-center gap-1">
                   <div className="rounded-full bg-violet-500 opacity-60"
-                    style={{ width: `${Math.sqrt(n / 22) * 28 + 8}px`, height: `${Math.sqrt(n / 22) * 28 + 8}px` }} />
+                    style={{ width: `${Math.sqrt(n / all[all.length - 1]) * 28 + 8}px`, height: `${Math.sqrt(n / all[all.length - 1]) * 28 + 8}px` }} />
                   <span className="text-gray-400">{n}</span>
                 </div>
               ))}
@@ -162,15 +175,16 @@ export default function WorldMap() {
           <div className="flex items-start justify-between mb-3">
             <div>
               <h3 className="text-base font-bold" style={{ color: selected.color }}>{selected.name}</h3>
-              <p className="text-xs text-gray-400 mt-0.5">{selected.count} documented datasets</p>
+              <p className="text-xs text-gray-400 mt-0.5">{selected.count} documented {selected.count === 1 ? "dataset" : "datasets"}</p>
             </div>
             <button onClick={() => setSelected(null)} className="text-gray-500 hover:text-gray-800 dark:hover:text-white text-lg leading-none">×</button>
           </div>
           <div className="flex flex-wrap gap-1.5">
             {selected.datasets.map((ds) => (
-              <span key={ds} className="px-2 py-0.5 rounded-md text-xs font-medium"
+              <span key={ds.id} title={`${ds.full_name} · ${ds.origin.join(", ")}`}
+                className="px-2 py-0.5 rounded-md text-xs font-medium"
                 style={{ color: isLight ? "#2D1B5E" : "#e5e7eb", background: selected.color + "25", border: `1px solid ${selected.color}40` }}>
-                {ds}
+                {ds.name}
               </span>
             ))}
           </div>
@@ -193,7 +207,7 @@ export default function WorldMap() {
                 <span className="font-medium text-gray-300 truncate">{r.name}</span>
               </div>
               <span className="text-lg font-bold" style={{ color: r.color }}>{r.count}</span>
-              <span className="text-gray-500 ml-1">datasets</span>
+              <span className="text-gray-500 ml-1">{r.count === 1 ? "dataset" : "datasets"}</span>
             </button>
           ))}
         </div>
@@ -201,7 +215,11 @@ export default function WorldMap() {
 
       {mapData && (
         <p className="text-xs text-gray-600 mt-3 text-center italic">
-          {mapData.note} · Last updated {mapData.last_updated}.
+          {mapData.total} datasets from the{" "}
+          <a href={`${BASE}/part2/datasets`} className="underline">Dataset Catalogue</a>, placed by country of recruitment.
+          A dataset recruiting in several regions is counted in each of them.
+          {mapData.unmapped.length > 0 && ` Not shown (no region assigned): ${mapData.unmapped.join(", ")}.`}
+          {mapData.last_updated && ` Last updated ${mapData.last_updated}.`}
         </p>
       )}
     </div>

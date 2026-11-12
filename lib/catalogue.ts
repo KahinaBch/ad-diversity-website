@@ -81,6 +81,92 @@ export function diversityLevel(d: Pick<Dataset, "ethnic_diversity">): DiversityL
   return "unknown";
 }
 
+// ─── World regions (world map) ────────────────────────────────────────────────
+export interface RegionDef {
+  id: string;
+  name: string;
+  centroid: [number, number]; // [lon, lat] of the bubble
+  color: string;
+  countries: string[];        // values as written in the catalogue's `origin`
+}
+
+export const REGIONS: RegionDef[] = [
+  {
+    id: "north-america", name: "North America", centroid: [-95, 48], color: "#7C3AED",
+    countries: ["USA", "Canada"],
+  },
+  {
+    id: "europe", name: "Europe", centroid: [10, 52], color: "#BE185D",
+    countries: [
+      "UK", "Ireland", "France", "Germany", "Netherlands", "Belgium", "Luxembourg", "Switzerland",
+      "Austria", "Spain", "Portugal", "Italy", "Greece", "Malta", "Cyprus", "Sweden", "Norway",
+      "Finland", "Denmark", "Iceland", "Estonia", "Latvia", "Lithuania", "Poland", "Czech Republic",
+      "Czechia", "Slovakia", "Hungary", "Slovenia", "Croatia", "Serbia", "Romania", "Bulgaria",
+      "Ukraine", "Russia",
+    ],
+  },
+  {
+    id: "asia-pacific", name: "Asia-Pacific", centroid: [130, 25], color: "#1E3A8A",
+    countries: [
+      "Australia", "New Zealand", "Japan", "South Korea", "China", "Taiwan", "Hong Kong",
+      "Singapore", "Vietnam", "Thailand", "Malaysia", "Indonesia", "Philippines",
+    ],
+  },
+  {
+    id: "latin-america", name: "Latin America", centroid: [-65, -15], color: "#0E7490",
+    countries: [
+      "Mexico", "Guatemala", "Costa Rica", "Panama", "Cuba", "Dominican Republic", "Puerto Rico",
+      "Colombia", "Venezuela", "Ecuador", "Peru", "Bolivia", "Brazil", "Chile", "Argentina",
+      "Uruguay", "Paraguay",
+    ],
+  },
+  {
+    id: "africa", name: "Africa", centroid: [20, 5], color: "#065F46",
+    countries: [
+      "Ghana", "Nigeria", "Uganda", "Tanzania", "Kenya", "Ethiopia", "Rwanda", "Cameroon",
+      "Senegal", "South Africa", "Egypt", "Morocco", "Tunisia", "Zambia", "Zimbabwe", "Malawi",
+      "Botswana", "Mozambique",
+    ],
+  },
+  {
+    id: "middle-east-south-asia", name: "Middle East & South Asia", centroid: [68, 22], color: "#92400E",
+    countries: [
+      "India", "Pakistan", "Bangladesh", "Sri Lanka", "Nepal", "Iran", "Iraq", "Israel", "Lebanon",
+      "Jordan", "Turkey", "Saudi Arabia", "United Arab Emirates", "UAE", "Qatar",
+    ],
+  },
+];
+
+const REGION_BY_COUNTRY = new Map(
+  REGIONS.flatMap((r) => r.countries.map((c) => [c.toLowerCase(), r] as const)),
+);
+
+export interface RegionSummary extends RegionDef {
+  datasets: Dataset[];
+}
+
+/**
+ * Groups datasets by world region using their `origin` countries.
+ * A multi-country dataset is counted once in every region it recruits from.
+ * Countries missing from REGIONS are returned in `unmapped`.
+ */
+export function groupByRegion(datasets: Dataset[]): { regions: RegionSummary[]; unmapped: string[] } {
+  const byRegion = new Map<string, Set<Dataset>>();
+  const unmapped = new Set<string>();
+  for (const d of datasets) {
+    for (const country of d.origin) {
+      const region = REGION_BY_COUNTRY.get(country.trim().toLowerCase());
+      if (!region) { unmapped.add(country); continue; }
+      if (!byRegion.has(region.id)) byRegion.set(region.id, new Set());
+      byRegion.get(region.id)!.add(d);
+    }
+  }
+  const regions = REGIONS
+    .map((r) => ({ ...r, datasets: [...(byRegion.get(r.id) ?? [])].sort((a, b) => a.name.localeCompare(b.name)) }))
+    .filter((r) => r.datasets.length > 0);
+  return { regions, unmapped: [...unmapped].sort() };
+}
+
 // ─── Misc ─────────────────────────────────────────────────────────────────────
 export function participantLabel(d: Pick<Dataset, "n_note" | "n_subjects">): string {
   return d.n_note || d.n_subjects.toLocaleString("en-US");
