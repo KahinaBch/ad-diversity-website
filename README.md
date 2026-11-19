@@ -48,9 +48,6 @@ Open [http://localhost:3000/ad-diversity-website](http://localhost:3000/ad-diver
 
 Dataset contributions are welcome via Pull Request to the [dataset catalogue sub-repository](https://github.com/KahinaBch/ad-dataset-catalogue).
 
-## License
-
-MIT — open source for academic use and community extension.
 
 ## Citation
 
