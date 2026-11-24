@@ -15,8 +15,10 @@ import path from "node:path";
 
 const ROOT = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const OUT = path.join(ROOT, "public/data/datasets.json");
-const REMOTE =
-  "https://raw.githubusercontent.com/KahinaBch/ad-dataset-catalogue/main/data/neuroimaging_genetics.json";
+// CATALOGUE_REF pins a catalogue commit (set by the deploy workflow when the
+// catalogue triggers it), so a just-pushed change is not missed by raw-file caching.
+const REF = process.env.CATALOGUE_REF || "main";
+const REMOTE = `https://raw.githubusercontent.com/KahinaBch/ad-dataset-catalogue/${REF}/data/neuroimaging_genetics.json`;
 const LOCAL = path.join(ROOT, "../ad-dataset-catalogue/data/neuroimaging_genetics.json");
 
 // Returns the file's exact bytes; it is copied unchanged so the website copy

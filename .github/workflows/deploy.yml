@@ -6,6 +6,10 @@ on:
       - main
       - feature/explore
   workflow_dispatch:
+  # Sent by ad-dataset-catalogue (.github/workflows/notify-website.yml)
+  # whenever data/neuroimaging_genetics.json changes on its main branch.
+  repository_dispatch:
+    types: [catalogue-updated]
 
 permissions:
   contents: read
@@ -34,6 +38,8 @@ jobs:
 
       - name: Sync dataset catalogue
         run: npm run sync:catalogue
+        env:
+          CATALOGUE_REF: ${{ github.event.client_payload.sha || 'main' }}
 
       - name: Build
         run: npm run build
